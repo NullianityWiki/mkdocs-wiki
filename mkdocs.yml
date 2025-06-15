@@ -1,4 +1,57 @@
-site_name: NullianityWiki
-site_url: https://nullianity.wiki
+# mkdocs.yml
+
+site_name: Нуллианство Вики
+site_url: https://nullianity.wiki/
+repo_url: https://github.com/NullianityWiki/mkdocs-wiki
+repo_name: NullianityWiki/mkdocs-wiki
+edit_uri: edit/main/docs/
+
 theme:
   name: material
+  language: ru
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Переключить на тёмную тему
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Переключить на светлую тему
+  logo: assets/logo.svg
+  favicon: favicon/favicon.svg
+
+nav:
+  - '🏠 Главная': index.md
+  - '🧠 Основы':
+      - 'Манифест': basics/manifesto.md
+      - 'Заповеди': basics/commandments.md
+      - 'Ритуалы': basics/rituals.md
+      - 'FAQ: Частые вопросы': basics/faq.md
+  - '👥 Сообщество':
+      - 'Наши площадки': community/platforms.md
+      - 'Проекты сообщества': community/projects.md
+      - 'Встречи и события': community/events.md
+  - '📜 Летопись':
+      - 'История Нуллианства': lore/history.md
+      - 'Мемы и символы': lore/memes.md
+      - 'Творчество нуллианцев': lore/creativity.md
+  - '🚀 Как помочь?':
+      - 'Сделать вклад в Вики': contribute/how-to-contribute.md
+      - 'Присоединиться к проектам': contribute/join-projects.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html

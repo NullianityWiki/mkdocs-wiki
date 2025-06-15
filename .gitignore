@@ -4,3 +4,8 @@ node_modules
 sh
 tmp
 .env
+.DS_Store
+# Python virtual environment
+venv/
+# MkDocs build output
+site/
