@@ -9,3 +9,5 @@ tmp
 venv/
 # MkDocs build output
 site/
+_td_files
+_td_database

@@ -5,17 +5,24 @@
   "repository": "https://github.com/NullianityWiki/mkdocs-wiki.git",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "tsc",
-    "parse": "yarn build && node dist/index.js"
+    "build": "npx tdl-install-types && tsc",
+    "parse": "npx ts-node src/report.ts",
+    "parse-thread": "npx ts-node src/report-thread.ts",
+    "export": "npx ts-node src/export-thread.ts"
   },
   "devDependencies": {
-    "@types/node": "^24.0.1",
+    "@types/node": "^24.0.4",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@types/stream-chain": "^2.1.0",
     "@types/stream-json": "^1.7.8",
+    "dotenv": "^16.5.0",
+    "prebuilt-tdlib": "^0.1008050.0",
     "stream-json": "^1.9.1",
-    "tiktoken": "^1.0.21"
+    "tdl": "^8.0.2",
+    "tdl-install-types": "0.3.0",
+    "tiktoken": "^1.0.21",
+    "ts-node": "^10.9.2"
   }
 }
