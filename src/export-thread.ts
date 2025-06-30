@@ -68,7 +68,7 @@ async function main() {
     const date = (new Date(msg.date * 1000)).toISOString();
     const textOut = msg.content.text.text;
 
-    output += `${date},${link},${threadName},${senderName}:${textOut}\n`;
+    output += `${date},${link},${senderName}:${textOut}\n`;
     count++;
   })
 
