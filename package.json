@@ -6,18 +6,22 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "npx tdl-install-types && tsc",
-    "parse": "npx ts-node src/report.ts",
-    "parse-thread": "npx ts-node src/report-thread.ts",
-    "export": "npx ts-node src/export-thread.ts"
+    "report": "npx ts-node src/report.ts",
+    "report-thread": "npx ts-node src/report-thread.ts",
+    "export-thread": "npx ts-node src/export-thread.ts",
+    "export-chat": "npx ts-node src/export-chat.ts",
+    "analize": "npx ts-node src/analize.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.4",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@google-cloud/vertexai": "^1.10.0",
     "@types/stream-chain": "^2.1.0",
     "@types/stream-json": "^1.7.8",
     "dotenv": "^16.5.0",
+    "openai": "^5.8.2",
     "prebuilt-tdlib": "^0.1008050.0",
     "stream-json": "^1.9.1",
     "tdl": "^8.0.2",
