@@ -5,6 +5,7 @@
   "repository": "https://github.com/NullianityWiki/mkdocs-wiki.git",
   "license": "UNLICENSED",
   "scripts": {
+    "run": "mkdocs serve",
     "build": "npx tdl-install-types && tsc",
     "report": "npx ts-node src/report.ts",
     "report-thread": "npx ts-node src/report-thread.ts",

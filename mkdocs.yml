@@ -16,14 +16,19 @@ theme:
     - content.code.annotate
   palette:
     - scheme: default
+      primary: grey
+      accent: blue grey
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Переключить на тёмную тему
+
     - scheme: slate
+      primary: grey
+      accent: blue grey
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Переключить на светлую тему
-  logo: assets/logo.svg
+  logo: assets/logo.png
   favicon: favicon/favicon.svg
 
 nav:
