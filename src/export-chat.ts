@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { Client } from 'tdl';
-import { ForumTopic, Message, MessageLink, User } from 'src/tdlib-types';
+import { ForumTopic, Message } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import { mkdirSync, writeFileSync } from 'fs';
 import { exportThread, login } from './common';
@@ -8,10 +8,11 @@ import { exportThread, login } from './common';
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
 
-const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME, START_DATE } = process.env;
+const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME, START_DATE, EXPORT_DIR } = process.env;
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = CHAT_NAME!;
 const startTimestamp = START_DATE ? Math.floor(new Date(START_DATE!).getTime() / 1000) : 0;
+const exportDir = EXPORT_DIR ?? './exports';
 
 const userNamesCache = new Map<number, string>();
 
@@ -69,6 +70,7 @@ async function main() {
 }
 
 async function getChatIdByChatName(client: Client, _chatName: string) {
+  console.log(`Searching for chat with name "${_chatName}"...`);
   const chat = await client.invoke({
     _: 'searchPublicChat',
     username: _chatName,
@@ -145,12 +147,11 @@ async function writeByDays(threadMessages: Map<number, Message[]>, lastThreadMsg
     });
   }
 
-
-  mkdirSync('./exports', { recursive: true });
+  mkdirSync(exportDir, { recursive: true });
 
   for (const [day, msgs] of Object.entries(byDate)) {
     console.log(`Writing messages for day ${day}, count: ${msgs.length}`);
-    const filename = `./exports/${day}.json`;
+    const filename = `${exportDir}/${day}.json`;
     writeFileSync(
       filename,
       JSON.stringify(msgs, null, 2),
@@ -160,9 +161,11 @@ async function writeByDays(threadMessages: Map<number, Message[]>, lastThreadMsg
   }
 
   console.log('Writing last messages...', lastThreadMsg.size);
+  const outputMsgs: Message[] = [];
+  Array.from(lastThreadMsg.values()).forEach(msg => outputMsgs.push(msg));
   writeFileSync(
-    './exports/_last_msgs.json',
-    JSON.stringify(lastThreadMsg.values(), null, 2),
+    exportDir + '/_last_msgs.json',
+    JSON.stringify(outputMsgs, null, 2),
     { encoding: 'utf-8' },
   );
 }
