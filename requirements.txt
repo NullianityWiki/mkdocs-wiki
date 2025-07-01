@@ -150,6 +150,7 @@ soupsieve==2.3.2.post1
 stability-sdk==0.2.3
 systemd-python==234
 tabulate==0.8.9
+telethon==1.36.0
 toml==0.10.2
 toolz==0.12.0
 typing_extensions==4.5.0
