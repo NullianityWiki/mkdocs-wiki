@@ -48,7 +48,6 @@ export async function exportThread(
   lastThreadMsgs: Map<number, Message> | null,
   userNamesCache: Map<number, string>,
 ): Promise<Message[]> {
-  console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name}`);
   const threadMessageId = thread.info.message_thread_id;
 
   // need to call before getMessageThreadHistory, otherwise we will get Message not found error
@@ -60,12 +59,14 @@ export async function exportThread(
 
   let allMessages: Message[] = [];
   const lastThreadMsg = lastThreadMsgs ? lastThreadMsgs.get(threadMessageId) : null;
-  let fromMessageId = lastThreadMsg ? lastThreadMsg.id : 0;
+  const toDate = Math.floor((lastThreadMsg?.date ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+  let fromMessageId = 0;
+
+  console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name} to date ${new Date(toDate * 1000)}`);
 
   let tryCount = 0;
   while (true) {
     try {
-      console.log(`Fetching messages starting from message ID ${fromMessageId}`);
       const result = await client.invoke({
         _: 'getMessageThreadHistory',
         chat_id: chatId,
@@ -79,9 +80,17 @@ export async function exportThread(
         break;
       }
       allMessages.push(...result.messages);
-      fromMessageId = result.messages[result.messages.length - 1].id as number;
+      const resultLstMsg = result.messages[result.messages.length - 1];
+      fromMessageId = resultLstMsg.id as number;
+
+      if (resultLstMsg.date < toDate) {
+        console.log('Reached target date with msg', new Date(resultLstMsg.date * 1000));
+        break;
+      } else {
+        console.log(`Fetched messages with the last ${new Date(resultLstMsg.date * 1000)}`);
+      }
     } catch (e) {
-      if(tryCount > 100) {
+      if (tryCount > 100) {
         console.error(`Failed to fetch messages for thread ${thread.info.name} after multiple attempts.`);
         throw e;
       }
