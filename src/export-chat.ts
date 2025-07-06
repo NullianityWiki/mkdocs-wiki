@@ -4,6 +4,7 @@ import { ForumTopic, Message } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import { mkdirSync, writeFileSync } from 'fs';
 import { exportThread, login } from './common';
+import { readFileSync } from 'node:fs';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
@@ -36,12 +37,18 @@ async function main() {
   const threads = await getActiveThreads(client, chatId);
 
   let lastThreadMsgOld = new Map<number, Message>();
-  // try {
-  //   lastThreadMsgOld = JSON.parse(readFileSync(
-  //     './exports/_last_msgs.json',
-  //     { encoding: 'utf-8' },
-  //   ));
-  // } catch (e) {}
+  try {
+    const msgs =  JSON.parse(readFileSync(
+      './exports/_last_msgs.json',
+      { encoding: 'utf-8' },
+    )) as Message[];
+
+    for(const m of msgs) {
+      if (m && m.message_thread_id) {
+        lastThreadMsgOld.set(m.message_thread_id, m);
+      }
+    }
+  } catch (e) {}
 
   const threadMessages = new Map<number, Message[]>();
   const lastThreadMsg = new Map<number, Message>();
