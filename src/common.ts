@@ -62,7 +62,7 @@ export async function exportThread(
   const toDate = Math.floor((lastThreadMsg?.date ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
   let fromMessageId = 0;
 
-  console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name} to date ${new Date(toDate * 1000)}`);
+  console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name} to date ${(new Date(toDate * 1000)).toISOString()}`);
 
   let tryCount = 0;
   while (true) {
@@ -84,10 +84,10 @@ export async function exportThread(
       fromMessageId = resultLstMsg.id as number;
 
       if (resultLstMsg.date < toDate) {
-        console.log('Reached target date with msg', new Date(resultLstMsg.date * 1000));
+        console.log('Reached target date with msg', (new Date(resultLstMsg.date * 1000)).toISOString());
         break;
       } else {
-        console.log(`Fetched messages with the last ${new Date(resultLstMsg.date * 1000)}`);
+        console.log(`Fetched messages with the last ${(new Date(resultLstMsg.date * 1000)).toISOString()}`);
       }
     } catch (e) {
       if (tryCount > 100) {
