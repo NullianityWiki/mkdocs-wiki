@@ -43,6 +43,9 @@ async function main() {
     createdReports.add(path.basename(file, '.md'));
   }
 
+  // do not create reports for not full day
+  createdReports.add(new Date(Date.now()).toISOString().slice(0, 10));
+
   for (const file of filesExports.filter(f => f.endsWith('.json'))) {
     const date = path.basename(file, '.json');
     if (file === '_last_msgs.json' || createdReports.has(date)) {
