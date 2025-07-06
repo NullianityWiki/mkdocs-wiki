@@ -62,6 +62,7 @@ export async function exportThread(
   const lastThreadMsg = lastThreadMsgs ? lastThreadMsgs.get(threadMessageId) : null;
   let fromMessageId = lastThreadMsg ? lastThreadMsg.id : 0;
 
+  let tryCount = 0;
   while (true) {
     try {
       console.log(`Fetching messages starting from message ID ${fromMessageId}`);
@@ -80,8 +81,13 @@ export async function exportThread(
       allMessages.push(...result.messages);
       fromMessageId = result.messages[result.messages.length - 1].id as number;
     } catch (e) {
+      if(tryCount > 100) {
+        console.error(`Failed to fetch messages for thread ${thread.info.name} after multiple attempts.`);
+        throw e;
+      }
       console.log(`Error fetching messages for thread ${thread.info.name}:`, e);
       await sleep(1000);
+      tryCount++;
     }
   }
 
