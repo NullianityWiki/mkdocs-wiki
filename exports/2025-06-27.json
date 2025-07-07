@@ -1,6 +1,111 @@
 [
   {
     "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89805",
+    "date": "2025-06-27T10:36:44.000Z",
+    "text": "Потому что он на борту и так несет все необходимое с собой (ну там разные приблуды типа Proton), но так же с этой версией единственная проблема котороая была - несовместимые версии драйверов nvidia"
+  },
+  {
+    "from": "Игросторик 0.(@igrosigros)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89807",
+    "date": "2025-06-27T10:37:13.000Z",
+    "text": "Я ставил деб пакет"
+  },
+  {
+    "from": "Игросторик 0.(@igrosigros)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89809",
+    "date": "2025-06-27T10:37:15.000Z",
+    "text": "Чорт"
+  },
+  {
+    "from": "Игросторик 0.(@igrosigros)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89810",
+    "date": "2025-06-27T10:37:21.000Z",
+    "text": "Как его сносить теперь"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89811",
+    "date": "2025-06-27T10:37:28.000Z",
+    "text": "Ну как он назывался"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89812",
+    "date": "2025-06-27T10:37:41.000Z",
+    "text": "Я сто лет ничего не ставил руками для apt"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/89824",
+    "date": "2025-06-27T10:40:14.000Z",
+    "text": "У тебя может периодически расходится версии драйверов (если nvidia как у других не знаю) нужно делать flatpak update"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91040",
+    "date": "2025-06-27T13:54:30.000Z",
+    "text": "В настройках включи режим совместимости"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91041",
+    "date": "2025-06-27T13:54:46.000Z",
+    "text": "У тебя все игры доступны будут он сам нужную версию протона поставит"
+  },
+  {
+    "from": "Игросторик 0.(@igrosigros)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91065",
+    "date": "2025-06-27T13:59:51.000Z",
+    "text": "Спасибо"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91101",
+    "date": "2025-06-27T14:05:18.000Z",
+    "text": "Сейчас прислал друг"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91102",
+    "date": "2025-06-27T14:05:18.000Z",
+    "text": "Щас собес"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91103",
+    "date": "2025-06-27T14:05:18.000Z",
+    "text": "Чувак сказал, что POST запрос HTTP безопаснее GET"
+  },
+  {
+    "from": "Игросторик 0.(@igrosigros)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91286",
+    "date": "2025-06-27T14:31:33.000Z",
+    "text": "Вот как вот чтобы взял инсталлер и запихнул в лончер, и он тебе игру поставит"
+  },
+  {
+    "from": "Игросторик 0.(@igrosigros)",
+    "thread": "0 Linux и FOSS",
+    "link": "https://t.me/NullianityNull/999/91287",
+    "date": "2025-06-27T14:31:37.000Z",
+    "text": "Игра пиратская"
+  },
+  {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
     "thread": "Квизы",
     "link": "https://t.me/NullianityNull/1/88750",
     "date": "2025-06-27T07:37:51.000Z",
@@ -4142,139 +4247,6 @@
     "link": "https://t.me/NullianityNull/87602/93073",
     "date": "2025-06-27T20:25:07.000Z",
     "text": "Мне кажется, если использовать шортсы -- то ютуб шортсы, а так же, может быть, ВКшортсы (их очень много детей сейчас смотрит). А вот в тик-токе, как я вижу, уже обосновалось какое-то радикализированное сообщество, я не уверен, стоит ли лезть на эту территорию; Все равно что прийти проповедовать в чужой храм. Пожалуй, лучше все-таки остановиться на активности на нейтральной территории..."
-  },
-  {
-    "from": "Давид Медведев(@d3v4k4nt)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89271",
-    "date": "2025-06-27T08:44:21.000Z",
-    "text": "эпик действительно как магазин очень неудобный, его большой плюс который его выделяет - это нонстоп раздачи игр, в том числе и хороших, мне так доставался контрол например.\nНо тем не менее я всё равно его потом с допами в стиме купил"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89792",
-    "date": "2025-06-27T10:32:31.000Z",
-    "text": "У меня стим не запускается"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89801",
-    "date": "2025-06-27T10:35:15.000Z",
-    "text": "Это почему?"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89802",
-    "date": "2025-06-27T10:35:35.000Z",
-    "text": "Я вообще использую версию steam всегда из flatpack"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89805",
-    "date": "2025-06-27T10:36:44.000Z",
-    "text": "Потому что он на борту и так несет все необходимое с собой (ну там разные приблуды типа Proton), но так же с этой версией единственная проблема котороая была - несовместимые версии драйверов nvidia"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89807",
-    "date": "2025-06-27T10:37:13.000Z",
-    "text": "Я ставил деб пакет"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89809",
-    "date": "2025-06-27T10:37:15.000Z",
-    "text": "Чорт"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89810",
-    "date": "2025-06-27T10:37:21.000Z",
-    "text": "Как его сносить теперь"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89811",
-    "date": "2025-06-27T10:37:28.000Z",
-    "text": "Ну как он назывался"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89812",
-    "date": "2025-06-27T10:37:41.000Z",
-    "text": "Я сто лет ничего не ставил руками для apt"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/89824",
-    "date": "2025-06-27T10:40:14.000Z",
-    "text": "У тебя может периодически расходится версии драйверов (если nvidia как у других не знаю) нужно делать flatpak update"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91040",
-    "date": "2025-06-27T13:54:30.000Z",
-    "text": "В настройках включи режим совместимости"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91041",
-    "date": "2025-06-27T13:54:46.000Z",
-    "text": "У тебя все игры доступны будут он сам нужную версию протона поставит"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91065",
-    "date": "2025-06-27T13:59:51.000Z",
-    "text": "Спасибо"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91101",
-    "date": "2025-06-27T14:05:18.000Z",
-    "text": "Сейчас прислал друг"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91102",
-    "date": "2025-06-27T14:05:18.000Z",
-    "text": "Щас собес"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91103",
-    "date": "2025-06-27T14:05:18.000Z",
-    "text": "Чувак сказал, что POST запрос HTTP безопаснее GET"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91286",
-    "date": "2025-06-27T14:31:33.000Z",
-    "text": "Вот как вот чтобы взял инсталлер и запихнул в лончер, и он тебе игру поставит"
-  },
-  {
-    "from": "Игросторик 0.(@igrosigros)",
-    "thread": "0 Linux и FOSS",
-    "link": "https://t.me/NullianityNull/999/91287",
-    "date": "2025-06-27T14:31:37.000Z",
-    "text": "Игра пиратская"
   },
   {
     "from": "Jelena Enet",
