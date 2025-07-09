@@ -1,5 +1,7 @@
 import { Client } from 'tdl';
 import { ForumTopic, Message, MessageLink, User } from 'src/tdlib-types';
+import { EXCLUDE_USERS } from './exclude';
+import { createHash } from 'node:crypto';
 
 export async function login(
   tdl: any,
@@ -47,6 +49,7 @@ export async function exportThread(
   thread: ForumTopic,
   lastThreadMsgs: Map<number, Message> | null,
   userNamesCache: Map<number, string>,
+  userExcludedCache: Map<number, boolean>,
 ): Promise<Message[]> {
   const threadMessageId = thread.info.message_thread_id;
 
@@ -62,7 +65,8 @@ export async function exportThread(
   const toDate = Math.floor((lastThreadMsg?.date ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
   let fromMessageId = 0;
 
-  console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name} to date ${(new Date(toDate * 1000)).toISOString()}`);
+  console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name} to date ${(new Date(toDate *
+    1000)).toISOString()}`);
 
   let tryCount = 0;
   while (true) {
@@ -101,12 +105,12 @@ export async function exportThread(
   }
 
   return enrichMessagesWithLinks(
-    await enrichMessagesWithUserNames(userNamesCache, allMessages.reverse().map(m => {
+    await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, allMessages.reverse().map(m => {
       return {
         ...m,
         thread_name: thread.info.name,
       };
-    }), client), chatId, client);
+    }), client), chatId, client, userExcludedCache);
 }
 
 export async function sleep(ms: number) {
@@ -115,13 +119,14 @@ export async function sleep(ms: number) {
 
 async function enrichMessagesWithUserNames(
   userNamesCache: Map<number, string>,
+  userExcludedCache: Map<number, boolean>,
   messages: Message[],
   client: Client,
 ): Promise<Message[]> {
   return await Promise.all(messages.map(async(msg) => {
     if (msg.sender_id && msg.sender_id._ === 'messageSenderUser') {
       const userId = msg.sender_id.user_id;
-      const userName = await getUserName(userNamesCache, client, userId);
+      const userName = await getUserName(userNamesCache, userExcludedCache, client, userId);
       return {
         ...msg,
         sender_name: userName,
@@ -131,7 +136,12 @@ async function enrichMessagesWithUserNames(
   }));
 }
 
-async function getUserName(userNamesCache: Map<number, string>, client: Client, userId: number): Promise<string> {
+async function getUserName(
+  userNamesCache: Map<number, string>,
+  userExcludedCache: Map<number, boolean>,
+  client: Client,
+  userId: number,
+): Promise<string> {
   if (userNamesCache.has(userId)) {
     return userNamesCache.get(userId)!;
   }
@@ -140,15 +150,42 @@ async function getUserName(userNamesCache: Map<number, string>, client: Client, 
     _: 'getUser',
     user_id: userId,
   }) as User;
-  const name = user.first_name
+  const uName = user.usernames?.active_usernames ? '@' + user.usernames?.active_usernames[0] : 'unknown';
+  let name = user.first_name
     + (user.last_name ? ' ' + user.last_name : '')
-    + (user.usernames?.active_usernames ? '(@' + user.usernames?.active_usernames[0] + ')' : '');
+    + ('(' + uName + ')');
+
+  if (EXCLUDE_USERS.has(uName)) {
+    name = hashText(name);
+    userExcludedCache.set(userId, true);
+  }
+
   userNamesCache.set(userId, name);
   return name;
 }
 
-async function enrichMessagesWithLinks(messages: Message[], chatId: number, client: Client): Promise<Message[]> {
+function hashText(text: string): string {
+  return createHash('sha256').update(text).digest('hex');
+}
+
+async function enrichMessagesWithLinks(
+  messages: Message[],
+  chatId: number,
+  client: Client,
+  userExcludedCache: Map<number, boolean>,
+): Promise<Message[]> {
+
   return await Promise.all(messages.map(async(msg) => {
+    if (msg.sender_id && msg.sender_id._ === 'messageSenderUser') {
+      const userId = msg.sender_id.user_id;
+      if (userExcludedCache.has(userId)) {
+        return {
+          ...msg,
+          link: '-',
+        };
+      }
+    }
+
     const link = await getMsgLink(client, chatId, msg.id);
     return {
       ...msg,

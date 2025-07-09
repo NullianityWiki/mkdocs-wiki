@@ -1,10 +1,10 @@
 [
   {
     "_": "message",
-    "id": 181300887552,
+    "id": 183040475136,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 2108805665
+      "user_id": 1831211224
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
@@ -14,13 +14,41 @@
     "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751932757,
+    "date": 1751969490,
     "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "🥰"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 5757503759
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
     "unread_reactions": [],
     "reply_to": {
       "_": "messageReplyToMessage",
       "chat_id": -1002286460601,
-      "message_id": 181297741824,
+      "message_id": 183003774976,
       "origin_send_date": 0
     },
     "message_thread_id": 4311744512,
@@ -43,13 +71,13 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Я не утверждаю объективность своей точки зрения, господин софист-приколист. Моё утверждение было \"с моей субъективной точки зрения это не нормально\". Я делаю утверждение о реальности, что моя точка зрения заключается в том-то том-то.",
+        "text": "Сатанисты вообще душки. Мне больше нравится секс, чем когда убивают.",
         "entities": []
       }
     },
     "thread_name": "0 Критика Нуллианства",
-    "sender_name": "Профессор(@arnirgodoflight)",
-    "link": "https://t.me/NullianityNull/4112/172902"
+    "sender_name": "Андрей(unknown)",
+    "link": "https://t.me/NullianityNull/4112/174561"
   },
   {
     "_": "message",
@@ -95,22 +123,28 @@
   },
   {
     "_": "message",
-    "id": 181239021568,
+    "id": 183058300928,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 997816471
+      "user_id": 71678656
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
     "is_pinned": false,
     "is_from_offline": false,
     "can_be_saved": true,
-    "has_timestamped_media": true,
+    "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751930493,
+    "date": 1751969575,
     "edit_date": 0,
     "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 183049912320,
+      "origin_send_date": 0
+    },
     "message_thread_id": 156007137280,
     "topic_id": {
       "_": "messageTopicForum",
@@ -131,13 +165,13 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Если летопись будет вообще. Но хотелось бы",
+        "text": "Типичный нулианец",
         "entities": []
       }
     },
     "thread_name": "General",
-    "sender_name": "0Blessed(@forbiddenfromthebegining)",
-    "link": "https://t.me/NullianityNull/148780/172843"
+    "sender_name": "Wanna Phonila(@wannaphonila)",
+    "link": "https://t.me/NullianityNull/148780/174578"
   },
   {
     "_": "message",
@@ -193,16 +227,16 @@
               "_": "reactionTypeEmoji",
               "emoji": "❤"
             },
-            "total_count": 2,
+            "total_count": 3,
             "is_chosen": false,
             "recent_sender_ids": [
               {
                 "_": "messageSenderUser",
-                "user_id": 5702705272
+                "user_id": 2087716233
               },
               {
                 "_": "messageSenderUser",
-                "user_id": 1167279221
+                "user_id": 5702705272
               }
             ]
           }
@@ -246,7 +280,7 @@
             "type": "m",
             "photo": {
               "_": "file",
-              "id": 2341,
+              "id": 2148,
               "size": 15735,
               "expected_size": 15735,
               "local": {
@@ -262,7 +296,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEGAASISJ65AAECj1hobF_GE_dJEdaj3KzF3mJcpJiQLwACFvcxG7BBWEuaIoK-ceRWIwEAAwIAA20AAzYE",
+                "id": "AgACAgIAAyEGAASISJ65AAECj1hobO_cBfAgCzh_s85IxXeJJ7NWaQACFvcxG7BBWEuaIoK-ceRWIwEAAwIAA20AAzYE",
                 "unique_id": "AQADFvcxG7BBWEty",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -278,7 +312,7 @@
             "type": "x",
             "photo": {
               "_": "file",
-              "id": 2342,
+              "id": 2149,
               "size": 72071,
               "expected_size": 72071,
               "local": {
@@ -294,7 +328,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEGAASISJ65AAECj1hobF_GE_dJEdaj3KzF3mJcpJiQLwACFvcxG7BBWEuaIoK-ceRWIwEAAwIAA3gAAzYE",
+                "id": "AgACAgIAAyEGAASISJ65AAECj1hobO_cBfAgCzh_s85IxXeJJ7NWaQACFvcxG7BBWEuaIoK-ceRWIwEAAwIAA3gAAzYE",
                 "unique_id": "AQADFvcxG7BBWEt9",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -310,7 +344,7 @@
             "type": "y",
             "photo": {
               "_": "file",
-              "id": 2343,
+              "id": 2150,
               "size": 135238,
               "expected_size": 135238,
               "local": {
@@ -326,7 +360,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEGAASISJ65AAECj1hobF_GE_dJEdaj3KzF3mJcpJiQLwACFvcxG7BBWEuaIoK-ceRWIwEAAwIAA3kAAzYE",
+                "id": "AgACAgIAAyEGAASISJ65AAECj1hobO_cBfAgCzh_s85IxXeJJ7NWaQACFvcxG7BBWEuaIoK-ceRWIwEAAwIAA3kAAzYE",
                 "unique_id": "AQADFvcxG7BBWEt-",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -410,28 +444,22 @@
   },
   {
     "_": "message",
-    "id": 180616167424,
+    "id": 182023356416,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 1831211224
+      "user_id": 7294302438
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
     "is_pinned": false,
     "is_from_offline": false,
     "can_be_saved": true,
-    "has_timestamped_media": false,
+    "has_timestamped_media": true,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751919901,
+    "date": 1751961824,
     "edit_date": 0,
     "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 180605681664,
-      "origin_send_date": 0
-    },
     "message_thread_id": 1822425088,
     "topic_id": {
       "_": "messageTopicForum",
@@ -452,20 +480,83 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Уже просто мелкая еще ))))",
+        "text": "370К подписчиков",
         "entities": []
       }
     },
     "thread_name": "0 Вопросы и предложения",
-    "sender_name": "Андрей",
-    "link": "https://t.me/NullianityNull/1738/172249"
+    "sender_name": "Алексей Фуфаев(@Dja_z_powrotem)",
+    "link": "https://t.me/NullianityNull/1738/173591"
   },
   {
     "_": "message",
-    "id": 181302984704,
+    "id": 183087661056,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 496138633
+      "user_id": 250067383
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751969748,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 172019941376,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 172019941376
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 1,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Обсуждение тут: https://t.me/NullianityNull/15575",
+        "entities": [
+          {
+            "_": "textEntity",
+            "offset": 16,
+            "length": 33,
+            "type": {
+              "_": "textEntityTypeUrl"
+            }
+          }
+        ]
+      },
+      "link_preview_options": {
+        "_": "linkPreviewOptions",
+        "is_disabled": true,
+        "url": "",
+        "force_small_media": false,
+        "force_large_media": false,
+        "show_above_text": false
+      }
+    },
+    "thread_name": "0 Репорты и Жалобы",
+    "sender_name": "Давид Медведев(@d3v4k4nt)",
+    "link": "https://t.me/NullianityNull/164051/174606"
+  },
+  {
+    "_": "message",
+    "id": 183098146816,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 5014462244
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
@@ -475,13 +566,520 @@
     "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751932836,
+    "date": 1751969795,
+    "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "❤"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 6324459010
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 183037329408,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 81456529408,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 81456529408
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "такое себе веселье, это забавно первые пару часов потом скучно становится и вызывает только недоуменяе как человек может повторять одну и туже пасту в течении уже пары недель.",
+        "entities": []
+      }
+    },
+    "thread_name": "0 vs. X",
+    "sender_name": "SamNull(@BakaAlf)",
+    "link": "https://t.me/NullianityNull/77683/174616"
+  },
+  {
+    "_": "message",
+    "id": 183130652672,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 1831211224
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": true,
+    "date": 1751969984,
     "edit_date": 0,
     "unread_reactions": [],
     "reply_to": {
       "_": "messageReplyToMessage",
       "chat_id": -1002286460601,
-      "message_id": 181301936128,
+      "message_id": 183066689536,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 54357131264,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 54357131264
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "У вас очень серьезный подход. Это вызывает уважение. Я бы попросил подружку ИИ. \"Исправь чтоб это было нормально\". Делов на пару секунд. ))))",
+        "entities": []
+      }
+    },
+    "thread_name": "Реформа Сути Нуллианства",
+    "sender_name": "Андрей(unknown)",
+    "link": "https://t.me/NullianityNull/51839/174647"
+  },
+  {
+    "_": "message",
+    "id": 183063543808,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 7580663580
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751969612,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 111806513152,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 111806513152
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageAudio",
+      "audio": {
+        "_": "audio",
+        "duration": 232,
+        "title": "うずまき",
+        "performer": "<unknown>",
+        "file_name": "うずまき.m4a",
+        "mime_type": "audio/m4a",
+        "external_album_covers": [
+          {
+            "_": "thumbnail",
+            "format": {
+              "_": "thumbnailFormatJpeg"
+            },
+            "width": 100,
+            "height": 100,
+            "file": {
+              "_": "file",
+              "id": 2152,
+              "size": 0,
+              "expected_size": 0,
+              "local": {
+                "_": "localFile",
+                "path": "",
+                "can_be_downloaded": true,
+                "can_be_deleted": false,
+                "is_downloading_active": false,
+                "is_downloading_completed": false,
+                "download_offset": 0,
+                "downloaded_prefix_size": 0,
+                "downloaded_size": 0
+              },
+              "remote": {
+                "_": "remoteFile",
+                "id": "AAgiI2F1ZGlvX3Qj44GG44Ga44G-44GNIzx1bmtub3duPiMxIwABAw",
+                "unique_id": "_wAIIiNhdWRpb190I-OBhuOBmuOBvuOBjSM8dW5rbm93bj4jMSMAAQ",
+                "is_uploading_active": false,
+                "is_uploading_completed": true,
+                "uploaded_size": 0
+              }
+            }
+          },
+          {
+            "_": "thumbnail",
+            "format": {
+              "_": "thumbnailFormatJpeg"
+            },
+            "width": 600,
+            "height": 600,
+            "file": {
+              "_": "file",
+              "id": 2153,
+              "size": 0,
+              "expected_size": 0,
+              "local": {
+                "_": "localFile",
+                "path": "",
+                "can_be_downloaded": true,
+                "can_be_deleted": false,
+                "is_downloading_active": false,
+                "is_downloading_completed": false,
+                "download_offset": 0,
+                "downloaded_prefix_size": 0,
+                "downloaded_size": 0
+              },
+              "remote": {
+                "_": "remoteFile",
+                "id": "AAgiI2F1ZGlvX3Qj44GG44Ga44G-44GNIzx1bmtub3duPiMwIwABAw",
+                "unique_id": "_wAIIiNhdWRpb190I-OBhuOBmuOBvuOBjSM8dW5rbm93bj4jMCMAAQ",
+                "is_uploading_active": false,
+                "is_uploading_completed": true,
+                "uploaded_size": 0
+              }
+            }
+          }
+        ],
+        "audio": {
+          "_": "file",
+          "id": 2151,
+          "size": 3880167,
+          "expected_size": 3880167,
+          "local": {
+            "_": "localFile",
+            "path": "",
+            "can_be_downloaded": true,
+            "can_be_deleted": false,
+            "is_downloading_active": false,
+            "is_downloading_completed": false,
+            "download_offset": 0,
+            "downloaded_prefix_size": 0,
+            "downloaded_size": 0
+          },
+          "remote": {
+            "_": "remoteFile",
+            "id": "CQACAgIAAyEFAASISJ65AAECqfdobPLDifG3fxCWIM6v4A4SE9oSOAAC8HIAAmWIaEvh-oLubEuGOTYE",
+            "unique_id": "AgAD8HIAAmWIaEs",
+            "is_uploading_active": false,
+            "is_uploading_completed": true,
+            "uploaded_size": 3880167
+          }
+        }
+      },
+      "caption": {
+        "_": "formattedText",
+        "text": "Вот вам спокойная музыка для сна🤗",
+        "entities": []
+      }
+    },
+    "thread_name": "Ваша любимая музыка",
+    "sender_name": "С0гласны?(@soglasni_yznali)",
+    "link": "https://t.me/NullianityNull/106627/174583"
+  },
+  {
+    "_": "message",
+    "id": 183025795072,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 5324789977
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751969439,
+    "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "🤯"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 6324459010
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "message_thread_id": 2647654400,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 2647654400
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Я в одной карте, где мяч нести, целый час вел матч против Зана Кригора и его команды. Никто из нас час не мог мяч донести.",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Видеоигры",
+    "sender_name": "Иван Артамонов(@artamonoffiwan)",
+    "link": "https://t.me/NullianityNull/2525/174547"
+  },
+  {
+    "_": "message",
+    "id": 183247044608,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 417862663
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751970516,
+    "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "🔥"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 5658474634
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 183178887168,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 978321408,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 978321408
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Поэтому я полностью согласен с запретом Проповедей в любом виде -- от идиологических и религиозных до бытовых. По сути, мы просто делаем правило \"давайте уважать чужое мировоззрение\"; Ну или моя личная заповедь: \"я обязан уважать вашу территорию до тех пор, пока вы не нарушаете границ моей.\". Миролюбия и гармонии в моем списке ценностей нет )))",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Дебаты",
+    "sender_name": "Терновый Койот(@OonHarn)",
+    "link": "https://t.me/NullianityNull/933/174758"
+  },
+  {
+    "_": "message",
+    "id": 182944006144,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 290335276
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751969046,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 117025275904,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 117025275904
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "но да, потом нужна прога, чтобы это соединить",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Стикеры",
+    "sender_name": "Алина Чижова(@missalinka007)",
+    "link": "https://t.me/NullianityNull/111604/174469"
+  },
+  {
+    "_": "message",
+    "id": 182939811840,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 496138633
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751969038,
+    "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "🔥"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 444876747
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 182079979520,
       "origin_send_date": 0
     },
     "message_thread_id": 44061163520,
@@ -501,175 +1099,34 @@
     "has_sensitive_content": false,
     "restriction_reason": "",
     "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Простити",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Глупенькая тема",
-    "sender_name": "Влад",
-    "link": "https://t.me/NullianityNull/42020/172904"
-  },
-  {
-    "_": "message",
-    "id": 181299838976,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1112255984
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751932672,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeCustomEmoji",
-              "custom_emoji_id": "5427232022252764138"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 997816471
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 181211758592,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 4772069376,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 4772069376
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Нифига садминился",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Админская",
-    "sender_name": "🐟(@InstructorFromNato)",
-    "link": "https://t.me/NullianityNull/4551/172901"
-  },
-  {
-    "_": "message",
-    "id": 181290401792,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 6538610688
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751932356,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 181127872512,
-      "quote": {
-        "_": "textQuote",
-        "text": {
-          "_": "formattedText",
-          "text": "-физический труд(работа членов) не распологает к глубоким мыслям...устаю",
-          "entities": []
-        },
-        "position": 16,
-        "is_manual": true
-      },
-      "origin_send_date": 0
-    },
-    "message_thread_id": 3346006016,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 3346006016
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageAnimation",
-      "animation": {
-        "_": "animation",
-        "duration": 10,
-        "width": 320,
-        "height": 180,
-        "file_name": "thorfinn-vinland-saga.mp4",
+      "_": "messageVideo",
+      "video": {
+        "_": "video",
+        "duration": 4,
+        "width": 240,
+        "height": 320,
+        "file_name": "",
         "mime_type": "video/mp4",
         "has_stickers": false,
+        "supports_streaming": true,
         "minithumbnail": {
           "_": "minithumbnail",
-          "width": 40,
-          "height": 22,
-          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAWACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDXxSECjPvQOaz5lexRWnPYVVcZ+lW5gN1VnwCcn8KBldxjNFOKHjJoouFi/HKD1FT7/lziiisYyaTsVJK5G6hxzx7jrVSZAArd+maKKKUnK9xEEh4x68UUUVsM/9k="
+          "width": 30,
+          "height": 40,
+          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAoAB4DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDPUnzQUH4VYOEfngHmrCWxA4HPrSral5AGxgcnFTcqxDkUuRU98qRxoijbznjis95GTGDkH1FMRtkcYHemJ+7bkU7JNRuTv4BP0rOzLIb+IyoHU/drLlBIwwrTmLCJ15Ax3qskMhTgbjmqRLLUs5AwvHoagWZwd6HLDqp70UVZI6WX7RCAeCeSKUuqoqqBwKKKaJZ//9k="
         },
         "thumbnail": {
           "_": "thumbnail",
           "format": {
-            "_": "thumbnailFormatMpeg4"
+            "_": "thumbnailFormatJpeg"
           },
-          "width": 150,
-          "height": 84,
+          "width": 240,
+          "height": 320,
           "file": {
             "_": "file",
-            "id": 2344,
-            "size": 38224,
-            "expected_size": 38224,
+            "id": 2154,
+            "size": 12176,
+            "expected_size": 12176,
             "local": {
               "_": "localFile",
               "path": "",
@@ -683,19 +1140,19 @@
             },
             "remote": {
               "_": "remoteFile",
-              "id": "AAMCBAADIQUABIhInrkAAQKjXGhsX8eMt15uEMRA1dUhD_zafPSSAAIzBAACKCANU7OttNKYLhVhAQAHdgADNgQ",
-              "unique_id": "AQADMwQAAiggDVN7",
+              "id": "AAMCAgADIQUABIhInrkAAQKpgWhs9IAZ0Qi602fR7wq1VbxIf_DsAAK9cgACZYhoS8fjTXuQmq58AQAHbQADNgQ",
+              "unique_id": "AQADvXIAAmWIaEty",
               "is_uploading_active": false,
               "is_uploading_completed": true,
-              "uploaded_size": 38224
+              "uploaded_size": 12176
             }
           }
         },
-        "animation": {
+        "video": {
           "_": "file",
-          "id": 2345,
-          "size": 224827,
-          "expected_size": 224827,
+          "id": 2155,
+          "size": 104847,
+          "expected_size": 104847,
           "local": {
             "_": "localFile",
             "path": "",
@@ -709,14 +1166,16 @@
           },
           "remote": {
             "_": "remoteFile",
-            "id": "CgACAgQAAyEFAASISJ65AAECo1xobF_HjLdebhDEQNXVIQ_82nz0kgACMwQAAiggDVOzrbTSmC4VYTYE",
-            "unique_id": "AgADMwQAAiggDVM",
+            "id": "BAACAgIAAyEFAASISJ65AAECqYFobPSAGdEIutNn0e8KtVW8SH_w7AACvXIAAmWIaEvH4017kJqufDYE",
+            "unique_id": "AgADvXIAAmWIaEs",
             "is_uploading_active": false,
             "is_uploading_completed": true,
-            "uploaded_size": 224827
+            "uploaded_size": 104847
           }
         }
       },
+      "alternative_videos": [],
+      "start_timestamp": 0,
       "caption": {
         "_": "formattedText",
         "text": "",
@@ -726,65 +1185,13 @@
       "has_spoiler": false,
       "is_secret": false
     },
-    "thread_name": "Знакомства нулевого толка",
-    "sender_name": "Удалëнный Аккаунт(@DeletedUser5678)",
-    "link": "https://t.me/NullianityNull/3191/172892"
+    "thread_name": "0 Глупенькая тема",
+    "sender_name": "Влад(unknown)",
+    "link": "https://t.me/NullianityNull/42020/174465"
   },
   {
     "_": "message",
-    "id": 181286207488,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1901641925
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751932162,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 175011528704,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 5878317056,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 5878317056
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "А все цикл ересь хоруса происходит в тридцатом или уже в сороковом тысячелетии?",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Книжный клуб",
-    "sender_name": "Fog(@Fogson1)",
-    "link": "https://t.me/NullianityNull/5606/172888"
-  },
-  {
-    "_": "message",
-    "id": 181255798784,
+    "id": 182787768320,
     "sender_id": {
       "_": "messageSenderUser",
       "user_id": 997816471
@@ -794,10 +1201,10 @@
     "is_pinned": false,
     "is_from_offline": false,
     "can_be_saved": true,
-    "has_timestamped_media": true,
+    "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751931365,
+    "date": 1751968235,
     "edit_date": 0,
     "interaction_info": {
       "_": "messageInteractionInfo",
@@ -810,14 +1217,14 @@
             "_": "messageReaction",
             "type": {
               "_": "reactionTypeEmoji",
-              "emoji": "💯"
+              "emoji": "❤"
             },
             "total_count": 1,
             "is_chosen": false,
             "recent_sender_ids": [
               {
                 "_": "messageSenderUser",
-                "user_id": 496138633
+                "user_id": 605277228
               }
             ]
           }
@@ -828,10 +1235,16 @@
       }
     },
     "unread_reactions": [],
-    "message_thread_id": 16331571200,
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 182779379712,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 1571815424,
     "topic_id": {
       "_": "messageTopicForum",
-      "forum_topic_id": 16331571200
+      "forum_topic_id": 1571815424
     },
     "self_destruct_in": 0,
     "auto_delete_in": 0,
@@ -848,20 +1261,20 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Надо или настраивать выборочную работу, или удалять вовсе",
+        "text": "Это право и будет предоставлено",
         "entities": []
       }
     },
-    "thread_name": "Обсуждение репортов и жалоб",
+    "thread_name": "0 Флуд",
     "sender_name": "0Blessed(@forbiddenfromthebegining)",
-    "link": "https://t.me/NullianityNull/15575/172859"
+    "link": "https://t.me/NullianityNull/1499/174320"
   },
   {
     "_": "message",
-    "id": 181207564288,
+    "id": 183302619136,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 146993163
+      "user_id": 1234774873
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
@@ -871,259 +1284,13 @@
     "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751929895,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "👍"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 1112255984
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 180931788800,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 172019941376,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 172019941376
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Я думаю, что нам и правда не стоит сохранять сообщения людей, которые этого не хотят",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Репорты и Жалобы",
-    "sender_name": "Alexander Panchin(@Scinquisitor)",
-    "link": "https://t.me/NullianityNull/164051/172813"
-  },
-  {
-    "_": "message",
-    "id": 181178204160,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 6324459010
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751929147,
+    "date": 1751971251,
     "edit_date": 0,
     "unread_reactions": [],
     "reply_to": {
       "_": "messageReplyToMessage",
       "chat_id": -1002286460601,
-      "message_id": 179596951552,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 826277888,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 826277888
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Я скидывал это сюда уже",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Мемы",
-    "sender_name": "0 Алексей(@NnEeAaLlEeXxEeYy)",
-    "link": "https://t.me/NullianityNull/788/172785"
-  },
-  {
-    "_": "message",
-    "id": 181169815552,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 496138633
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751928877,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 129908080640,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 129908080640
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageSticker",
-      "sticker": {
-        "_": "sticker",
-        "id": "5415841945077422921",
-        "set_id": "323976255084953603",
-        "width": 512,
-        "height": 512,
-        "emoji": "💩",
-        "format": {
-          "_": "stickerFormatWebp"
-        },
-        "full_type": {
-          "_": "stickerFullTypeRegular"
-        },
-        "thumbnail": {
-          "_": "thumbnail",
-          "format": {
-            "_": "thumbnailFormatWebp"
-          },
-          "width": 320,
-          "height": 320,
-          "file": {
-            "_": "file",
-            "id": 2346,
-            "size": 27372,
-            "expected_size": 27372,
-            "local": {
-              "_": "localFile",
-              "path": "",
-              "can_be_downloaded": true,
-              "can_be_deleted": false,
-              "is_downloading_active": false,
-              "is_downloading_completed": false,
-              "download_offset": 0,
-              "downloaded_prefix_size": 0,
-              "downloaded_size": 0
-            },
-            "remote": {
-              "_": "remoteFile",
-              "id": "AAMCAgADIQUABIhInrkAAQKi6WhsX-SDwUaR1HX7o-yveuxU8aTZAAJJGwACju8oSxLNY0OV30CBAQAHbQADNgQ",
-              "unique_id": "AQADSRsAAo7vKEty",
-              "is_uploading_active": false,
-              "is_uploading_completed": true,
-              "uploaded_size": 27372
-            }
-          }
-        },
-        "sticker": {
-          "_": "file",
-          "id": 2347,
-          "size": 62492,
-          "expected_size": 62492,
-          "local": {
-            "_": "localFile",
-            "path": "",
-            "can_be_downloaded": true,
-            "can_be_deleted": false,
-            "is_downloading_active": false,
-            "is_downloading_completed": false,
-            "download_offset": 0,
-            "downloaded_prefix_size": 0,
-            "downloaded_size": 0
-          },
-          "remote": {
-            "_": "remoteFile",
-            "id": "CAACAgIAAyEFAASISJ65AAECoulobF_kg8FGkdR1-6Psr3rsVPGk2QACSRsAAo7vKEsSzWNDld9AgTYE",
-            "unique_id": "AgADSRsAAo7vKEs",
-            "is_uploading_active": false,
-            "is_uploading_completed": true,
-            "uploaded_size": 62492
-          }
-        }
-      },
-      "is_premium": false
-    },
-    "thread_name": "Нуллианская Инквизиция",
-    "sender_name": "Влад",
-    "link": "https://t.me/NullianityNull/123890/172777"
-  },
-  {
-    "_": "message",
-    "id": 181125775360,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1423512369
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751927678,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 180484046848,
+      "message_id": 183241801728,
       "origin_send_date": 0
     },
     "message_thread_id": 160961658880,
@@ -1146,13 +1313,1403 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "А что там с правилами?",
+        "text": "*Рика убили симулянты*",
         "entities": []
       }
     },
-    "thread_name": "Мафия \"Рик и Морти\"",
-    "sender_name": "Lyа 🌴(@yersinias)",
-    "link": "https://t.me/NullianityNull/153505/172735"
+    "thread_name": "Мафия \"Рик и Морти\". День второй",
+    "sender_name": "2cd097df68640b86740f828093b5cd6b42cc4141a061f8a30139553c32dd0350",
+    "link": "https://t.me/NullianityNull/153505/174811"
+  },
+  {
+    "_": "message",
+    "id": 182735339520,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 449985919
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": true,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751967957,
+    "edit_date": 1751968099,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "❤"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 6324459010
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "message_thread_id": 4772069376,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 4772069376
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 4,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "будут обезличенные",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Админская",
+    "sender_name": "0 belbix(@belbix)",
+    "link": "https://t.me/NullianityNull/4551/174270"
+  },
+  {
+    "_": "message",
+    "id": 183297376256,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 469487267
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751971221,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 182681862144,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 3346006016,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 3346006016
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Вот видишь сам Панчин в топике....ради тебя пришёл между прочим.",
+        "entities": []
+      }
+    },
+    "thread_name": "Знакомства нулевого толка",
+    "sender_name": "Принц Порока(@PrincePoroka)",
+    "link": "https://t.me/NullianityNull/3191/174806"
+  },
+  {
+    "_": "message",
+    "id": 183336173568,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 824274287
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751971607,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 16331571200,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 16331571200
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Пока что только один конечно, но кто знает...",
+        "entities": []
+      }
+    },
+    "thread_name": "Обсуждение репортов и жалоб",
+    "sender_name": "Dmitriy I(@Dimon_Sanchez_Jr)",
+    "link": "https://t.me/NullianityNull/15575/174843"
+  },
+  {
+    "_": "message",
+    "id": 183303667712,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 5584567208
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751971253,
+    "edit_date": 1751971477,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 182644113408,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 162745286656,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 162745286656
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Да, все верно. Я голословно обвиняю присутствующих в некомпетентности изходя из субъективных оценок:\nЕсли большинство предложенных вариантов отметаются, если посмотреть в аксиомы Нуллианства, то не кажется ли вам, что как минимум стоило перечитать их, перед предложением?\nМеня устраивает текущая модель принятия решений - Нуллианство, пока что не организация, а собрание людей со схожими интересами, нам попросту нет необходимости в сложной системе принятия решений, поскольку мы не являемся целостной организацией, а для предотвращения того, что запрещено законом или противоречит основным принципам пока-что хватает админов. проблема выбора модели управления, по моим субъективным оценкам, не актуальна.",
+        "entities": []
+      }
+    },
+    "thread_name": "0: Проект решения. Ритуал принятия решения. Опрос и сбор предложений",
+    "sender_name": "0 Alexey Lуapin(@hjs7373)",
+    "link": "https://t.me/NullianityNull/155206/174812"
+  },
+  {
+    "_": "message",
+    "id": 182615801856,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 605277228
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751967190,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 181601828864,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 163858874368,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 163858874368
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messagePhoto",
+      "photo": {
+        "_": "photo",
+        "has_stickers": false,
+        "minithumbnail": {
+          "_": "minithumbnail",
+          "width": 40,
+          "height": 27,
+          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAbACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCrGgKjMRJx2ajYAcGE5/3vXpTVTKj92x980vl+sTfnTEL5fH+pOT0+alERAGYcn/epoT5seUTnOOacUOQRE4HpmgCNtoypjIb69KKSQYbG0r7E0UwHqnC4Rjn3o2qRwj5+tQ7iOhNLubpuPHvSAn2AYIjce5NKsTMQFjb15NV9zf3j19aN7DkMRx60PYEDHLHrj3opKKYH/9k="
+        },
+        "sizes": [
+          {
+            "_": "photoSize",
+            "type": "m",
+            "photo": {
+              "_": "file",
+              "id": 2159,
+              "size": 20471,
+              "expected_size": 20471,
+              "local": {
+                "_": "localFile",
+                "path": "",
+                "can_be_downloaded": true,
+                "can_be_deleted": false,
+                "is_downloading_active": false,
+                "is_downloading_completed": false,
+                "download_offset": 0,
+                "downloaded_prefix_size": 0,
+                "downloaded_size": 0
+              },
+              "remote": {
+                "_": "remoteFile",
+                "id": "AgACAgIAAyEFAASISJ65AAECqExobPrEcGFmoGERxg3IOIJrVC3YwgACgPYxG2WIaEsyZQUb-9HRdwEAAwIAA20AAzYE",
+                "unique_id": "AQADgPYxG2WIaEty",
+                "is_uploading_active": false,
+                "is_uploading_completed": true,
+                "uploaded_size": 20471
+              }
+            },
+            "width": 320,
+            "height": 213,
+            "progressive_sizes": []
+          },
+          {
+            "_": "photoSize",
+            "type": "x",
+            "photo": {
+              "_": "file",
+              "id": 2160,
+              "size": 50494,
+              "expected_size": 50494,
+              "local": {
+                "_": "localFile",
+                "path": "",
+                "can_be_downloaded": true,
+                "can_be_deleted": false,
+                "is_downloading_active": false,
+                "is_downloading_completed": false,
+                "download_offset": 0,
+                "downloaded_prefix_size": 0,
+                "downloaded_size": 0
+              },
+              "remote": {
+                "_": "remoteFile",
+                "id": "AgACAgIAAyEFAASISJ65AAECqExobPrEcGFmoGERxg3IOIJrVC3YwgACgPYxG2WIaEsyZQUb-9HRdwEAAwIAA3gAAzYE",
+                "unique_id": "AQADgPYxG2WIaEt9",
+                "is_uploading_active": false,
+                "is_uploading_completed": true,
+                "uploaded_size": 50494
+              }
+            },
+            "width": 720,
+            "height": 479,
+            "progressive_sizes": [
+              5102,
+              14103,
+              25780,
+              34452
+            ]
+          }
+        ]
+      },
+      "caption": {
+        "_": "formattedText",
+        "text": "",
+        "entities": []
+      },
+      "show_caption_above_media": false,
+      "has_spoiler": false,
+      "is_secret": false
+    },
+    "thread_name": "Путешествия",
+    "sender_name": "ad94362ed2cbb25daed5780b876e9b5a4fa5b66f168bca537e3afbb523c79fe7",
+    "link": "https://t.me/NullianityNull/156268/174156"
+  },
+  {
+    "_": "message",
+    "id": 183277453312,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 7657204186
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751970914,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 183101292544,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 84999667712,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 84999667712
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Пока только бывшие",
+        "entities": []
+      }
+    },
+    "thread_name": "0 vs ☪️",
+    "sender_name": "Химер Роковой(@Darryl_ma1n)",
+    "link": "https://t.me/NullianityNull/81062/174787"
+  },
+  {
+    "_": "message",
+    "id": 183104438272,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 7580663580
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751969842,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 826277888,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 826277888
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messagePhoto",
+      "photo": {
+        "_": "photo",
+        "has_stickers": false,
+        "minithumbnail": {
+          "_": "minithumbnail",
+          "width": 40,
+          "height": 31,
+          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAfACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCGaIPDG4kOWycE/wCfSmAvGgbvSwIJDtfO0Lnr3zUsseLfyx821v8A69TF2dipLS40AMeHO70pAmR90Z96AQrqfUGlI2Tf7JGOPrWlybEcoAOGHIAop8oyZB1woINFRJamkXZCrkMXOQrAYOe1KGBJOc46flUWVYcZUkcZ6UzdEHO4llHdRihdxPsSdIueqtTpnDAbcjv9ajYxiNiMk7hjgd6No29MZ55//VQLcsTlhcZUcEYzj1FFVwwChjktjtRSbKXKtz//2Q=="
+        },
+        "sizes": [
+          {
+            "_": "photoSize",
+            "type": "m",
+            "photo": {
+              "_": "file",
+              "id": 5437,
+              "size": 35741,
+              "expected_size": 35741,
+              "local": {
+                "_": "localFile",
+                "path": "",
+                "can_be_downloaded": true,
+                "can_be_deleted": false,
+                "is_downloading_active": false,
+                "is_downloading_completed": false,
+                "download_offset": 0,
+                "downloaded_prefix_size": 0,
+                "downloaded_size": 0
+              },
+              "remote": {
+                "_": "remoteFile",
+                "id": "AgACAgIAAyEFAASISJ65AAECqh5obPrOsPxZ1vhfvSC7VVi9OuciXAAC7fYxG2WIaEveHUsCypgpPAEAAwIAA20AAzYE",
+                "unique_id": "AQAD7fYxG2WIaEty",
+                "is_uploading_active": false,
+                "is_uploading_completed": true,
+                "uploaded_size": 35741
+              }
+            },
+            "width": 320,
+            "height": 250,
+            "progressive_sizes": []
+          },
+          {
+            "_": "photoSize",
+            "type": "x",
+            "photo": {
+              "_": "file",
+              "id": 5438,
+              "size": 120713,
+              "expected_size": 120713,
+              "local": {
+                "_": "localFile",
+                "path": "",
+                "can_be_downloaded": true,
+                "can_be_deleted": false,
+                "is_downloading_active": false,
+                "is_downloading_completed": false,
+                "download_offset": 0,
+                "downloaded_prefix_size": 0,
+                "downloaded_size": 0
+              },
+              "remote": {
+                "_": "remoteFile",
+                "id": "AgACAgIAAyEFAASISJ65AAECqh5obPrOsPxZ1vhfvSC7VVi9OuciXAAC7fYxG2WIaEveHUsCypgpPAEAAwIAA3gAAzYE",
+                "unique_id": "AQAD7fYxG2WIaEt9",
+                "is_uploading_active": false,
+                "is_uploading_completed": true,
+                "uploaded_size": 120713
+              }
+            },
+            "width": 735,
+            "height": 574,
+            "progressive_sizes": [
+              9482,
+              31252,
+              57288,
+              91341
+            ]
+          }
+        ]
+      },
+      "caption": {
+        "_": "formattedText",
+        "text": "",
+        "entities": []
+      },
+      "show_caption_above_media": false,
+      "has_spoiler": false,
+      "is_secret": false
+    },
+    "thread_name": "0 Мемы",
+    "sender_name": "С0гласны?(@soglasni_yznali)",
+    "link": "https://t.me/NullianityNull/788/174622"
+  },
+  {
+    "_": "message",
+    "id": 182282354688,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 6324459010
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751964913,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 182201614336,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 15372124160,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 15372124160
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageVideo",
+      "video": {
+        "_": "video",
+        "duration": 26,
+        "width": 576,
+        "height": 1024,
+        "file_name": "",
+        "mime_type": "video/mp4",
+        "has_stickers": false,
+        "supports_streaming": true,
+        "minithumbnail": {
+          "_": "minithumbnail",
+          "width": 22,
+          "height": 40,
+          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAoABYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDRIppFOdlT7xxUcMokBB4YE8VpcgXFFPIop3ApyOZjvGMHpkc01Mh/MU/MT3oQ4Cjin4HXisbmlh4ll9V/Kimj6Cii7CxEoBx0xTkIGc0UUhko6UUUUAf/2Q=="
+        },
+        "thumbnail": {
+          "_": "thumbnail",
+          "format": {
+            "_": "thumbnailFormatJpeg"
+          },
+          "width": 180,
+          "height": 320,
+          "file": {
+            "_": "file",
+            "id": 2161,
+            "size": 16330,
+            "expected_size": 16330,
+            "local": {
+              "_": "localFile",
+              "path": "",
+              "can_be_downloaded": true,
+              "can_be_deleted": false,
+              "is_downloading_active": false,
+              "is_downloading_completed": false,
+              "download_offset": 0,
+              "downloaded_prefix_size": 0,
+              "downloaded_size": 0
+            },
+            "remote": {
+              "_": "remoteFile",
+              "id": "AAMCAgADIQUABIhInrkAAQKnDmhs-wJrs5AKlzDY0vEPglXC2lFWAAKNcQACZYhoS4MPnuVeieflAQAHbQADNgQ",
+              "unique_id": "AQADjXEAAmWIaEty",
+              "is_uploading_active": false,
+              "is_uploading_completed": true,
+              "uploaded_size": 16330
+            }
+          }
+        },
+        "video": {
+          "_": "file",
+          "id": 2162,
+          "size": 3561509,
+          "expected_size": 3561509,
+          "local": {
+            "_": "localFile",
+            "path": "",
+            "can_be_downloaded": true,
+            "can_be_deleted": false,
+            "is_downloading_active": false,
+            "is_downloading_completed": false,
+            "download_offset": 0,
+            "downloaded_prefix_size": 0,
+            "downloaded_size": 0
+          },
+          "remote": {
+            "_": "remoteFile",
+            "id": "BAACAgIAAyEFAASISJ65AAECpw5obPsCa7OQCpcw2NLxD4JVwtpRVgACjXEAAmWIaEuDD57lXonn5TYE",
+            "unique_id": "AgADjXEAAmWIaEs",
+            "is_uploading_active": false,
+            "is_uploading_completed": true,
+            "uploaded_size": 3561509
+          }
+        }
+      },
+      "alternative_videos": [],
+      "start_timestamp": 0,
+      "caption": {
+        "_": "formattedText",
+        "text": "",
+        "entities": []
+      },
+      "show_caption_above_media": false,
+      "has_spoiler": false,
+      "is_secret": false
+    },
+    "thread_name": "Мемология",
+    "sender_name": "0 Алексей(@NnEeAaLlEeXxEeYy)",
+    "link": "https://t.me/NullianityNull/14660/173838"
+  },
+  {
+    "_": "message",
+    "id": 182277111808,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 6324459010
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751964870,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 163505504256,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 6387924992,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 6387924992
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Только так и будет символ, если распаковать, то уже не будет",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Мерч",
+    "sender_name": "0 Алексей(@NnEeAaLlEeXxEeYy)",
+    "link": "https://t.me/NullianityNull/6092/173833"
+  },
+  {
+    "_": "message",
+    "id": 182271868928,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 1831211224
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751964795,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 182257188864,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 21537751040,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 21537751040
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "От рефлекторно, через инстинктивно, до осмысленно. Но это все один процесс эволюции реакций живых организмов на окружающую среду.",
+        "entities": []
+      }
+    },
+    "thread_name": "0: Радикальное Нуллианство.",
+    "sender_name": "Андрей(unknown)",
+    "link": "https://t.me/NullianityNull/20540/173828"
+  },
+  {
+    "_": "message",
+    "id": 182165962752,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 6324459010
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751963784,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 63672680448,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 63672680448
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Только в тик токе нашёл",
+        "entities": []
+      }
+    },
+    "thread_name": "0 женский",
+    "sender_name": "0 Алексей(@NnEeAaLlEeXxEeYy)",
+    "link": "https://t.me/NullianityNull/60723/173727"
+  },
+  {
+    "_": "message",
+    "id": 182066348032,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 250067383
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751962419,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 174467317760,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 1047527424,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 1047527424
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 1,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Через что запускаешь?",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Linux и FOSS",
+    "sender_name": "Давид Медведев(@d3v4k4nt)",
+    "link": "https://t.me/NullianityNull/999/173632"
+  },
+  {
+    "_": "message",
+    "id": 181934227456,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 2108805665
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751960750,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 181879701504,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 895483904,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 895483904
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Так вот ты какая... лекция по физике от батюшки феофана",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Физика",
+    "sender_name": "Профессор(@arnirgodoflight)",
+    "link": "https://t.me/NullianityNull/854/173506"
+  },
+  {
+    "_": "message",
+    "id": 183415865344,
+    "sender_id": {
+      "_": "messageSenderChat",
+      "chat_id": -1002485955382
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751972548,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 181589245952,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 178411012096,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 178411012096
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Доброе!",
+        "entities": []
+      }
+    },
+    "thread_name": "Синагога ✡️",
+    "link": "https://t.me/NullianityNull/170146/174919"
+  },
+  {
+    "_": "message",
+    "id": 183476682752,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 700717719
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751973045,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 183470391296,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 14552137728,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 14552137728
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "так называемые фонарики",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Фотография",
+    "sender_name": "Югослав(@Yugo4444)",
+    "link": "https://t.me/NullianityNull/13878/174977"
+  },
+  {
+    "_": "message",
+    "id": 181809446912,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 5324789977
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751959010,
+    "edit_date": 0,
+    "unread_reactions": [],
+    "message_thread_id": 5878317056,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 5878317056
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "https://youtu.be/iKy19OGn6_k?si=GEzlK1eARQCdR-lU",
+        "entities": [
+          {
+            "_": "textEntity",
+            "offset": 0,
+            "length": 48,
+            "type": {
+              "_": "textEntityTypeUrl"
+            }
+          }
+        ]
+      },
+      "link_preview": {
+        "_": "linkPreview",
+        "url": "https://youtu.be/iKy19OGn6_k?si=GEzlK1eARQCdR-lU",
+        "display_url": "youtube.com/watch?v=iKy19OGn6_k",
+        "site_name": "YouTube",
+        "title": "Dr Livesey as Roboute Guillimane (40k meme)",
+        "description": {
+          "_": "formattedText",
+          "text": "credits : https://twitter.com/_AL1V/status/1567064962278871042?s=20&t=J4pTZoc8zh2y2TDGw5M6fQ\n#warhammer40k #memes #drliveseywalking",
+          "entities": [
+            {
+              "_": "textEntity",
+              "offset": 10,
+              "length": 82,
+              "type": {
+                "_": "textEntityTypeUrl"
+              }
+            },
+            {
+              "_": "textEntity",
+              "offset": 93,
+              "length": 13,
+              "type": {
+                "_": "textEntityTypeTextUrl",
+                "url": "https://www.youtube.com/results?search_query=%23warhammer40k"
+              }
+            },
+            {
+              "_": "textEntity",
+              "offset": 107,
+              "length": 6,
+              "type": {
+                "_": "textEntityTypeTextUrl",
+                "url": "https://www.youtube.com/results?search_query=%23memes"
+              }
+            },
+            {
+              "_": "textEntity",
+              "offset": 114,
+              "length": 17,
+              "type": {
+                "_": "textEntityTypeTextUrl",
+                "url": "https://www.youtube.com/results?search_query=%23drliveseywalking"
+              }
+            }
+          ]
+        },
+        "author": "",
+        "type": {
+          "_": "linkPreviewTypeEmbeddedVideoPlayer",
+          "url": "https://www.youtube.com/embed/iKy19OGn6_k",
+          "thumbnail": {
+            "_": "photo",
+            "has_stickers": false,
+            "minithumbnail": {
+              "_": "minithumbnail",
+              "width": 40,
+              "height": 30,
+              "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAeACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCl9i5UFzyeeOlEliVfCFiPcYq8pG+MYyc9fxqSVgJWB5OOBUq43YzlscxsWYhh2xSNZgNgOT+FXlYhCOoPrUROyTcMGnJNFUrSKwsSyllJoq6pz+NFS20LfoREjeoAYEHvT53xLl+R/s1RF9MCSCuT320p1CdhhipHoVFWtCXqTNJj15oE3I6VX+2S7gfkyOnyinf2jcYxuXH+6Kb1HG0VsT+YVw4/KioDqFwTksPyoqXFMrn8j//Z"
+            },
+            "sizes": [
+              {
+                "_": "photoSize",
+                "type": "m",
+                "photo": {
+                  "_": "file",
+                  "id": 2166,
+                  "size": 24130,
+                  "expected_size": 24130,
+                  "local": {
+                    "_": "localFile",
+                    "path": "",
+                    "can_be_downloaded": true,
+                    "can_be_deleted": false,
+                    "is_downloading_active": false,
+                    "is_downloading_completed": false,
+                    "download_offset": 0,
+                    "downloaded_prefix_size": 0,
+                    "downloaded_size": 0
+                  },
+                  "remote": {
+                    "_": "remoteFile",
+                    "id": "AgACAgQAAxUAAWhs_YOOnawyh3EFaIE1s6zeDQ1NAALzrjEb6yfNUOybzoVfbMZ0AQADAgADbQADNgQ",
+                    "unique_id": "AQAD864xG-snzVBy",
+                    "is_uploading_active": false,
+                    "is_uploading_completed": true,
+                    "uploaded_size": 24130
+                  }
+                },
+                "width": 320,
+                "height": 240,
+                "progressive_sizes": []
+              },
+              {
+                "_": "photoSize",
+                "type": "x",
+                "photo": {
+                  "_": "file",
+                  "id": 2167,
+                  "size": 63326,
+                  "expected_size": 63326,
+                  "local": {
+                    "_": "localFile",
+                    "path": "",
+                    "can_be_downloaded": true,
+                    "can_be_deleted": false,
+                    "is_downloading_active": false,
+                    "is_downloading_completed": false,
+                    "download_offset": 0,
+                    "downloaded_prefix_size": 0,
+                    "downloaded_size": 0
+                  },
+                  "remote": {
+                    "_": "remoteFile",
+                    "id": "AgACAgQAAxUAAWhs_YOOnawyh3EFaIE1s6zeDQ1NAALzrjEb6yfNUOybzoVfbMZ0AQADAgADeAADNgQ",
+                    "unique_id": "AQAD864xG-snzVB9",
+                    "is_uploading_active": false,
+                    "is_uploading_completed": true,
+                    "uploaded_size": 63326
+                  }
+                },
+                "width": 640,
+                "height": 480,
+                "progressive_sizes": [
+                  5141,
+                  15035,
+                  30215,
+                  41707
+                ]
+              }
+            ]
+          },
+          "duration": 0,
+          "width": 640,
+          "height": 480
+        },
+        "has_large_media": true,
+        "show_large_media": true,
+        "show_media_above_description": true,
+        "skip_confirmation": true,
+        "show_above_text": false,
+        "instant_view_version": 0
+      }
+    },
+    "thread_name": "0 Книжный клуб",
+    "sender_name": "Иван Артамонов(@artamonoffiwan)",
+    "link": "https://t.me/NullianityNull/5606/173387"
+  },
+  {
+    "_": "message",
+    "id": 181743386624,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 1152196443
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": false,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751957680,
+    "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "😁"
+            },
+            "total_count": 3,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 194661384
+              },
+              {
+                "_": "messageSenderUser",
+                "user_id": 331491239
+              },
+              {
+                "_": "messageSenderUser",
+                "user_id": 290335276
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 176164962304,
+      "origin_send_date": 0
+    },
+    "message_thread_id": 1031798784,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 1031798784
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 1,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Ой даа, я улетаю с того как вижу эти \"Что думаете Коллеги?\"\n\nКАКИЕ КОЛЛЕГИ, КТО ВЫ ТАКОЙ?? 😂😂😂",
+        "entities": []
+      }
+    },
+    "thread_name": "0 Психология",
+    "sender_name": "Вадим Яковлев | Психотерапевт, мыслитель(@TheFrameFounder)",
+    "link": "https://t.me/NullianityNull/984/173324"
+  },
+  {
+    "_": "message",
+    "id": 181660549120,
+    "sender_id": {
+      "_": "messageSenderUser",
+      "user_id": 1657517096
+    },
+    "chat_id": -1002286460601,
+    "is_outgoing": false,
+    "is_pinned": false,
+    "is_from_offline": false,
+    "can_be_saved": true,
+    "has_timestamped_media": true,
+    "is_channel_post": false,
+    "contains_unread_mention": false,
+    "date": 1751956260,
+    "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "😁"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 496138633
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
+    "unread_reactions": [],
+    "message_thread_id": 129908080640,
+    "topic_id": {
+      "_": "messageTopicForum",
+      "forum_topic_id": 129908080640
+    },
+    "self_destruct_in": 0,
+    "auto_delete_in": 0,
+    "via_bot_user_id": 0,
+    "sender_business_bot_user_id": 0,
+    "sender_boost_count": 0,
+    "paid_message_star_count": 0,
+    "author_signature": "",
+    "media_album_id": "0",
+    "effect_id": "0",
+    "has_sensitive_content": false,
+    "restriction_reason": "",
+    "content": {
+      "_": "messageText",
+      "text": {
+        "_": "formattedText",
+        "text": "Спасибо)). Типа \"тебе гипноз на понос\" и Ванга пальцем показывает, например",
+        "entities": []
+      }
+    },
+    "thread_name": "Нуллианская Инквизиция",
+    "sender_name": "Oompa-Lumpen Умпа-Люмпен(@OompaLumpen)",
+    "link": "https://t.me/NullianityNull/123890/173245"
   },
   {
     "_": "message",
@@ -1203,179 +2760,8 @@
       }
     },
     "thread_name": "0 Нуллианцы Мск",
-    "sender_name": "Мяу(@enchalex)",
+    "sender_name": "ad94362ed2cbb25daed5780b876e9b5a4fa5b66f168bca537e3afbb523c79fe7",
     "link": "https://t.me/NullianityNull/110369/172729"
-  },
-  {
-    "_": "message",
-    "id": 181081735168,
-    "sender_id": {
-      "_": "messageSenderChat",
-      "chat_id": -1002655865955
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751926879,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 181078589440,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 178411012096,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 178411012096
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Отлично, все ждем и любим)",
-        "entities": []
-      }
-    },
-    "thread_name": "Синагога ✡️",
-    "link": "https://t.me/NullianityNull/170146/172693"
-  },
-  {
-    "_": "message",
-    "id": 181050277888,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 6324459010
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751926618,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 63672680448,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 63672680448
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageAnimatedEmoji",
-      "animated_emoji": {
-        "_": "animatedEmoji",
-        "sticker": {
-          "_": "sticker",
-          "id": "5129961152259818018",
-          "set_id": "1258816259751983",
-          "width": 512,
-          "height": 512,
-          "emoji": "🤣",
-          "format": {
-            "_": "stickerFormatTgs"
-          },
-          "full_type": {
-            "_": "stickerFullTypeRegular"
-          },
-          "thumbnail": {
-            "_": "thumbnail",
-            "format": {
-              "_": "thumbnailFormatWebp"
-            },
-            "width": 128,
-            "height": 128,
-            "file": {
-              "_": "file",
-              "id": 230,
-              "size": 5046,
-              "expected_size": 5046,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AAMCAQADFQABaGKJGzWO1DMt1nAIsG6S6i3LXYcAAiICAAJ9SDFHVI7hI3ERRG8BAAdtAAM2BA",
-                "unique_id": "AQADIgIAAn1IMUdy",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 5046
-              }
-            }
-          },
-          "sticker": {
-            "_": "file",
-            "id": 231,
-            "size": 15738,
-            "expected_size": 15738,
-            "local": {
-              "_": "localFile",
-              "path": "",
-              "can_be_downloaded": true,
-              "can_be_deleted": false,
-              "is_downloading_active": false,
-              "is_downloading_completed": false,
-              "download_offset": 0,
-              "downloaded_prefix_size": 0,
-              "downloaded_size": 0
-            },
-            "remote": {
-              "_": "remoteFile",
-              "id": "CAACAgEAAxUAAWhiiRs1jtQzLdZwCLBukuoty12HAAIiAgACfUgxR1SO4SNxEURvNgQ",
-              "unique_id": "AgADIgIAAn1IMUc",
-              "is_uploading_active": false,
-              "is_uploading_completed": true,
-              "uploaded_size": 15738
-            }
-          }
-        },
-        "sticker_width": 512,
-        "sticker_height": 512,
-        "fitzpatrick_type": 0
-      },
-      "emoji": "🤣"
-    },
-    "thread_name": "0 женский",
-    "sender_name": "0 Алексей(@NnEeAaLlEeXxEeYy)",
-    "link": "https://t.me/NullianityNull/60723/172663"
   },
   {
     "_": "message",
@@ -1471,519 +2857,6 @@
   },
   {
     "_": "message",
-    "id": 180905574400,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 7764864090
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751924638,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 175739240448,
-      "quote": {
-        "_": "textQuote",
-        "text": {
-          "_": "formattedText",
-          "text": "Вопрос для диспута из Сексологии:\nМинет - так ли эта практика нормальна?",
-          "entities": []
-        },
-        "position": 0,
-        "is_manual": true
-      },
-      "origin_send_date": 0
-    },
-    "message_thread_id": 1031798784,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 1031798784
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Очень странный вопрос. А в вашей \"сексологии\" не задаются вопросами вроде: секс не ради продолжения рода - так ли нормальна эта практика?! 🤔",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Психология",
-    "sender_name": "Asoka33(@Asoka33)",
-    "link": "https://t.me/NullianityNull/984/172525"
-  },
-  {
-    "_": "message",
-    "id": 180767162368,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 556187097
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751922671,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "😢"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 5961609488
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 180005896192,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 15372124160,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 15372124160
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Какой рофл? Я тут живу",
-        "entities": []
-      }
-    },
-    "thread_name": "Мемология",
-    "sender_name": "Влад Меметил(@javlad)",
-    "link": "https://t.me/NullianityNull/14660/172393"
-  },
-  {
-    "_": "message",
-    "id": 180598341632,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 5702705272
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751919527,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "😁"
-            },
-            "total_count": 2,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 1696441178
-              },
-              {
-                "_": "messageSenderUser",
-                "user_id": 659866723
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "message_thread_id": 1571815424,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 1571815424
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "А яндекс показывает ветер 3мс😊👍",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Флуд",
-    "sender_name": "Murmik 🄋(@lbrmu)",
-    "link": "https://t.me/NullianityNull/1499/172232"
-  },
-  {
-    "_": "message",
-    "id": 180593098752,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 423554588
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751919496,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 117025275904,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 117025275904
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Nullita на испанском",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Стикеры",
-    "sender_name": "T S(@shani_ta)",
-    "link": "https://t.me/NullianityNull/111604/172227"
-  },
-  {
-    "_": "message",
-    "id": 180575272960,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1831211224
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751919223,
-    "edit_date": 0,
-    "forward_info": {
-      "_": "messageForwardInfo",
-      "origin": {
-        "_": "messageOriginUser",
-        "sender_user_id": 1831211224
-      },
-      "date": 1751918840,
-      "public_service_announcement_type": ""
-    },
-    "unread_reactions": [],
-    "message_thread_id": 21537751040,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 21537751040
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Познание как фундаментальная цель жизни\nhttps://medium.com/@andreitsetserau/познание-как-фундаментальная-цель-жизни-726fc0b72320",
-        "entities": [
-          {
-            "_": "textEntity",
-            "offset": 0,
-            "length": 40,
-            "type": {
-              "_": "textEntityTypeBold"
-            }
-          },
-          {
-            "_": "textEntity",
-            "offset": 40,
-            "length": 88,
-            "type": {
-              "_": "textEntityTypeUrl"
-            }
-          }
-        ]
-      },
-      "link_preview": {
-        "_": "linkPreview",
-        "url": "https://medium.com/@andreitsetserau/%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%B0%D0%BA-%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%86%D0%B5%D0%BB%D1%8C-%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8-726fc0b72320",
-        "display_url": "medium.com/@andreitsetserau/познание-как-фундаментальная-цель-жизни-726fc0b72320",
-        "site_name": "Medium",
-        "title": "Познание как фундаментальная цель жизни",
-        "description": {
-          "_": "formattedText",
-          "text": "(Радикальное Нуллианство)",
-          "entities": []
-        },
-        "author": "https://medium.com/@andreitsetserau",
-        "type": {
-          "_": "linkPreviewTypePhoto",
-          "photo": {
-            "_": "photo",
-            "has_stickers": false,
-            "minithumbnail": {
-              "_": "minithumbnail",
-              "width": 27,
-              "height": 40,
-              "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAoABsDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwC5d3Qt0wOXPQVni+ud2d/4YFTakmZA2OnU46VUjCEHfSDdk/2y5fLLKAR/DgVpQOZoUkIwSOayltjI48tW+nT9a14k2RIuAMAcUAtCOeDzGDccdiAari2RbyLKAAgnbVuRmHTP4CqrhzMr7ySoNIZaMeZA/ccCpKro8h43E/lVigBDgjmmeUM5BxRRQA5VC9KWiigD/9k="
-            },
-            "sizes": [
-              {
-                "_": "photoSize",
-                "type": "m",
-                "photo": {
-                  "_": "file",
-                  "id": 2350,
-                  "size": 21346,
-                  "expected_size": 21346,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYAp-UHxpshXIVnXxXjJ4lmgSAALPuTEbAh9lU1-T_rzQC8cQAQADAgADbQADNgQ",
-                    "unique_id": "AQADz7kxGwIfZVNy",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 21346
-                  }
-                },
-                "width": 213,
-                "height": 320,
-                "progressive_sizes": []
-              },
-              {
-                "_": "photoSize",
-                "type": "x",
-                "photo": {
-                  "_": "file",
-                  "id": 2351,
-                  "size": 112401,
-                  "expected_size": 112401,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYAp-UHxpshXIVnXxXjJ4lmgSAALPuTEbAh9lU1-T_rzQC8cQAQADAgADeAADNgQ",
-                    "unique_id": "AQADz7kxGwIfZVN9",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 112401
-                  }
-                },
-                "width": 533,
-                "height": 800,
-                "progressive_sizes": []
-              },
-              {
-                "_": "photoSize",
-                "type": "y",
-                "photo": {
-                  "_": "file",
-                  "id": 2352,
-                  "size": 279438,
-                  "expected_size": 279438,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYAp-UHxpshXIVnXxXjJ4lmgSAALPuTEbAh9lU1-T_rzQC8cQAQADAgADeQADNgQ",
-                    "unique_id": "AQADz7kxGwIfZVN-",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 279438
-                  }
-                },
-                "width": 853,
-                "height": 1280,
-                "progressive_sizes": []
-              },
-              {
-                "_": "photoSize",
-                "type": "w",
-                "photo": {
-                  "_": "file",
-                  "id": 2353,
-                  "size": 372855,
-                  "expected_size": 372855,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYAp-UHxpshXIVnXxXjJ4lmgSAALPuTEbAh9lU1-T_rzQC8cQAQADAgADdwADNgQ",
-                    "unique_id": "AQADz7kxGwIfZVN8",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 372855
-                  }
-                },
-                "width": 1024,
-                "height": 1536,
-                "progressive_sizes": [
-                  20410,
-                  54042,
-                  115768,
-                  196867
-                ]
-              }
-            ]
-          }
-        },
-        "has_large_media": true,
-        "show_large_media": true,
-        "show_media_above_description": false,
-        "skip_confirmation": false,
-        "show_above_text": false,
-        "instant_view_version": 0
-      },
-      "link_preview_options": {
-        "_": "linkPreviewOptions",
-        "is_disabled": false,
-        "url": "https://medium.com/@andreitsetserau/%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%B0%D0%BA-%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%86%D0%B5%D0%BB%D1%8C-%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8-726fc0b72320",
-        "force_small_media": false,
-        "force_large_media": false,
-        "show_above_text": false
-      }
-    },
-    "thread_name": "0: Радикальное Нуллианство.",
-    "sender_name": "Андрей",
-    "link": "https://t.me/NullianityNull/20540/172210"
-  },
-  {
-    "_": "message",
     "id": 180557447168,
     "sender_id": {
       "_": "messageSenderUser",
@@ -1998,7 +2871,7 @@
     "is_channel_post": false,
     "contains_unread_mention": false,
     "date": 1751918840,
-    "edit_date": 1751918930,
+    "edit_date": 1751969730,
     "unread_reactions": [],
     "message_thread_id": 138885988352,
     "topic_id": {
@@ -2020,19 +2893,19 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Познание как фундаментальная цель жизни\nhttps://medium.com/@andreitsetserau/познание-как-фундаментальная-цель-жизни-726fc0b72320",
+        "text": "Познание как фундаментальная цель всего живого.\nhttps://medium.com/@andreitsetserau/познание-как-фундаментальная-цель-жизни-726fc0b72320",
         "entities": [
           {
             "_": "textEntity",
             "offset": 0,
-            "length": 40,
+            "length": 48,
             "type": {
               "_": "textEntityTypeBold"
             }
           },
           {
             "_": "textEntity",
-            "offset": 40,
+            "offset": 48,
             "length": 88,
             "type": {
               "_": "textEntityTypeUrl"
@@ -2069,7 +2942,7 @@
                 "type": "m",
                 "photo": {
                   "_": "file",
-                  "id": 2350,
+                  "id": 2168,
                   "size": 21346,
                   "expected_size": 21346,
                   "local": {
@@ -2085,7 +2958,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYEfTtDWsFqDMDw1XZOSPe_XVAALPuTEbAh9lU1-T_rzQC8cQAQADAgADbQADNgQ",
+                    "id": "AgACAgQAAxUAAWhs_c7QcTjtYGPutNivQdYBRQ4JAALPuTEbAh9lU1-T_rzQC8cQAQADAgADbQADNgQ",
                     "unique_id": "AQADz7kxGwIfZVNy",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -2101,7 +2974,7 @@
                 "type": "x",
                 "photo": {
                   "_": "file",
-                  "id": 2351,
+                  "id": 2169,
                   "size": 112401,
                   "expected_size": 112401,
                   "local": {
@@ -2117,7 +2990,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYEfTtDWsFqDMDw1XZOSPe_XVAALPuTEbAh9lU1-T_rzQC8cQAQADAgADeAADNgQ",
+                    "id": "AgACAgQAAxUAAWhs_c7QcTjtYGPutNivQdYBRQ4JAALPuTEbAh9lU1-T_rzQC8cQAQADAgADeAADNgQ",
                     "unique_id": "AQADz7kxGwIfZVN9",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -2133,7 +3006,7 @@
                 "type": "y",
                 "photo": {
                   "_": "file",
-                  "id": 2352,
+                  "id": 2170,
                   "size": 279438,
                   "expected_size": 279438,
                   "local": {
@@ -2149,7 +3022,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYEfTtDWsFqDMDw1XZOSPe_XVAALPuTEbAh9lU1-T_rzQC8cQAQADAgADeQADNgQ",
+                    "id": "AgACAgQAAxUAAWhs_c7QcTjtYGPutNivQdYBRQ4JAALPuTEbAh9lU1-T_rzQC8cQAQADAgADeQADNgQ",
                     "unique_id": "AQADz7kxGwIfZVN-",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -2165,7 +3038,7 @@
                 "type": "w",
                 "photo": {
                   "_": "file",
-                  "id": 2353,
+                  "id": 2171,
                   "size": 372855,
                   "expected_size": 372855,
                   "local": {
@@ -2181,7 +3054,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsYEfTtDWsFqDMDw1XZOSPe_XVAALPuTEbAh9lU1-T_rzQC8cQAQADAgADdwADNgQ",
+                    "id": "AgACAgQAAxUAAWhs_c7QcTjtYGPutNivQdYBRQ4JAALPuTEbAh9lU1-T_rzQC8cQAQADAgADdwADNgQ",
                     "unique_id": "AQADz7kxGwIfZVN8",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -2212,287 +3085,13 @@
         "is_disabled": false,
         "url": "https://medium.com/@andreitsetserau/%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%B0%D0%BA-%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D1%86%D0%B5%D0%BB%D1%8C-%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8-726fc0b72320",
         "force_small_media": false,
-        "force_large_media": false,
+        "force_large_media": true,
         "show_above_text": false
       }
     },
     "thread_name": "Тексты Нуллианства и про него.",
-    "sender_name": "Андрей",
+    "sender_name": "Андрей(unknown)",
     "link": "https://t.me/NullianityNull/132452/172193"
-  },
-  {
-    "_": "message",
-    "id": 180530184192,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 146993163
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": true,
-    "date": 1751918163,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "👌"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 6324459010
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 175440396288,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 54357131264,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 54357131264
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Там добавлен 2 заповеди, да, это надо отразить",
-        "entities": []
-      }
-    },
-    "thread_name": "Реформа Сути Нуллианства",
-    "sender_name": "Alexander Panchin(@Scinquisitor)",
-    "link": "https://t.me/NullianityNull/51839/172167"
-  },
-  {
-    "_": "message",
-    "id": 180482998272,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1045282410
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751916217,
-    "edit_date": 1751917010,
-    "unread_reactions": [],
-    "message_thread_id": 14552137728,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 14552137728
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messagePhoto",
-      "photo": {
-        "_": "photo",
-        "has_stickers": false,
-        "minithumbnail": {
-          "_": "minithumbnail",
-          "width": 40,
-          "height": 23,
-          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAXACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCnilxU6QZ7g1L9lPqKrmRPIynikxVtoAvUj8KicAUcyDlaK5opzH2op3FYrieRejUv2qb++fzooqC7sQ3Mp6ufzpDK56miigLjd5oooouFj//Z"
-        },
-        "sizes": [
-          {
-            "_": "photoSize",
-            "type": "m",
-            "photo": {
-              "_": "file",
-              "id": 2354,
-              "size": 5557,
-              "expected_size": 5557,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECoFpobGCQIG-Y6tRP22pWUfhZUyCx7QACc_cxG2WIYEvtO3_A1M5lRQEAAwIAA20AAzYE",
-                "unique_id": "AQADc_cxG2WIYEty",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 5557
-              }
-            },
-            "width": 320,
-            "height": 180,
-            "progressive_sizes": []
-          },
-          {
-            "_": "photoSize",
-            "type": "x",
-            "photo": {
-              "_": "file",
-              "id": 2355,
-              "size": 24533,
-              "expected_size": 24533,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECoFpobGCQIG-Y6tRP22pWUfhZUyCx7QACc_cxG2WIYEvtO3_A1M5lRQEAAwIAA3gAAzYE",
-                "unique_id": "AQADc_cxG2WIYEt9",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 24533
-              }
-            },
-            "width": 800,
-            "height": 450,
-            "progressive_sizes": []
-          },
-          {
-            "_": "photoSize",
-            "type": "y",
-            "photo": {
-              "_": "file",
-              "id": 2356,
-              "size": 59320,
-              "expected_size": 59320,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECoFpobGCQIG-Y6tRP22pWUfhZUyCx7QACc_cxG2WIYEvtO3_A1M5lRQEAAwIAA3kAAzYE",
-                "unique_id": "AQADc_cxG2WIYEt-",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 59320
-              }
-            },
-            "width": 1280,
-            "height": 720,
-            "progressive_sizes": []
-          },
-          {
-            "_": "photoSize",
-            "type": "w",
-            "photo": {
-              "_": "file",
-              "id": 2357,
-              "size": 255104,
-              "expected_size": 255104,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECoFpobGCQIG-Y6tRP22pWUfhZUyCx7QACc_cxG2WIYEvtO3_A1M5lRQEAAwIAA3cAAzYE",
-                "unique_id": "AQADc_cxG2WIYEt8",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 255104
-              }
-            },
-            "width": 2560,
-            "height": 1440,
-            "progressive_sizes": [
-              28489,
-              38997,
-              40880,
-              76723
-            ]
-          }
-        ]
-      },
-      "caption": {
-        "_": "formattedText",
-        "text": "закат",
-        "entities": []
-      },
-      "show_caption_above_media": false,
-      "has_spoiler": false,
-      "is_secret": false
-    },
-    "thread_name": "0 Фотография",
-    "sender_name": "Antonio(@antonio22ru)",
-    "link": "https://t.me/NullianityNull/13878/172122"
   },
   {
     "_": "message",
@@ -2542,10 +3141,10 @@
   },
   {
     "_": "message",
-    "id": 180441055232,
+    "id": 183236558848,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 812175673
+      "user_id": 155670507
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
@@ -2555,105 +3154,7 @@
     "has_timestamped_media": true,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751914949,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 895483904,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 895483904
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "самому(",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Физика",
-    "sender_name": "SilentChill(@silentChil)",
-    "link": "https://t.me/NullianityNull/854/172082"
-  },
-  {
-    "_": "message",
-    "id": 180386529280,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 700717719
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751913684,
-    "edit_date": 1751913708,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 180348780544,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 81456529408,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 81456529408
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "ну можно сказать что ее продукт - это новые способы и методы мышления, новые перспективы",
-        "entities": []
-      }
-    },
-    "thread_name": "0 vs. X",
-    "sender_name": "Югослав(@Yugo4444)",
-    "link": "https://t.me/NullianityNull/77683/172030"
-  },
-  {
-    "_": "message",
-    "id": 180326760448,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1153157301
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751912657,
+    "date": 1751970439,
     "edit_date": 0,
     "interaction_info": {
       "_": "messageInteractionInfo",
@@ -2669,7 +3170,7 @@
       }
     },
     "unread_reactions": [],
-    "message_thread_id": 180326760448,
+    "message_thread_id": 183236558848,
     "topic_id": {
       "_": "messageTopicForum",
       "forum_topic_id": 1048576
@@ -2689,13 +3190,89 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Спутник Путина Харон - проводник в царство мертвых",
-        "entities": []
+        "text": "🏁 А вот и победители:\n  🏆 Constantine Novikov   33 очков(а) (ответов: 9)\n\n\nЕсли вам нравится игра, оцените нашего бота: https://telegram.me/storebot?start=QuizariumBot",
+        "entities": [
+          {
+            "_": "textEntity",
+            "offset": 3,
+            "length": 19,
+            "type": {
+              "_": "textEntityTypeBold"
+            }
+          },
+          {
+            "_": "textEntity",
+            "offset": 28,
+            "length": 20,
+            "type": {
+              "_": "textEntityTypeBold"
+            }
+          },
+          {
+            "_": "textEntity",
+            "offset": 62,
+            "length": 12,
+            "type": {
+              "_": "textEntityTypeItalic"
+            }
+          },
+          {
+            "_": "textEntity",
+            "offset": 122,
+            "length": 47,
+            "type": {
+              "_": "textEntityTypeUrl"
+            }
+          }
+        ]
+      },
+      "link_preview_options": {
+        "_": "linkPreviewOptions",
+        "is_disabled": true,
+        "url": "",
+        "force_small_media": false,
+        "force_large_media": false,
+        "show_above_text": false
       }
     },
+    "reply_markup": {
+      "_": "replyMarkupShowKeyboard",
+      "rows": [
+        [
+          {
+            "_": "keyboardButton",
+            "text": "🚩 Начать игру!",
+            "type": {
+              "_": "keyboardButtonTypeText"
+            }
+          }
+        ],
+        [
+          {
+            "_": "keyboardButton",
+            "text": "🇷🇺 Поменять язык",
+            "type": {
+              "_": "keyboardButtonTypeText"
+            }
+          },
+          {
+            "_": "keyboardButton",
+            "text": "❓ Помощь",
+            "type": {
+              "_": "keyboardButtonTypeText"
+            }
+          }
+        ]
+      ],
+      "is_persistent": false,
+      "resize_keyboard": true,
+      "one_time": false,
+      "is_personal": true,
+      "input_field_placeholder": ""
+    },
     "thread_name": "Квизы",
-    "sender_name": "Constantín XXIICenter(@XXIICenter)",
-    "link": "https://t.me/NullianityNull/1/171973"
+    "sender_name": "Quizarium(@QuizariumBot)",
+    "link": "https://t.me/NullianityNull/1/174748"
   },
   {
     "_": "message",
@@ -2748,7 +3325,7 @@
             "type": "m",
             "photo": {
               "_": "file",
-              "id": 2358,
+              "id": 2172,
               "size": 28142,
               "expected_size": 28142,
               "local": {
@@ -2764,7 +3341,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECn5hobGHLTIeUAY_5WTgSx9v1cUBkkwACEPcxG2WIYEt8WkTfX6CmDgEAAwIAA20AAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECn5hobP9BOPV8oYLvu5ZYjB5rocRctQACEPcxG2WIYEt8WkTfX6CmDgEAAwIAA20AAzYE",
                 "unique_id": "AQADEPcxG2WIYEty",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -2780,7 +3357,7 @@
             "type": "x",
             "photo": {
               "_": "file",
-              "id": 2359,
+              "id": 2173,
               "size": 82986,
               "expected_size": 82986,
               "local": {
@@ -2796,7 +3373,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECn5hobGHLTIeUAY_5WTgSx9v1cUBkkwACEPcxG2WIYEt8WkTfX6CmDgEAAwIAA3gAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECn5hobP9BOPV8oYLvu5ZYjB5rocRctQACEPcxG2WIYEt8WkTfX6CmDgEAAwIAA3gAAzYE",
                 "unique_id": "AQADEPcxG2WIYEt9",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -2812,7 +3389,7 @@
             "type": "y",
             "photo": {
               "_": "file",
-              "id": 2360,
+              "id": 2174,
               "size": 128607,
               "expected_size": 128607,
               "local": {
@@ -2828,7 +3405,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECn5hobGHLTIeUAY_5WTgSx9v1cUBkkwACEPcxG2WIYEt8WkTfX6CmDgEAAwIAA3kAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECn5hobP9BOPV8oYLvu5ZYjB5rocRctQACEPcxG2WIYEt8WkTfX6CmDgEAAwIAA3kAAzYE",
                 "unique_id": "AQADEPcxG2WIYEt-",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -2889,8 +3466,8 @@
     },
     "interaction_info": {
       "_": "messageInteractionInfo",
-      "view_count": 9750,
-      "forward_count": 312,
+      "view_count": 14933,
+      "forward_count": 401,
       "reactions": {
         "_": "messageReactions",
         "reactions": [
@@ -2900,12 +3477,31 @@
               "_": "reactionTypeEmoji",
               "emoji": "❤"
             },
+            "total_count": 2,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderChat",
+                "chat_id": -1002233040101
+              },
+              {
+                "_": "messageSenderUser",
+                "user_id": 725352691
+              }
+            ]
+          },
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "😱"
+            },
             "total_count": 1,
             "is_chosen": false,
             "recent_sender_ids": [
               {
                 "_": "messageSenderUser",
-                "user_id": 725352691
+                "user_id": 7580663580
               }
             ]
           }
@@ -2957,7 +3553,7 @@
           "height": 320,
           "file": {
             "_": "file",
-            "id": 2361,
+            "id": 2175,
             "size": 24479,
             "expected_size": 24479,
             "local": {
@@ -2973,7 +3569,7 @@
             },
             "remote": {
               "_": "remoteFile",
-              "id": "AAMCAgADIQUABIhInrkAAQKdpWhsYsv9R-HQ70LAeX4b1lwcf3Y3AAJVeAACB71hS8aDaZtksCjzAQAHbQADNgQ",
+              "id": "AAMCAgADIQUABIhInrkAAQKdpWhs_8vfTYEbvQ8BPj3ObGtR-2VcAAJVeAACB71hS8aDaZtksCjzAQAHbQADNgQ",
               "unique_id": "AQADVXgAAge9YUty",
               "is_uploading_active": false,
               "is_uploading_completed": true,
@@ -2983,7 +3579,7 @@
         },
         "animation": {
           "_": "file",
-          "id": 2362,
+          "id": 2176,
           "size": 5104820,
           "expected_size": 5104820,
           "local": {
@@ -2999,7 +3595,7 @@
           },
           "remote": {
             "_": "remoteFile",
-            "id": "CgACAgIAAyEFAASISJ65AAECnaVobGLL_Ufh0O9CwHl-G9ZcHH92NwACVXgAAge9YUvGg2mbZLAo8zYE",
+            "id": "CgACAgIAAyEFAASISJ65AAECnaVobP_L302BG70PAT49zmxrUftlXAACVXgAAge9YUvGg2mbZLAo8zYE",
             "unique_id": "AgADVXgAAge9YUs",
             "is_uploading_active": false,
             "is_uploading_completed": true,
@@ -3187,7 +3783,7 @@
             "type": "m",
             "photo": {
               "_": "file",
-              "id": 2363,
+              "id": 2184,
               "size": 33716,
               "expected_size": 33716,
               "local": {
@@ -3203,7 +3799,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECnXJobGNGsDFxKqVASxEOprowlR4WTwACmfYxG2WIYEucOh44ZLq4jQEAAwIAA20AAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECnXJobQFGS10svmvEGj-OWNQuvM2zHgACmfYxG2WIYEucOh44ZLq4jQEAAwIAA20AAzYE",
                 "unique_id": "AQADmfYxG2WIYEty",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -3219,7 +3815,7 @@
             "type": "x",
             "photo": {
               "_": "file",
-              "id": 2364,
+              "id": 2185,
               "size": 63423,
               "expected_size": 63423,
               "local": {
@@ -3235,7 +3831,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECnXJobGNGsDFxKqVASxEOprowlR4WTwACmfYxG2WIYEucOh44ZLq4jQEAAwIAA3gAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECnXJobQFGS10svmvEGj-OWNQuvM2zHgACmfYxG2WIYEucOh44ZLq4jQEAAwIAA3gAAzYE",
                 "unique_id": "AQADmfYxG2WIYEt9",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -3440,10 +4036,10 @@
   },
   {
     "_": "message",
-    "id": 179383042048,
+    "id": 183581540352,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 830341313
+      "user_id": 227663800
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
@@ -3453,61 +4049,43 @@
     "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751905461,
+    "date": 1751974407,
     "edit_date": 0,
+    "interaction_info": {
+      "_": "messageInteractionInfo",
+      "view_count": 0,
+      "forward_count": 0,
+      "reactions": {
+        "_": "messageReactions",
+        "reactions": [
+          {
+            "_": "messageReaction",
+            "type": {
+              "_": "reactionTypeEmoji",
+              "emoji": "💯"
+            },
+            "total_count": 1,
+            "is_chosen": false,
+            "recent_sender_ids": [
+              {
+                "_": "messageSenderUser",
+                "user_id": 94333847
+              }
+            ]
+          }
+        ],
+        "are_tags": false,
+        "paid_reactors": [],
+        "can_get_added_reactions": true
+      }
+    },
     "unread_reactions": [],
     "reply_to": {
       "_": "messageReplyToMessage",
       "chat_id": -1002286460601,
-      "message_id": 179351584768,
+      "message_id": 183565811712,
       "origin_send_date": 0
     },
-    "message_thread_id": 978321408,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 978321408
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Из этого следует, что даже если бессмертие покажет себя технически невозможным, это не отменит ценности любопытства и познания",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Дебаты",
-    "sender_name": "Катерина Соболь(@kati_sobol)",
-    "link": "https://t.me/NullianityNull/933/171073"
-  },
-  {
-    "_": "message",
-    "id": 179366264832,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 8053135393
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751905091,
-    "edit_date": 0,
-    "unread_reactions": [],
     "message_thread_id": 3955228672,
     "topic_id": {
       "_": "messageTopicForum",
@@ -3525,132 +4103,16 @@
     "has_sensitive_content": false,
     "restriction_reason": "",
     "content": {
-      "_": "messagePhoto",
-      "photo": {
-        "_": "photo",
-        "has_stickers": false,
-        "minithumbnail": {
-          "_": "minithumbnail",
-          "width": 22,
-          "height": 40,
-          "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAoABYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDX5yeKX5vajB9qMH2oAUZ70UCigBpxv6np61Eok+0Fif3ePlqU4yaaI0+U7QSOhxSGPUYz1/E0UAdaKYhOcnFGST2oooAUE96KKKAP/9k="
-        },
-        "sizes": [
-          {
-            "_": "photoSize",
-            "type": "m",
-            "photo": {
-              "_": "file",
-              "id": 2365,
-              "size": 13472,
-              "expected_size": 13472,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECnDFobGUMAtUE_HVEwP_mSDHjVzqD-AAC0_UxG2WIYEtaOxLFsdwRyQEAAwIAA20AAzYE",
-                "unique_id": "AQAD0_UxG2WIYEty",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 13472
-              }
-            },
-            "width": 174,
-            "height": 320,
-            "progressive_sizes": []
-          },
-          {
-            "_": "photoSize",
-            "type": "x",
-            "photo": {
-              "_": "file",
-              "id": 2366,
-              "size": 51578,
-              "expected_size": 51578,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECnDFobGUMAtUE_HVEwP_mSDHjVzqD-AAC0_UxG2WIYEtaOxLFsdwRyQEAAwIAA3gAAzYE",
-                "unique_id": "AQAD0_UxG2WIYEt9",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 51578
-              }
-            },
-            "width": 434,
-            "height": 800,
-            "progressive_sizes": []
-          },
-          {
-            "_": "photoSize",
-            "type": "y",
-            "photo": {
-              "_": "file",
-              "id": 2367,
-              "size": 65232,
-              "expected_size": 65232,
-              "local": {
-                "_": "localFile",
-                "path": "",
-                "can_be_downloaded": true,
-                "can_be_deleted": false,
-                "is_downloading_active": false,
-                "is_downloading_completed": false,
-                "download_offset": 0,
-                "downloaded_prefix_size": 0,
-                "downloaded_size": 0
-              },
-              "remote": {
-                "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECnDFobGUMAtUE_HVEwP_mSDHjVzqD-AAC0_UxG2WIYEtaOxLFsdwRyQEAAwIAA3kAAzYE",
-                "unique_id": "AQAD0_UxG2WIYEt-",
-                "is_uploading_active": false,
-                "is_uploading_completed": true,
-                "uploaded_size": 65232
-              }
-            },
-            "width": 694,
-            "height": 1280,
-            "progressive_sizes": [
-              6276,
-              15826,
-              28961,
-              41683
-            ]
-          }
-        ]
-      },
-      "caption": {
+      "_": "messageText",
+      "text": {
         "_": "formattedText",
-        "text": "",
+        "text": "Поэтому обновлять их нужно регулярно!",
         "entities": []
-      },
-      "show_caption_above_media": false,
-      "has_spoiler": false,
-      "is_secret": false
+      }
     },
     "thread_name": "0 Микология и грибы",
-    "sender_name": "Adam rock",
-    "link": "https://t.me/NullianityNull/3772/171057"
+    "sender_name": "Alata 1375(@Alata_Advena)",
+    "link": "https://t.me/NullianityNull/3772/175077"
   },
   {
     "_": "message",
@@ -4487,80 +4949,6 @@
   },
   {
     "_": "message",
-    "id": 177424302080,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 7673083516
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751887638,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "🥱"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 5584567208
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "message_thread_id": 162745286656,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 162745286656
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "надо его не доску почета повесить",
-        "entities": []
-      }
-    },
-    "thread_name": "0: Проект решения. Ритуал принятия решения. Опрос и сбор предложений",
-    "sender_name": "Oleksii(@shestakovych)",
-    "link": "https://t.me/NullianityNull/155206/169205"
-  },
-  {
-    "_": "message",
     "id": 177213538304,
     "sender_id": {
       "_": "messageSenderUser",
@@ -4764,7 +5152,7 @@
       }
     },
     "thread_name": "Игра \"Мафия\" - Рик и Морти (регистрация + флуд)",
-    "sender_name": "Somebody",
+    "sender_name": "Somebody(unknown)",
     "link": "https://t.me/NullianityNull/127559/168531"
   },
   {
@@ -4810,7 +5198,7 @@
       }
     },
     "thread_name": "Вместо бога",
-    "sender_name": "Андрей",
+    "sender_name": "Андрей(unknown)",
     "link": "https://t.me/NullianityNull/11931/168129"
   },
   {
@@ -5408,7 +5796,7 @@
                 "type": "m",
                 "photo": {
                   "_": "file",
-                  "id": 2368,
+                  "id": 2189,
                   "size": 20432,
                   "expected_size": 20432,
                   "local": {
@@ -5424,7 +5812,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZUJ8O9lkgCGSMNeJt_lNFK2YAAJlqzEbbHkFUbOxz5GEF3BmAQADAgADbQADNgQ",
+                    "id": "AgACAgQAAxUAAWhtBQOTB-Kn1Ma4GZxcFE-DDygnAAJlqzEbbHkFUbOxz5GEF3BmAQADAgADbQADNgQ",
                     "unique_id": "AQADZasxG2x5BVFy",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -5440,7 +5828,7 @@
                 "type": "x",
                 "photo": {
                   "_": "file",
-                  "id": 2369,
+                  "id": 2190,
                   "size": 26705,
                   "expected_size": 26705,
                   "local": {
@@ -5456,7 +5844,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZUJ8O9lkgCGSMNeJt_lNFK2YAAJlqzEbbHkFUbOxz5GEF3BmAQADAgADeAADNgQ",
+                    "id": "AgACAgQAAxUAAWhtBQOTB-Kn1Ma4GZxcFE-DDygnAAJlqzEbbHkFUbOxz5GEF3BmAQADAgADeAADNgQ",
                     "unique_id": "AQADZasxG2x5BVF9",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -5570,7 +5958,7 @@
                 "type": "m",
                 "photo": {
                   "_": "file",
-                  "id": 2370,
+                  "id": 2191,
                   "size": 12314,
                   "expected_size": 12314,
                   "local": {
@@ -5586,7 +5974,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZULUsCTg64AuWvstciB8KwKUAAInqTEb5w5EUKPr-nRwE55jAQADAgADbQADNgQ",
+                    "id": "AgACAgQAAxUAAWhtBQT3ZFDDupXvNrFn7AkrWd8DAAInqTEb5w5EUKPr-nRwE55jAQADAgADbQADNgQ",
                     "unique_id": "AQADJ6kxG-cORFBy",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -5602,7 +5990,7 @@
                 "type": "x",
                 "photo": {
                   "_": "file",
-                  "id": 2371,
+                  "id": 2192,
                   "size": 58627,
                   "expected_size": 58627,
                   "local": {
@@ -5618,7 +6006,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZULUsCTg64AuWvstciB8KwKUAAInqTEb5w5EUKPr-nRwE55jAQADAgADeAADNgQ",
+                    "id": "AgACAgQAAxUAAWhtBQT3ZFDDupXvNrFn7AkrWd8DAAInqTEb5w5EUKPr-nRwE55jAQADAgADeAADNgQ",
                     "unique_id": "AQADJ6kxG-cORFB9",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -5634,7 +6022,7 @@
                 "type": "y",
                 "photo": {
                   "_": "file",
-                  "id": 2372,
+                  "id": 2193,
                   "size": 113390,
                   "expected_size": 113390,
                   "local": {
@@ -5650,7 +6038,7 @@
                   },
                   "remote": {
                     "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZULUsCTg64AuWvstciB8KwKUAAInqTEb5w5EUKPr-nRwE55jAQADAgADeQADNgQ",
+                    "id": "AgACAgQAAxUAAWhtBQT3ZFDDupXvNrFn7AkrWd8DAAInqTEb5w5EUKPr-nRwE55jAQADAgADeQADNgQ",
                     "unique_id": "AQADJ6kxG-cORFB-",
                     "is_uploading_active": false,
                     "is_uploading_completed": true,
@@ -5785,58 +6173,6 @@
   },
   {
     "_": "message",
-    "id": 175022014464,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1016193808
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": false,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751856948,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "reply_to": {
-      "_": "messageReplyToMessage",
-      "chat_id": -1002286460601,
-      "message_id": 166617677824,
-      "origin_send_date": 0
-    },
-    "message_thread_id": 6387924992,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 6387924992
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Это противоречит 1 заповеди",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Мерч",
-    "sender_name": "0 Александра Смелая(@Funny_and_sad)",
-    "link": "https://t.me/NullianityNull/6092/166914"
-  },
-  {
-    "_": "message",
     "id": 175020965888,
     "sender_id": {
       "_": "messageSenderUser",
@@ -5880,52 +6216,6 @@
     "thread_name": "Конкурс лого Нуллианства",
     "sender_name": "Югослав(@Yugo4444)",
     "link": "https://t.me/NullianityNull/124974/166913"
-  },
-  {
-    "_": "message",
-    "id": 174609924096,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 203302215
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751835940,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 1047527424,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 1047527424
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 16,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Что в логах? Он через steam запускается?",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Linux и FOSS",
-    "sender_name": "Vadim Suharnikov(@vsuharnikov)",
-    "link": "https://t.me/NullianityNull/999/166521"
   },
   {
     "_": "message",
@@ -5978,80 +6268,6 @@
     "thread_name": "Качалка и все что с этим связано",
     "sender_name": "Принц Порока(@PrincePoroka)",
     "link": "https://t.me/NullianityNull/94024/166297"
-  },
-  {
-    "_": "message",
-    "id": 172881870848,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 997816471
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751819160,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "❤"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 7657204186
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "message_thread_id": 111806513152,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 111806513152
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Eve тема",
-        "entities": []
-      }
-    },
-    "thread_name": "Ваша любимая музыка",
-    "sender_name": "0Blessed(@forbiddenfromthebegining)",
-    "link": "https://t.me/NullianityNull/106627/164873"
   },
   {
     "_": "message",
@@ -6303,143 +6519,6 @@
   },
   {
     "_": "message",
-    "id": 171201003520,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 5014462244
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751807439,
-    "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "❤"
-            },
-            "total_count": 1,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 6324459010
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
-    "unread_reactions": [],
-    "message_thread_id": 84999667712,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 84999667712
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Соратники всех кому понравились дебаты эти прошу заглянуть в тему предложения и вопросы https://t.me/NullianityNull/1738/155477 и проявить реакцию, чем активнее мы будем продвигать тем быстрее мы получим собственную трибуну для создания подобного же контента и популяризации Нуллианства.",
-        "entities": [
-          {
-            "_": "textEntity",
-            "offset": 88,
-            "length": 39,
-            "type": {
-              "_": "textEntityTypeUrl"
-            }
-          }
-        ]
-      },
-      "link_preview_options": {
-        "_": "linkPreviewOptions",
-        "is_disabled": true,
-        "url": "",
-        "force_small_media": false,
-        "force_large_media": false,
-        "show_above_text": false
-      }
-    },
-    "thread_name": "0 vs ☪️",
-    "sender_name": "SamNull(@BakaAlf)",
-    "link": "https://t.me/NullianityNull/81062/163270"
-  },
-  {
-    "_": "message",
-    "id": 170521526272,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 605277228
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751804232,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 163858874368,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 163858874368
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Ну, если кто из био профиля пригласит просто в личную поездку, тоже устроит 🥰",
-        "entities": []
-      }
-    },
-    "thread_name": "Путешествия",
-    "sender_name": "Мяу(@enchalex)",
-    "link": "https://t.me/NullianityNull/156268/162622"
-  },
-  {
-    "_": "message",
     "id": 170364239872,
     "sender_id": {
       "_": "messageSenderUser",
@@ -6594,7 +6673,7 @@
           "height": 320,
           "file": {
             "_": "file",
-            "id": 2373,
+            "id": 2194,
             "size": 31272,
             "expected_size": 31272,
             "local": {
@@ -6610,7 +6689,7 @@
             },
             "remote": {
               "_": "remoteFile",
-              "id": "AAMCAgADIQUABIhInrkAAQJ4GWhsZYn9hb3NthwMQ_s3QXh9LDeiAAL-cgACLOxJS22kHdC0OnlpAQAHbQADNgQ",
+              "id": "AAMCAgADIQUABIhInrkAAQJ4GWhtBYiH-K7DtkcFKf7jXwwXd-5_AAL-cgACLOxJS22kHdC0OnlpAQAHbQADNgQ",
               "unique_id": "AQAD_nIAAizsSUty",
               "is_uploading_active": false,
               "is_uploading_completed": true,
@@ -6620,7 +6699,7 @@
         },
         "sticker": {
           "_": "file",
-          "id": 2374,
+          "id": 2195,
           "size": 64842,
           "expected_size": 64842,
           "local": {
@@ -6636,7 +6715,7 @@
           },
           "remote": {
             "_": "remoteFile",
-            "id": "CAACAgIAAyEFAASISJ65AAECeBlobGWJ_YW9zbYcDEP7N0F4fSw3ogAC_nIAAizsSUttpB3QtDp5aTYE",
+            "id": "CAACAgIAAyEFAASISJ65AAECeBlobQWIh_iuw7ZHBSn-418MF3fufwAC_nIAAizsSUttpB3QtDp5aTYE",
             "unique_id": "AgAD_nIAAizsSUs",
             "is_uploading_active": false,
             "is_uploading_completed": true,
@@ -6867,7 +6946,7 @@
       }
     },
     "thread_name": "Нулевая волна Нуллианцев",
-    "sender_name": "Влад",
+    "sender_name": "Влад(unknown)",
     "link": "https://t.me/NullianityNull/16267/161416"
   },
   {
@@ -7066,7 +7145,7 @@
             "type": "m",
             "photo": {
               "_": "file",
-              "id": 2375,
+              "id": 2196,
               "size": 24741,
               "expected_size": 24741,
               "local": {
@@ -7082,7 +7161,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECcZ1obGWKuZ7B58CU6-5K_TSoYoSU7gAC8_ExG8L9UEt2LJpElmHN4gEAAwIAA20AAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECcZ1obQXFlWYVvBIcTC8cvVqI7sU9bQAC8_ExG8L9UEt2LJpElmHN4gEAAwIAA20AAzYE",
                 "unique_id": "AQAD8_ExG8L9UEty",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -7098,7 +7177,7 @@
             "type": "x",
             "photo": {
               "_": "file",
-              "id": 2376,
+              "id": 2197,
               "size": 91598,
               "expected_size": 91598,
               "local": {
@@ -7114,7 +7193,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECcZ1obGWKuZ7B58CU6-5K_TSoYoSU7gAC8_ExG8L9UEt2LJpElmHN4gEAAwIAA3gAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECcZ1obQXFlWYVvBIcTC8cvVqI7sU9bQAC8_ExG8L9UEt2LJpElmHN4gEAAwIAA3gAAzYE",
                 "unique_id": "AQAD8_ExG8L9UEt9",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -7130,7 +7209,7 @@
             "type": "y",
             "photo": {
               "_": "file",
-              "id": 2377,
+              "id": 2198,
               "size": 165526,
               "expected_size": 165526,
               "local": {
@@ -7146,7 +7225,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECcZ1obGWKuZ7B58CU6-5K_TSoYoSU7gAC8_ExG8L9UEt2LJpElmHN4gEAAwIAA3kAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECcZ1obQXFlWYVvBIcTC8cvVqI7sU9bQAC8_ExG8L9UEt2LJpElmHN4gEAAwIAA3kAAzYE",
                 "unique_id": "AQAD8_ExG8L9UEt-",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -7256,7 +7335,7 @@
             "type": "x",
             "photo": {
               "_": "file",
-              "id": 2379,
+              "id": 2200,
               "size": 7515,
               "expected_size": 7515,
               "local": {
@@ -7272,7 +7351,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECbWtobGWKglMRColuBhXrJvCedcVBfAACJ_gxG8L9SEsVtMFxNlrlfgEAAwIAA3gAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECbWtobQXH3BCSE0IR8SRdJRd1h4DJTgACJ_gxG8L9SEsVtMFxNlrlfgEAAwIAA3gAAzYE",
                 "unique_id": "AQADJ_gxG8L9SEt9",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -7293,7 +7372,7 @@
             "type": "m",
             "photo": {
               "_": "file",
-              "id": 2378,
+              "id": 2199,
               "size": 7820,
               "expected_size": 7820,
               "local": {
@@ -7309,7 +7388,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECbWtobGWKglMRColuBhXrJvCedcVBfAACJ_gxG8L9SEsVtMFxNlrlfgEAAwIAA20AAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECbWtobQXH3BCSE0IR8SRdJRd1h4DJTgACJ_gxG8L9SEsVtMFxNlrlfgEAAwIAA20AAzYE",
                 "unique_id": "AQADJ_gxG8L9SEty",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -7766,7 +7845,7 @@
           "height": 224,
           "file": {
             "_": "file",
-            "id": 2380,
+            "id": 2201,
             "size": 4502,
             "expected_size": 4502,
             "local": {
@@ -7782,7 +7861,7 @@
             },
             "remote": {
               "_": "remoteFile",
-              "id": "AAMCAgADIQUABIhInrkAAQJkZmhsZYtin1WdmSNkIww1BteTOdKjAAIgfQACl_RJS7Gv9x4fUvVVAQAHbQADNgQ",
+              "id": "AAMCAgADIQUABIhInrkAAQJkZmhtBkYG23svy5ipAAGl-F1sCSlFFwACIH0AApf0SUuxr_ceH1L1VQEAB20AAzYE",
               "unique_id": "AQADIH0AApf0SUty",
               "is_uploading_active": false,
               "is_uploading_completed": true,
@@ -7792,7 +7871,7 @@
         },
         "video": {
           "_": "file",
-          "id": 2381,
+          "id": 2202,
           "size": 297982,
           "expected_size": 297982,
           "local": {
@@ -7808,7 +7887,7 @@
           },
           "remote": {
             "_": "remoteFile",
-            "id": "BAACAgIAAyEFAASISJ65AAECZGZobGWLYp9VnZkjZCMMNQbXkznSowACIH0AApf0SUuxr_ceH1L1VTYE",
+            "id": "BAACAgIAAyEFAASISJ65AAECZGZobQZGBtt7L8uYqQABpfhdbAkpRRcAAiB9AAKX9ElLsa_3Hh9S9VU2BA",
             "unique_id": "AgADIH0AApf0SUs",
             "is_uploading_active": false,
             "is_uploading_completed": true,
@@ -7937,10 +8016,10 @@
   },
   {
     "_": "message",
-    "id": 163052519424,
+    "id": 183547985920,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 725352691
+      "user_id": 227663800
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
@@ -7950,40 +8029,8 @@
     "has_timestamped_media": true,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751699982,
+    "date": 1751973998,
     "edit_date": 0,
-    "interaction_info": {
-      "_": "messageInteractionInfo",
-      "view_count": 0,
-      "forward_count": 0,
-      "reactions": {
-        "_": "messageReactions",
-        "reactions": [
-          {
-            "_": "messageReaction",
-            "type": {
-              "_": "reactionTypeEmoji",
-              "emoji": "❤"
-            },
-            "total_count": 2,
-            "is_chosen": false,
-            "recent_sender_ids": [
-              {
-                "_": "messageSenderUser",
-                "user_id": 227663800
-              },
-              {
-                "_": "messageSenderUser",
-                "user_id": 997816471
-              }
-            ]
-          }
-        ],
-        "are_tags": false,
-        "paid_reactors": [],
-        "can_get_added_reactions": true
-      }
-    },
     "unread_reactions": [],
     "message_thread_id": 1664090112,
     "topic_id": {
@@ -8005,13 +8052,13 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "как-то у меня совпадало так, что мои партнеры обычно играли во что-то \nмне всегда было интересно пробовать во что-то новое, если оно подходит моим вкусам) \nтак что совместный интерес на игры - это отлично",
+        "text": "Каждый раз, как я себя плохо чувствую вечером, мелькает предательская мысль, что было бы здорово не проснуться утром :(",
         "entities": []
       }
     },
     "thread_name": "п0лный н0ль",
-    "sender_name": "gloomy0eternity(@kuraimonogotari)",
-    "link": "https://t.me/NullianityNull/1587/155499"
+    "sender_name": "Alata 1375(@Alata_Advena)",
+    "link": "https://t.me/NullianityNull/1587/175045"
   },
   {
     "_": "message",
@@ -8153,7 +8200,7 @@
       }
     },
     "thread_name": "ВСЕМ! ВСЕМ! ВСЕМ! (доска объявлений)",
-    "sender_name": "Влад",
+    "sender_name": "Влад(unknown)",
     "link": "https://t.me/NullianityNull/122783/154567"
   },
   {
@@ -8485,7 +8532,7 @@
           "height": 320,
           "file": {
             "_": "file",
-            "id": 3881,
+            "id": 3013,
             "size": 9648,
             "expected_size": 9648,
             "local": {
@@ -8501,7 +8548,7 @@
             },
             "remote": {
               "_": "remoteFile",
-              "id": "AAMCAgADIQUABIhInrkAAQJLOWhsZYzchQuOF4_GUf-0eJWVwAziAALGEwACa2_ASn9bFHFe0PnRAQAHbQADNgQ",
+              "id": "AAMCAgADIQUABIhInrkAAQJLOWhtBsvA9p-zBsK_CmH96okfYLu0AALGEwACa2_ASn9bFHFe0PnRAQAHbQADNgQ",
               "unique_id": "AQADxhMAAmtvwEpy",
               "is_uploading_active": false,
               "is_uploading_completed": true,
@@ -8511,7 +8558,7 @@
         },
         "sticker": {
           "_": "file",
-          "id": 3882,
+          "id": 3014,
           "size": 17734,
           "expected_size": 17734,
           "local": {
@@ -8527,7 +8574,7 @@
           },
           "remote": {
             "_": "remoteFile",
-            "id": "CAACAgIAAyEFAASISJ65AAECSzlobGWM3IULjhePxlH_tHiVlcAM4gACxhMAAmtvwEp_WxRxXtD50TYE",
+            "id": "CAACAgIAAyEFAASISJ65AAECSzlobQbLwPafswbCvwph_eqJH2C7tAACxhMAAmtvwEp_WxRxXtD50TYE",
             "unique_id": "AgADxhMAAmtvwEo",
             "is_uploading_active": false,
             "is_uploading_completed": true,
@@ -8715,48 +8762,6 @@
   },
   {
     "_": "message",
-    "id": 153599606784,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 531471051
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751608814,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 3504340992,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 3504340992
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageForumTopicIsClosedToggled",
-      "is_closed": true
-    },
-    "thread_name": "0 Экономика",
-    "sender_name": "0÷0=Aleksandr(@Alleks_88)",
-    "link": "https://t.me/NullianityNull/3342/146484"
-  },
-  {
-    "_": "message",
     "id": 153364725760,
     "sender_id": {
       "_": "messageSenderUser",
@@ -8872,7 +8877,7 @@
       }
     },
     "thread_name": "0 Медицина",
-    "sender_name": "Ярослав Гришкин.",
+    "sender_name": "Ярослав Гришкин.(unknown)",
     "link": "https://t.me/NullianityNull/2239/145898"
   },
   {
@@ -9097,22 +9102,28 @@
   },
   {
     "_": "message",
-    "id": 150324903936,
+    "id": 183507091456,
     "sender_id": {
       "_": "messageSenderUser",
-      "user_id": 700717719
+      "user_id": 2131388078
     },
     "chat_id": -1002286460601,
     "is_outgoing": false,
     "is_pinned": false,
     "is_from_offline": false,
     "can_be_saved": true,
-    "has_timestamped_media": true,
+    "has_timestamped_media": false,
     "is_channel_post": false,
     "contains_unread_mention": false,
-    "date": 1751563547,
+    "date": 1751973446,
     "edit_date": 0,
     "unread_reactions": [],
+    "reply_to": {
+      "_": "messageReplyToMessage",
+      "chat_id": -1002286460601,
+      "message_id": 22146973696,
+      "origin_send_date": 0
+    },
     "message_thread_id": 15633219584,
     "topic_id": {
       "_": "messageTopicForum",
@@ -9133,157 +9144,13 @@
       "_": "messageText",
       "text": {
         "_": "formattedText",
-        "text": "Pusher 3\nhttps://www.kinopoisk.ru/film/180613/?utm_referrer=www.google.com",
-        "entities": [
-          {
-            "_": "textEntity",
-            "offset": 9,
-            "length": 65,
-            "type": {
-              "_": "textEntityTypeUrl"
-            }
-          }
-        ]
-      },
-      "link_preview": {
-        "_": "linkPreview",
-        "url": "https://www.kinopoisk.ru/film/180613/",
-        "display_url": "kinopoisk.ru/film/180613",
-        "site_name": "Кинопоиск",
-        "title": "«Дилер 3» (Pusher III, 2005)",
-        "description": {
-          "_": "formattedText",
-          "text": "В этот раз Мило получил не то, что ожидал, и к тому же его кинули партнеры. Подробная информация о фильме Дилер 3 на сайте Кинопоиск.",
-          "entities": []
-        },
-        "author": "",
-        "type": {
-          "_": "linkPreviewTypePhoto",
-          "photo": {
-            "_": "photo",
-            "has_stickers": false,
-            "minithumbnail": {
-              "_": "minithumbnail",
-              "width": 40,
-              "height": 21,
-              "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP/L2u71////m8H////6/+b9//j/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/wAARCAAVACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDLQoB86En2OKHKH7ikfU5oSGR13KhIzjIpHjZMbhjNADaUKWzjHHqaSlO3Yc/ezx9KABlKkZI59DRTiYynAIfP+P8A9aigYyloooEJRjNFFABjBooooA//2Q=="
-            },
-            "sizes": [
-              {
-                "_": "photoSize",
-                "type": "m",
-                "photo": {
-                  "_": "file",
-                  "id": 3883,
-                  "size": 5891,
-                  "expected_size": 5891,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZcYpH-q-GkKWWI1IDWD90OhTAALrszEbnQABTFOLQAOQdtq1qQEAAwIAA20AAzYE",
-                    "unique_id": "AQAD67MxG50AAUxTcg",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 5891
-                  }
-                },
-                "width": 320,
-                "height": 168,
-                "progressive_sizes": []
-              },
-              {
-                "_": "photoSize",
-                "type": "x",
-                "photo": {
-                  "_": "file",
-                  "id": 3884,
-                  "size": 22279,
-                  "expected_size": 22279,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZcYpH-q-GkKWWI1IDWD90OhTAALrszEbnQABTFOLQAOQdtq1qQEAAwIAA3gAAzYE",
-                    "unique_id": "AQAD67MxG50AAUxTfQ",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 22279
-                  }
-                },
-                "width": 800,
-                "height": 420,
-                "progressive_sizes": []
-              },
-              {
-                "_": "photoSize",
-                "type": "y",
-                "photo": {
-                  "_": "file",
-                  "id": 3885,
-                  "size": 33131,
-                  "expected_size": 33131,
-                  "local": {
-                    "_": "localFile",
-                    "path": "",
-                    "can_be_downloaded": true,
-                    "can_be_deleted": false,
-                    "is_downloading_active": false,
-                    "is_downloading_completed": false,
-                    "download_offset": 0,
-                    "downloaded_prefix_size": 0,
-                    "downloaded_size": 0
-                  },
-                  "remote": {
-                    "_": "remoteFile",
-                    "id": "AgACAgQAAxUAAWhsZcYpH-q-GkKWWI1IDWD90OhTAALrszEbnQABTFOLQAOQdtq1qQEAAwIAA3kAAzYE",
-                    "unique_id": "AQAD67MxG50AAUxTfg",
-                    "is_uploading_active": false,
-                    "is_uploading_completed": true,
-                    "uploaded_size": 33131
-                  }
-                },
-                "width": 1200,
-                "height": 630,
-                "progressive_sizes": [
-                  4212,
-                  8727,
-                  16081,
-                  21543
-                ]
-              }
-            ]
-          }
-        },
-        "has_large_media": true,
-        "show_large_media": true,
-        "show_media_above_description": false,
-        "skip_confirmation": false,
-        "show_above_text": false,
-        "instant_view_version": 0
+        "text": "Популярное [не равно] Лучшее. \"Миллионы мух не могут ошибаться\".",
+        "entities": []
       }
     },
     "thread_name": "Кино",
-    "sender_name": "Югослав(@Yugo4444)",
-    "link": "https://t.me/NullianityNull/14909/143361"
+    "sender_name": "RC 1140(@RC_1140)",
+    "link": "https://t.me/NullianityNull/14909/175006"
   },
   {
     "_": "message",
@@ -9326,98 +9193,6 @@
     "thread_name": "0 История Нуллианства",
     "sender_name": "0÷0=Aleksandr(@Alleks_88)",
     "link": "https://t.me/NullianityNull/1342/143311"
-  },
-  {
-    "_": "message",
-    "id": 149860384768,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1864135268
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751558251,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 2647654400,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 2647654400
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "Без проблем, главное найтись)",
-        "entities": []
-      }
-    },
-    "thread_name": "0 Видеоигры",
-    "sender_name": "Карась Есенин(@war_karas)",
-    "link": "https://t.me/NullianityNull/2525/142918"
-  },
-  {
-    "_": "message",
-    "id": 149837316096,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 531471051
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751558034,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 114688000000,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 114688000000
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 1,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageText",
-      "text": {
-        "_": "formattedText",
-        "text": "И потом. Упс. Что то пошло не так",
-        "entities": []
-      }
-    },
-    "thread_name": "Топик Строителей",
-    "sender_name": "0÷0=Aleksandr(@Alleks_88)",
-    "link": "https://t.me/NullianityNull/109375/142896"
   },
   {
     "_": "message",
@@ -9506,48 +9281,6 @@
     "thread_name": "0 Wiki",
     "sender_name": "🐟(@InstructorFromNato)",
     "link": "https://t.me/NullianityNull/926/142125"
-  },
-  {
-    "_": "message",
-    "id": 149008941056,
-    "sender_id": {
-      "_": "messageSenderUser",
-      "user_id": 1112255984
-    },
-    "chat_id": -1002286460601,
-    "is_outgoing": false,
-    "is_pinned": false,
-    "is_from_offline": false,
-    "can_be_saved": true,
-    "has_timestamped_media": true,
-    "is_channel_post": false,
-    "contains_unread_mention": false,
-    "date": 1751550766,
-    "edit_date": 0,
-    "unread_reactions": [],
-    "message_thread_id": 2816475136,
-    "topic_id": {
-      "_": "messageTopicForum",
-      "forum_topic_id": 2816475136
-    },
-    "self_destruct_in": 0,
-    "auto_delete_in": 0,
-    "via_bot_user_id": 0,
-    "sender_business_bot_user_id": 0,
-    "sender_boost_count": 0,
-    "paid_message_star_count": 0,
-    "author_signature": "",
-    "media_album_id": "0",
-    "effect_id": "0",
-    "has_sensitive_content": false,
-    "restriction_reason": "",
-    "content": {
-      "_": "messageForumTopicIsClosedToggled",
-      "is_closed": true
-    },
-    "thread_name": "0: Сфера телекоммуникаций",
-    "sender_name": "🐟(@InstructorFromNato)",
-    "link": "https://t.me/NullianityNull/2686/142106"
   },
   {
     "_": "message",
@@ -9918,7 +9651,7 @@
       }
     },
     "thread_name": "0рден \"Нуллианство-Vita\"",
-    "sender_name": "Андрей",
+    "sender_name": "Андрей(unknown)",
     "link": "https://t.me/NullianityNull/78768/137296"
   },
   {
@@ -10031,8 +9764,8 @@
     },
     "interaction_info": {
       "_": "messageInteractionInfo",
-      "view_count": 130,
-      "forward_count": 4
+      "view_count": 133,
+      "forward_count": 5
     },
     "unread_reactions": [],
     "message_thread_id": 20059258880,
@@ -10068,7 +9801,7 @@
             "type": "m",
             "photo": {
               "_": "file",
-              "id": 3886,
+              "id": 3018,
               "size": 25130,
               "expected_size": 25130,
               "local": {
@@ -10084,7 +9817,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECEqJobGXIEwjsPnVyJAR-AqEIK_-GeAACFvcxGxDpMUuXfdCO8w_O_wEAAwIAA20AAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECEqJobQeRbDiNcOhdpXLftmrx1lTVXwACFvcxGxDpMUuXfdCO8w_O_wEAAwIAA20AAzYE",
                 "unique_id": "AQADFvcxGxDpMUty",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -10100,7 +9833,7 @@
             "type": "x",
             "photo": {
               "_": "file",
-              "id": 3887,
+              "id": 3019,
               "size": 89984,
               "expected_size": 89984,
               "local": {
@@ -10116,7 +9849,7 @@
               },
               "remote": {
                 "_": "remoteFile",
-                "id": "AgACAgIAAyEFAASISJ65AAECEqJobGXIEwjsPnVyJAR-AqEIK_-GeAACFvcxGxDpMUuXfdCO8w_O_wEAAwIAA3gAAzYE",
+                "id": "AgACAgIAAyEFAASISJ65AAECEqJobQeRbDiNcOhdpXLftmrx1lTVXwACFvcxGxDpMUuXfdCO8w_O_wEAAwIAA3gAAzYE",
                 "unique_id": "AQADFvcxGxDpMUt9",
                 "is_uploading_active": false,
                 "is_uploading_completed": true,
@@ -10250,7 +9983,7 @@
       }
     },
     "thread_name": "Каламбуры и анекдоты про \"0\"",
-    "sender_name": "DMITRIJS N.",
+    "sender_name": "DMITRIJS N.(unknown)",
     "link": "https://t.me/NullianityNull/815/134164"
   },
   {
@@ -10302,7 +10035,7 @@
       }
     },
     "thread_name": "Топик JavaScript",
-    "sender_name": "Мяу(@enchalex)",
+    "sender_name": "ad94362ed2cbb25daed5780b876e9b5a4fa5b66f168bca537e3afbb523c79fe7",
     "link": "https://t.me/NullianityNull/85824/132334"
   },
   {
@@ -10434,7 +10167,7 @@
       }
     },
     "thread_name": "0 Оффлайн встречи. Круг разума",
-    "sender_name": "Julia Korennova",
+    "sender_name": "Julia Korennova(unknown)",
     "link": "https://t.me/NullianityNull/11348/122612"
   },
   {

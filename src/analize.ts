@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 import 'dotenv/config';
 
 const EXPORTS_DIR = './exports';
-const REPORTS_DIR = './reports';
+const REPORTS_DIR = './docs/lore/reports';
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 
 

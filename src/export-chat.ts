@@ -16,6 +16,7 @@ const startTimestamp = START_DATE ? Math.floor(new Date(START_DATE!).getTime() /
 const exportDir = EXPORT_DIR ?? './exports';
 
 const userNamesCache = new Map<number, string>();
+const userExcludedCache = new Map<number, boolean>();
 
 type MessageOut = {
   from: string;
@@ -54,7 +55,7 @@ async function main() {
   const lastThreadMsg = new Map<number, Message>();
   for (const thread of threads.values()) {
     const threadId = thread.info.message_thread_id;
-    const msgs = (await exportThread(client, chatId, thread, lastThreadMsgOld, userNamesCache));
+    const msgs = (await exportThread(client, chatId, thread, lastThreadMsgOld, userNamesCache, userExcludedCache));
     // .filter(msg => {
     // return msg.date >= startTimestamp;
     // });
