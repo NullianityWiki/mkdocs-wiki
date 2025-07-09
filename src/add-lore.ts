@@ -8,7 +8,7 @@ async function main() {
 
 async function updateChronicle(filePath: string) {
   // Папка с отчетами относительно пути файла
-  const reportDir = path.resolve(path.dirname(filePath), './docs/lore/reports');
+  const reportDir = path.resolve(path.dirname(filePath), './reports');
 
   // Чтение Markdown-файла
   const content = await fs.readFile(filePath, 'utf-8');
