@@ -1,5 +1,166 @@
 [
   {
+    "from": "Vadim Suharnikov(@vsuharnikov)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/106756",
+    "date": "2025-06-29T11:44:42.000Z",
+    "text": "Недавно был вопрос обмена или не орм. Вышло неплохое видео\nhttps://youtu.be/O1Qxpvt7WCw"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108029",
+    "date": "2025-06-29T15:19:25.000Z",
+    "text": "мб кто то знает как из модели сообщения телеграма собрать линку на это сообщение?"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108031",
+    "date": "2025-06-29T15:19:52.000Z",
+    "text": "пример модели\n{\n    \"_\": \"message\",\n    \"id\": 54358179840,\n    \"sender_id\": {\n      \"_\": \"messageSenderUser\",\n      \"user_id\": 569922080\n    },\n    \"chat_id\": -1002286460601,\n    \"is_outgoing\": false,\n    \"is_pinned\": true,\n    \"is_from_offline\": false,\n    \"can_be_saved\": true,\n    \"has_timestamped_media\": true,\n    \"is_channel_post\": false,\n    \"contains_unread_mention\": false,\n    \"date\": 1750433020,\n    \"edit_date\": 1750456624,\n    \"interaction_info\": {\n      \"_\": \"messageInteractionInfo\",\n      \"view_count\": 0,\n      \"forward_count\": 0,\n      \"reactions\": {\n        \"_\": \"messageReactions\",\n        \"reactions\": [\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"❤️\"\n            },\n            \"total_count\": 4,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": [\n              {\n                \"_\": \"messageSenderUser\",\n                \"user_id\": 855223692\n              }\n            ]\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"👍\"\n            },\n            \"total_count\": 4,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": [\n              {\n                \"_\": \"messageSenderUser\",\n                \"user_id\": 1350920721\n              }\n            ]\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeCustomEmoji\",\n              \"custom_emoji_id\": \"5319304325942503387\"\n            },\n            \"total_count\": 3,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": []\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"🤔\"\n            },\n            \"total_count\": 2,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": [\n              {\n                \"_\": \"messageSenderUser\",\n                \"user_id\": 830341313\n              }\n            ]\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"🤣\"\n            },\n            \"total_count\": 1,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": []\n          }\n        ],\n        \"are_tags\": false,\n        \"paid_reactors\": [],\n        \"can_get_added_reactions\": true\n      }\n    },\n    \"unread_reactions\": [],\n    \"message_thread_id\": 54357131264,\n    \"topic_id\": {\n      \"_\": \"messageTopicForum\",\n      \"forum_topic_id\": 54357131264\n    },\n    \"self_destruct_in\": 0,\n    \"auto_delete_in\": 0,\n    \"via_bot_user_id\": 0,\n    \"sender_business_bot_user_id\": 0,\n    \"sender_boost_count\": 0,\n    \"paid_message_star_count\": 0,\n    \"author_signature\": \"\",\n    \"media_album_id\": \"0\",\n    \"effect_id\": \"0\",\n    \"has_sensitive_content\": false,\n    \"restriction_reason\": \"\",\n    \"content\": {\n      \"_\": \"messageText\",\n      \"text\": {\n        \"_\": \"formattedText\",\n        \"text\": \"Нам нужно изменить манифест и ключевые идеи нашей религии. \\n\\nВ вопросы-предложения выписал мысль по реформе основ Нуллианства - сделать корень религии не в рациональном мышлении (непонятно как завлекать этим людей в религию), а в борьбе с культурой смерти (есть чёткая цель и понятная корневая мотивация объединения). Рациональность и любовь к науке - важная часть заповедей и мировоззрения, но не главная точка агитации. Подробно аргументы читайте в сообщениях ниже\\n\\n(ссылка на оригинальные сообщения, но продублирую их в этом же чате ещё раз)\\nhttps://t.me/NullianityNull/1738/50671\\nhttps://t.me/NullianityNull/1738/50672\",\n        \"entities\": [\n          {\n            \"_\": \"textEntity\",\n            \"offset\": 545,\n            \"length\": 38,\n            \"type\": {\n              \"_\": \"textEntityTypeUrl\"\n            }\n          },\n          {\n            \"_\": \"textEntity\",\n            \"offset\": 584,\n            \"length\": 38,\n            \"type\": {\n              \"_\": \"textEntityTypeUrl\"\n            }\n          }\n        ]\n      },"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108032",
+    "date": "2025-06-29T15:19:53.000Z",
+    "text": "\n      \"link_preview_options\": {\n        \"_\": \"linkPreviewOptions\",\n        \"is_disabled\": true,\n        \"url\": \"\",\n        \"force_small_media\": false,\n        \"force_large_media\": false,\n        \"show_above_text\": false\n      }\n    },\n    \"sender_name\": \"Андрей Жарский(@greenradiation)\"\n  },"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108033",
+    "date": "2025-06-29T15:20:08.000Z",
+    "text": "link   https://t.me/NullianityNull/51839/51840"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108036",
+    "date": "2025-06-29T15:21:14.000Z",
+    "text": "мб просто втупую полные айди сработают, хм\n  https://t.me/NullianityNull/54357131264/54358179840"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108040",
+    "date": "2025-06-29T15:22:03.000Z",
+    "text": "неа, надо как то обработать 🤷‍♂️"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108042",
+    "date": "2025-06-29T15:22:36.000Z",
+    "text": "как будто есть общий каунтер сообщений в группе, как бы его получить тольк..."
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108092",
+    "date": "2025-06-29T15:50:57.000Z",
+    "text": "cloudru даёт не сильно плохой сервер за 140 руб/месяц (в остальном он ужасен)"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108104",
+    "date": "2025-06-29T15:53:52.000Z",
+    "text": "orig\n\nTGPy> Message(\n id=108029,\n peer_id=PeerChannel(\n  channel_id=2286460601\n ),\n date=datetime.datetime(2025, 6, 29, 15, 19, 25, tzinfo=datetime.timezone.utc),\n message='мб кто то знает как из модели сообщения телеграма собрать линку на это сообщение?',\n out=False,\n mentioned=False,\n media_unread=False,\n silent=False,\n post=False,\n from_scheduled=False,\n legacy=False,\n edit_hide=False,\n pinned=False,\n noforwards=False,\n invert_media=False,\n offline=False,\n from_id=PeerUser(\n  user_id=449985919\n ),\n from_boosts_applied=4,\n saved_peer_id=None,\n fwd_from=None,\n via_bot_id=None,\n via_business_bot_id=None,\n reply_to=MessageReplyHeader(\n  reply_to_scheduled=False,\n  forum_topic=True,\n  quote=False,\n  reply_to_msg_id=852,\n  reply_to_peer_id=None,\n  reply_from=None,\n  reply_media=None,\n  reply_to_top_id=None,\n  quote_text=None,\n  quote_entities=[\n  ],\n  quote_offset=None\n ),\n media=None,\n reply_markup=None,\n entities=[\n ],\n views=None,\n forwards=None,\n replies=None,\n edit_date=None,\n post_author=None,\n grouped_id=None,\n reactions=None,\n restriction_reason=[\n ],\n ttl_period=None,\n quick_reply_shortcut_id=None\n)"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108105",
+    "date": "2025-06-29T15:54:00.000Z",
+    "text": "https://t.me/NullianityNull/852/108029"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108119",
+    "date": "2025-06-29T15:57:57.000Z",
+    "text": "f\"https://t.me/{client.get_entity(orig.peer_id).await.username}/{orig.id}\"\n\nTGPy> https://t.me/NullianityNull/108105"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108122",
+    "date": "2025-06-29T15:58:22.000Z",
+    "text": "id топика можно опустить"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108152",
+    "date": "2025-06-29T16:04:15.000Z",
+    "text": "f\"https://t.me/{client.get_entity(orig.peer_id).await.username}/{orig.reply_to.reply_to_top_id or orig.reply_to.reply_to_msg_id}/{orig.id}\"\n\nTGPy> https://t.me/NullianityNull/852/108119"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108156",
+    "date": "2025-06-29T16:04:27.000Z",
+    "text": "хотя, наверно, так тоже можно примерно"
+  },
+  {
+    "from": "NullzeRT ⁧hjkl(@nullzert)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108158",
+    "date": "2025-06-29T16:04:59.000Z",
+    "text": "но это всё схемы telethon, не знаю насколько они соответствуют тгшным"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108250",
+    "date": "2025-06-29T16:46:51.000Z",
+    "text": "ну чето в TDLib нет такого, может в модели какой то другой"
+  },
+  {
+    "from": "0 belbix(@belbix)",
+    "thread": "0 Программирование",
+    "link": "https://t.me/NullianityNull/852/108255",
+    "date": "2025-06-29T16:48:18.000Z",
+    "text": "видимо так самое простое https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_message_link.html"
+  },
+  {
+    "from": "Химер Роковой(@Darryl_ma1n)",
+    "thread": "Terraria",
+    "link": "https://t.me/NullianityNull/106496/106737",
+    "date": "2025-06-29T11:34:04.000Z",
+    "text": "Опа"
+  },
+  {
+    "from": "TheArzy(@TheArzy)",
+    "thread": "Terraria",
+    "link": "https://t.me/NullianityNull/106496/106753",
+    "date": "2025-06-29T11:41:55.000Z",
+    "text": "Ну тоже как вариант..."
+  },
+  {
+    "from": "TheArzy(@TheArzy)",
+    "thread": "Terraria",
+    "link": "https://t.me/NullianityNull/106496/106779",
+    "date": "2025-06-29T11:58:00.000Z",
+    "text": "Я больше понимаю это как ветку на подобии ветки минкруфта"
+  },
+  {
+    "from": "TheArzy(@TheArzy)",
+    "thread": "Terraria",
+    "link": "https://t.me/NullianityNull/106496/106780",
+    "date": "2025-06-29T11:58:07.000Z",
+    "text": "Совместные игры"
+  },
+  {
+    "from": "TheArzy(@TheArzy)",
+    "thread": "Terraria",
+    "link": "https://t.me/NullianityNull/106496/106929",
+    "date": "2025-06-29T12:22:48.000Z",
+    "text": "И мне кажется что как значок ветки подошел бы эмодзи дерева, наверняка его можно где-то найти"
+  },
+  {
     "from": "nullianity_banhammer_bot(@nullianity_banhammer_bot)",
     "thread": "Квизы",
     "link": "https://t.me/NullianityNull/1/105957",
@@ -917,6 +1078,167 @@
     "text": "Спокойной"
   },
   {
+    "from": "Катерина Соболь(@kati_sobol)",
+    "thread": "Глобальное потепление и экология",
+    "link": "https://t.me/NullianityNull/70164/105285",
+    "date": "2025-06-29T04:46:56.000Z",
+    "text": "Не, ну шарахнуть несколькими жирными азотными кометами так-то можно... Но пока да, только долина Маринера, где атмосфера стекается чуть плотнее, и всё равно гонять в скафандрах"
+  },
+  {
+    "from": "Химер Роковой(@Darryl_ma1n)",
+    "thread": "Глобальное потепление и экология",
+    "link": "https://t.me/NullianityNull/70164/105297",
+    "date": "2025-06-29T05:57:07.000Z",
+    "text": "Как успехи?"
+  },
+  {
+    "from": "Катерина Соболь(@kati_sobol)",
+    "thread": "Глобальное потепление и экология",
+    "link": "https://t.me/NullianityNull/70164/108523",
+    "date": "2025-06-29T18:23:28.000Z",
+    "text": "В начале июля прогнозируют +14\n\nГде моë глобальное потепление?!"
+  },
+  {
+    "from": "Dmitriy I(@Dimon_Sanchez_Jr)",
+    "thread": "Глобальное потепление и экология",
+    "link": "https://t.me/NullianityNull/70164/109403",
+    "date": "2025-06-29T19:41:19.000Z",
+    "text": "В октябре"
+  },
+  {
+    "from": "L P(@nickname367)",
+    "thread": "Глобальное потепление и экология",
+    "link": "https://t.me/NullianityNull/70164/110160",
+    "date": "2025-06-29T21:41:35.000Z",
+    "text": "о, интересная тема."
+  },
+  {
+    "from": "Химер Роковой(@Darryl_ma1n)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/106740",
+    "date": "2025-06-29T11:34:32.000Z",
+    "text": "Хм"
+  },
+  {
+    "from": "0 Светлана Матренина(@Svet_1592)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/106963",
+    "date": "2025-06-29T12:40:31.000Z",
+    "text": "Многозначительно."
+  },
+  {
+    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/106965",
+    "date": "2025-06-29T12:44:01.000Z",
+    "text": "Сибирь тут"
+  },
+  {
+    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/106966",
+    "date": "2025-06-29T12:44:07.000Z",
+    "text": "Жара пиздец"
+  },
+  {
+    "from": "T S(@shani_ta)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107193",
+    "date": "2025-06-29T13:48:04.000Z",
+    "text": "Завидное"
+  },
+  {
+    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107194",
+    "date": "2025-06-29T13:48:15.000Z",
+    "text": "Я хочу зиму"
+  },
+  {
+    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107196",
+    "date": "2025-06-29T13:48:19.000Z",
+    "text": "У меня гипертония"
+  },
+  {
+    "from": "Chancellor Ikseew(unknown)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107201",
+    "date": "2025-06-29T13:48:58.000Z",
+    "text": "Здравствуйте, сограждане восточники."
+  },
+  {
+    "from": "T S(@shani_ta)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107202",
+    "date": "2025-06-29T13:48:59.000Z",
+    "text": "У нас в стране не сложно организовать себе круглогодичную зиму. Вам очень повезло! 😅"
+  },
+  {
+    "from": "0Blessed(@forbiddenfromthebegining)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107236",
+    "date": "2025-06-29T13:52:32.000Z",
+    "text": "Я хочу доооождь"
+  },
+  {
+    "from": "0Blessed(@forbiddenfromthebegining)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107237",
+    "date": "2025-06-29T13:52:36.000Z",
+    "text": "В Новосибе обещали дождь"
+  },
+  {
+    "from": "0Blessed(@forbiddenfromthebegining)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107238",
+    "date": "2025-06-29T13:52:38.000Z",
+    "text": "Где мой дождь"
+  },
+  {
+    "from": "gloomy0eternity(@kuraimonogotari)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107256",
+    "date": "2025-06-29T13:55:17.000Z",
+    "text": "яндекс осадки говорят: не видать тебе дождя сегодня"
+  },
+  {
+    "from": "T S(@shani_ta)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107358",
+    "date": "2025-06-29T14:07:26.000Z",
+    "text": "Он в Москве пролился"
+  },
+  {
+    "from": "0Blessed(@forbiddenfromthebegining)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107399",
+    "date": "2025-06-29T14:11:50.000Z",
+    "text": "А с утра говорили обратное"
+  },
+  {
+    "from": "0Blessed(@forbiddenfromthebegining)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/107400",
+    "date": "2025-06-29T14:11:57.000Z",
+    "text": "Я на работу ехал в приподнятом настроении"
+  },
+  {
+    "from": "ad94362ed2cbb25daed5780b876e9b5a4fa5b66f168bca537e3afbb523c79fe7",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "-",
+    "date": "2025-06-29T17:37:04.000Z",
+    "text": "Тут есть Голубь?"
+  },
+  {
+    "from": "Andrey(@chubakkk)",
+    "thread": "Нуллианцы Сибирь и Дальний Восток",
+    "link": "https://t.me/NullianityNull/106074/109588",
+    "date": "2025-06-29T20:18:09.000Z",
+    "text": "Это такой восток, который немного подалбше, чем ближний"
+  },
+  {
     "from": "Дарья Оршанская(@BlackLis15)",
     "thread": "0 Мерч",
     "link": "https://t.me/NullianityNull/6092/107049",
@@ -1111,174 +1433,6 @@
     "link": "https://t.me/NullianityNull/85819/107650",
     "date": "2025-06-29T14:33:45.000Z",
     "text": "Ааа, я думал  ты про то что ошибка в них будет"
-  },
-  {
-    "from": "gloomy0eternity(@kuraimonogotari)",
-    "thread": "Кино",
-    "link": "https://t.me/NullianityNull/14909/106689",
-    "date": "2025-06-29T11:20:30.000Z",
-    "text": "как и с облачным атласом :с"
-  },
-  {
-    "from": "Nura Glumm(@Anna_Art_Surikat)",
-    "thread": "Кино",
-    "link": "https://t.me/NullianityNull/14909/106693",
-    "date": "2025-06-29T11:20:44.000Z",
-    "text": "Люблю фильмы, которые потом долго вспоминаешь и пытаешься понять несостыковки и общую логику"
-  },
-  {
-    "from": "ihtorius(@IHTORIUS)",
-    "thread": "Кино",
-    "link": "https://t.me/NullianityNull/14909/108223",
-    "date": "2025-06-29T16:39:00.000Z",
-    "text": "Я хоть и мужчина но этот фильм в моем топ-3)"
-  },
-  {
-    "from": "Nura Glumm(@Anna_Art_Surikat)",
-    "thread": "Кино",
-    "link": "https://t.me/NullianityNull/14909/108232",
-    "date": "2025-06-29T16:42:09.000Z",
-    "text": "Что именно нравится? Идея, подача, актриса?"
-  },
-  {
-    "from": "ihtorius(@IHTORIUS)",
-    "thread": "Кино",
-    "link": "https://t.me/NullianityNull/14909/108244",
-    "date": "2025-06-29T16:45:28.000Z",
-    "text": "И Одри Тату и подача. Вообще нравится этот мир который они создали, сказку для взрослых. Как будто Амели видит мир как я)"
-  },
-  {
-    "from": "Nura Glumm(@Anna_Art_Surikat)",
-    "thread": "Кино",
-    "link": "https://t.me/NullianityNull/14909/108247",
-    "date": "2025-06-29T16:46:07.000Z",
-    "text": "Значит мы с вами видим этот мир похожим образом ✨"
-  },
-  {
-    "from": "Vadim Suharnikov(@vsuharnikov)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/106756",
-    "date": "2025-06-29T11:44:42.000Z",
-    "text": "Недавно был вопрос обмена или не орм. Вышло неплохое видео\nhttps://youtu.be/O1Qxpvt7WCw"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108029",
-    "date": "2025-06-29T15:19:25.000Z",
-    "text": "мб кто то знает как из модели сообщения телеграма собрать линку на это сообщение?"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108031",
-    "date": "2025-06-29T15:19:52.000Z",
-    "text": "пример модели\n{\n    \"_\": \"message\",\n    \"id\": 54358179840,\n    \"sender_id\": {\n      \"_\": \"messageSenderUser\",\n      \"user_id\": 569922080\n    },\n    \"chat_id\": -1002286460601,\n    \"is_outgoing\": false,\n    \"is_pinned\": true,\n    \"is_from_offline\": false,\n    \"can_be_saved\": true,\n    \"has_timestamped_media\": true,\n    \"is_channel_post\": false,\n    \"contains_unread_mention\": false,\n    \"date\": 1750433020,\n    \"edit_date\": 1750456624,\n    \"interaction_info\": {\n      \"_\": \"messageInteractionInfo\",\n      \"view_count\": 0,\n      \"forward_count\": 0,\n      \"reactions\": {\n        \"_\": \"messageReactions\",\n        \"reactions\": [\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"❤️\"\n            },\n            \"total_count\": 4,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": [\n              {\n                \"_\": \"messageSenderUser\",\n                \"user_id\": 855223692\n              }\n            ]\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"👍\"\n            },\n            \"total_count\": 4,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": [\n              {\n                \"_\": \"messageSenderUser\",\n                \"user_id\": 1350920721\n              }\n            ]\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeCustomEmoji\",\n              \"custom_emoji_id\": \"5319304325942503387\"\n            },\n            \"total_count\": 3,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": []\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"🤔\"\n            },\n            \"total_count\": 2,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": [\n              {\n                \"_\": \"messageSenderUser\",\n                \"user_id\": 830341313\n              }\n            ]\n          },\n          {\n            \"_\": \"messageReaction\",\n            \"type\": {\n              \"_\": \"reactionTypeEmoji\",\n              \"emoji\": \"🤣\"\n            },\n            \"total_count\": 1,\n            \"is_chosen\": false,\n            \"recent_sender_ids\": []\n          }\n        ],\n        \"are_tags\": false,\n        \"paid_reactors\": [],\n        \"can_get_added_reactions\": true\n      }\n    },\n    \"unread_reactions\": [],\n    \"message_thread_id\": 54357131264,\n    \"topic_id\": {\n      \"_\": \"messageTopicForum\",\n      \"forum_topic_id\": 54357131264\n    },\n    \"self_destruct_in\": 0,\n    \"auto_delete_in\": 0,\n    \"via_bot_user_id\": 0,\n    \"sender_business_bot_user_id\": 0,\n    \"sender_boost_count\": 0,\n    \"paid_message_star_count\": 0,\n    \"author_signature\": \"\",\n    \"media_album_id\": \"0\",\n    \"effect_id\": \"0\",\n    \"has_sensitive_content\": false,\n    \"restriction_reason\": \"\",\n    \"content\": {\n      \"_\": \"messageText\",\n      \"text\": {\n        \"_\": \"formattedText\",\n        \"text\": \"Нам нужно изменить манифест и ключевые идеи нашей религии. \\n\\nВ вопросы-предложения выписал мысль по реформе основ Нуллианства - сделать корень религии не в рациональном мышлении (непонятно как завлекать этим людей в религию), а в борьбе с культурой смерти (есть чёткая цель и понятная корневая мотивация объединения). Рациональность и любовь к науке - важная часть заповедей и мировоззрения, но не главная точка агитации. Подробно аргументы читайте в сообщениях ниже\\n\\n(ссылка на оригинальные сообщения, но продублирую их в этом же чате ещё раз)\\nhttps://t.me/NullianityNull/1738/50671\\nhttps://t.me/NullianityNull/1738/50672\",\n        \"entities\": [\n          {\n            \"_\": \"textEntity\",\n            \"offset\": 545,\n            \"length\": 38,\n            \"type\": {\n              \"_\": \"textEntityTypeUrl\"\n            }\n          },\n          {\n            \"_\": \"textEntity\",\n            \"offset\": 584,\n            \"length\": 38,\n            \"type\": {\n              \"_\": \"textEntityTypeUrl\"\n            }\n          }\n        ]\n      },"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108032",
-    "date": "2025-06-29T15:19:53.000Z",
-    "text": "\n      \"link_preview_options\": {\n        \"_\": \"linkPreviewOptions\",\n        \"is_disabled\": true,\n        \"url\": \"\",\n        \"force_small_media\": false,\n        \"force_large_media\": false,\n        \"show_above_text\": false\n      }\n    },\n    \"sender_name\": \"Андрей Жарский(@greenradiation)\"\n  },"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108033",
-    "date": "2025-06-29T15:20:08.000Z",
-    "text": "link   https://t.me/NullianityNull/51839/51840"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108036",
-    "date": "2025-06-29T15:21:14.000Z",
-    "text": "мб просто втупую полные айди сработают, хм\n  https://t.me/NullianityNull/54357131264/54358179840"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108040",
-    "date": "2025-06-29T15:22:03.000Z",
-    "text": "неа, надо как то обработать 🤷‍♂️"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108042",
-    "date": "2025-06-29T15:22:36.000Z",
-    "text": "как будто есть общий каунтер сообщений в группе, как бы его получить тольк..."
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108092",
-    "date": "2025-06-29T15:50:57.000Z",
-    "text": "cloudru даёт не сильно плохой сервер за 140 руб/месяц (в остальном он ужасен)"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108104",
-    "date": "2025-06-29T15:53:52.000Z",
-    "text": "orig\n\nTGPy> Message(\n id=108029,\n peer_id=PeerChannel(\n  channel_id=2286460601\n ),\n date=datetime.datetime(2025, 6, 29, 15, 19, 25, tzinfo=datetime.timezone.utc),\n message='мб кто то знает как из модели сообщения телеграма собрать линку на это сообщение?',\n out=False,\n mentioned=False,\n media_unread=False,\n silent=False,\n post=False,\n from_scheduled=False,\n legacy=False,\n edit_hide=False,\n pinned=False,\n noforwards=False,\n invert_media=False,\n offline=False,\n from_id=PeerUser(\n  user_id=449985919\n ),\n from_boosts_applied=4,\n saved_peer_id=None,\n fwd_from=None,\n via_bot_id=None,\n via_business_bot_id=None,\n reply_to=MessageReplyHeader(\n  reply_to_scheduled=False,\n  forum_topic=True,\n  quote=False,\n  reply_to_msg_id=852,\n  reply_to_peer_id=None,\n  reply_from=None,\n  reply_media=None,\n  reply_to_top_id=None,\n  quote_text=None,\n  quote_entities=[\n  ],\n  quote_offset=None\n ),\n media=None,\n reply_markup=None,\n entities=[\n ],\n views=None,\n forwards=None,\n replies=None,\n edit_date=None,\n post_author=None,\n grouped_id=None,\n reactions=None,\n restriction_reason=[\n ],\n ttl_period=None,\n quick_reply_shortcut_id=None\n)"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108105",
-    "date": "2025-06-29T15:54:00.000Z",
-    "text": "https://t.me/NullianityNull/852/108029"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108119",
-    "date": "2025-06-29T15:57:57.000Z",
-    "text": "f\"https://t.me/{client.get_entity(orig.peer_id).await.username}/{orig.id}\"\n\nTGPy> https://t.me/NullianityNull/108105"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108122",
-    "date": "2025-06-29T15:58:22.000Z",
-    "text": "id топика можно опустить"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108152",
-    "date": "2025-06-29T16:04:15.000Z",
-    "text": "f\"https://t.me/{client.get_entity(orig.peer_id).await.username}/{orig.reply_to.reply_to_top_id or orig.reply_to.reply_to_msg_id}/{orig.id}\"\n\nTGPy> https://t.me/NullianityNull/852/108119"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108156",
-    "date": "2025-06-29T16:04:27.000Z",
-    "text": "хотя, наверно, так тоже можно примерно"
-  },
-  {
-    "from": "NullzeRT ⁧hjkl(@nullzert)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108158",
-    "date": "2025-06-29T16:04:59.000Z",
-    "text": "но это всё схемы telethon, не знаю насколько они соответствуют тгшным"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108250",
-    "date": "2025-06-29T16:46:51.000Z",
-    "text": "ну чето в TDLib нет такого, может в модели какой то другой"
-  },
-  {
-    "from": "0 belbix(@belbix)",
-    "thread": "0 Программирование",
-    "link": "https://t.me/NullianityNull/852/108255",
-    "date": "2025-06-29T16:48:18.000Z",
-    "text": "видимо так самое простое https://core.telegram.org/tdlib/docs/classtd_1_1td__api_1_1get_message_link.html"
   },
   {
     "from": "С0гласны?(@soglasni_yznali)",
@@ -1708,132 +1862,6 @@
     "text": "ПЦР - это ещё ладно. Из аппаратуры по сути чайник + специфический белочек. А вот заказывать фрагменты ДНК - точно не вариант. Через чур дорого. Я знаю, что оглинуклеотиды можно собирать в фильтре, так что можно обойтись без синтезатора.... хотя в общем-то такое чувство, что друга надо посылать в институт и пытаться познакомиться с учёными из нужной лаборатории..."
   },
   {
-    "from": "Химер Роковой(@Darryl_ma1n)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/106740",
-    "date": "2025-06-29T11:34:32.000Z",
-    "text": "Хм"
-  },
-  {
-    "from": "0 Светлана Матренина(@Svet_1592)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/106963",
-    "date": "2025-06-29T12:40:31.000Z",
-    "text": "Многозначительно."
-  },
-  {
-    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/106965",
-    "date": "2025-06-29T12:44:01.000Z",
-    "text": "Сибирь тут"
-  },
-  {
-    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/106966",
-    "date": "2025-06-29T12:44:07.000Z",
-    "text": "Жара пиздец"
-  },
-  {
-    "from": "T S(@shani_ta)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107193",
-    "date": "2025-06-29T13:48:04.000Z",
-    "text": "Завидное"
-  },
-  {
-    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107194",
-    "date": "2025-06-29T13:48:15.000Z",
-    "text": "Я хочу зиму"
-  },
-  {
-    "from": "0 Александр Лугинин(@Aleksandr_Luginin)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107196",
-    "date": "2025-06-29T13:48:19.000Z",
-    "text": "У меня гипертония"
-  },
-  {
-    "from": "Chancellor Ikseew(unknown)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107201",
-    "date": "2025-06-29T13:48:58.000Z",
-    "text": "Здравствуйте, сограждане восточники."
-  },
-  {
-    "from": "T S(@shani_ta)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107202",
-    "date": "2025-06-29T13:48:59.000Z",
-    "text": "У нас в стране не сложно организовать себе круглогодичную зиму. Вам очень повезло! 😅"
-  },
-  {
-    "from": "0Blessed(@forbiddenfromthebegining)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107236",
-    "date": "2025-06-29T13:52:32.000Z",
-    "text": "Я хочу доооождь"
-  },
-  {
-    "from": "0Blessed(@forbiddenfromthebegining)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107237",
-    "date": "2025-06-29T13:52:36.000Z",
-    "text": "В Новосибе обещали дождь"
-  },
-  {
-    "from": "0Blessed(@forbiddenfromthebegining)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107238",
-    "date": "2025-06-29T13:52:38.000Z",
-    "text": "Где мой дождь"
-  },
-  {
-    "from": "gloomy0eternity(@kuraimonogotari)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107256",
-    "date": "2025-06-29T13:55:17.000Z",
-    "text": "яндекс осадки говорят: не видать тебе дождя сегодня"
-  },
-  {
-    "from": "T S(@shani_ta)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107358",
-    "date": "2025-06-29T14:07:26.000Z",
-    "text": "Он в Москве пролился"
-  },
-  {
-    "from": "0Blessed(@forbiddenfromthebegining)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107399",
-    "date": "2025-06-29T14:11:50.000Z",
-    "text": "А с утра говорили обратное"
-  },
-  {
-    "from": "0Blessed(@forbiddenfromthebegining)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/107400",
-    "date": "2025-06-29T14:11:57.000Z",
-    "text": "Я на работу ехал в приподнятом настроении"
-  },
-  {
-    "from": "ad94362ed2cbb25daed5780b876e9b5a4fa5b66f168bca537e3afbb523c79fe7",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "-",
-    "date": "2025-06-29T17:37:04.000Z",
-    "text": "Тут есть Голубь?"
-  },
-  {
-    "from": "Andrey(@chubakkk)",
-    "thread": "Нуллианцы Сибирь и Дальний Восток",
-    "link": "https://t.me/NullianityNull/106074/109588",
-    "date": "2025-06-29T20:18:09.000Z",
-    "text": "Это такой восток, который немного подалбше, чем ближний"
-  },
-  {
     "from": "Timofey Andriyanov(unknown)",
     "thread": "Инженерное дело",
     "link": "https://t.me/NullianityNull/1062/105517",
@@ -1951,41 +1979,6 @@
     "link": "https://t.me/NullianityNull/1062/109473",
     "date": "2025-06-29T19:51:13.000Z",
     "text": "Благодарю)"
-  },
-  {
-    "from": "Катерина Соболь(@kati_sobol)",
-    "thread": "Глобальное потепление и экология",
-    "link": "https://t.me/NullianityNull/70164/105285",
-    "date": "2025-06-29T04:46:56.000Z",
-    "text": "Не, ну шарахнуть несколькими жирными азотными кометами так-то можно... Но пока да, только долина Маринера, где атмосфера стекается чуть плотнее, и всё равно гонять в скафандрах"
-  },
-  {
-    "from": "Химер Роковой(@Darryl_ma1n)",
-    "thread": "Глобальное потепление и экология",
-    "link": "https://t.me/NullianityNull/70164/105297",
-    "date": "2025-06-29T05:57:07.000Z",
-    "text": "Как успехи?"
-  },
-  {
-    "from": "Катерина Соболь(@kati_sobol)",
-    "thread": "Глобальное потепление и экология",
-    "link": "https://t.me/NullianityNull/70164/108523",
-    "date": "2025-06-29T18:23:28.000Z",
-    "text": "В начале июля прогнозируют +14\n\nГде моë глобальное потепление?!"
-  },
-  {
-    "from": "Dmitriy I(@Dimon_Sanchez_Jr)",
-    "thread": "Глобальное потепление и экология",
-    "link": "https://t.me/NullianityNull/70164/109403",
-    "date": "2025-06-29T19:41:19.000Z",
-    "text": "В октябре"
-  },
-  {
-    "from": "L P(@nickname367)",
-    "thread": "Глобальное потепление и экология",
-    "link": "https://t.me/NullianityNull/70164/110160",
-    "date": "2025-06-29T21:41:35.000Z",
-    "text": "о, интересная тема."
   },
   {
     "from": "Lyа 🌴(@yersinias)",
@@ -4016,40 +4009,5 @@
     "link": "https://t.me/NullianityNull/67548/108000",
     "date": "2025-06-29T15:08:12.000Z",
     "text": "Уоттс оч крутой. Его Рифтеры тоже озвучены, кстати."
-  },
-  {
-    "from": "Химер Роковой(@Darryl_ma1n)",
-    "thread": "Terraria",
-    "link": "https://t.me/NullianityNull/106496/106737",
-    "date": "2025-06-29T11:34:04.000Z",
-    "text": "Опа"
-  },
-  {
-    "from": "TheArzy(@TheArzy)",
-    "thread": "Terraria",
-    "link": "https://t.me/NullianityNull/106496/106753",
-    "date": "2025-06-29T11:41:55.000Z",
-    "text": "Ну тоже как вариант..."
-  },
-  {
-    "from": "TheArzy(@TheArzy)",
-    "thread": "Terraria",
-    "link": "https://t.me/NullianityNull/106496/106779",
-    "date": "2025-06-29T11:58:00.000Z",
-    "text": "Я больше понимаю это как ветку на подобии ветки минкруфта"
-  },
-  {
-    "from": "TheArzy(@TheArzy)",
-    "thread": "Terraria",
-    "link": "https://t.me/NullianityNull/106496/106780",
-    "date": "2025-06-29T11:58:07.000Z",
-    "text": "Совместные игры"
-  },
-  {
-    "from": "TheArzy(@TheArzy)",
-    "thread": "Terraria",
-    "link": "https://t.me/NullianityNull/106496/106929",
-    "date": "2025-06-29T12:22:48.000Z",
-    "text": "И мне кажется что как значок ветки подошел бы эмодзи дерева, наверняка его можно где-то найти"
   }
 ]
