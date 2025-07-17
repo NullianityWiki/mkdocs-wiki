@@ -16,6 +16,7 @@ const threadMessageName = process.env.THREAD_NAME!;
 let fromDate = Number(process.env.THREAD_FROM_DATE ?? 0);
 
 const userNamesCache = new Map<number, string>();
+const userExcludedCache = new Map<number, boolean>();
 
 async function main() {
   const client = await login(
@@ -44,7 +45,7 @@ async function main() {
     throw new Error(`Expected 1 forum topic, got ${forums.topics.length}`);
   }
 
-  const messages = await exportThread(client, chatId, forums.topics[0], new Map<number, Message>(), userNamesCache);
+  const messages = await exportThread(client, chatId, forums.topics[0], new Map<number, Message>(), userNamesCache, userExcludedCache);
 
   let output = '';
   let count = 0;
