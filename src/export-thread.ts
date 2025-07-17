@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { mkdirSync, writeFileSync } from 'fs';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, login } from './common';
+import { exportThread, login, savePhotoFromMessage } from './common';
 import { ForumTopics, Message } from 'src/tdlib-types';
 
 const tdl = require('tdl');
@@ -49,12 +49,15 @@ async function main() {
 
   let output = '';
   let count = 0;
-  messages.forEach(msg => {
+  for(const msg of messages) {
+
+    //   await savePhotoFromMessage(client, msg, `./tmp/images`);
+
     if (!msg || msg.content._ !== 'messageText' || !msg.content.text) {
-      return;
+      continue;
     }
     if( fromDate && msg.date < fromDate) {
-      return;
+      continue;
     }
 
     // @ts-ignore
@@ -71,7 +74,7 @@ async function main() {
 
     output += `${date},${link},${senderName}:${textOut}\n`;
     count++;
-  })
+  }
 
   mkdirSync('./tmp', { recursive: true });
   writeFileSync(`./tmp/thread_${threadMessageName}.txt`, output);

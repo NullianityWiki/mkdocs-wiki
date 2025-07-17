@@ -1,7 +1,9 @@
 import { Client } from 'tdl';
-import { ForumTopic, Message, MessageLink, User } from 'src/tdlib-types';
+import { ForumTopic, Message, MessageLink, User,File } from 'src/tdlib-types';
 import { EXCLUDE_USERS } from './exclude';
 import { createHash } from 'node:crypto';
+import * as fs from 'node:fs';
+import path from 'path';
 
 export async function login(
   tdl: any,
@@ -10,6 +12,11 @@ export async function login(
   botToken?: string,
   phoneNumber?: string,
 ) {
+  // const cfg: TDLibConfiguration = {
+  //   verbosityLevel: 3
+  // };
+  // tdl.configure(cfg);
+
   const client: Client = tdl.createClient({ apiId, apiHash });
   client.on('error', console.error);
   client.on('update', (update: any) => {
@@ -79,10 +86,10 @@ export async function exportThread(
         offset: 0,
         limit: 100,
       }) as { messages: Message[] };
-
       if (result.messages.length === 0) {
         break;
       }
+
       allMessages.push(...result.messages);
       const resultLstMsg = result.messages[result.messages.length - 1];
       fromMessageId = resultLstMsg.id as number;
@@ -91,7 +98,12 @@ export async function exportThread(
         console.log('Reached target date with msg', (new Date(resultLstMsg.date * 1000)).toISOString());
         break;
       } else {
-        console.log(`Fetched messages with the last ${(new Date(resultLstMsg.date * 1000)).toISOString()}`);
+        console.log(`Fetched ${result.messages.length} messages with the last ${(new Date(resultLstMsg.date *
+          1000)).toISOString()}`);
+      }
+
+      if (result.messages.length < 100) {
+        break;
       }
     } catch (e) {
       if (tryCount > 100) {
@@ -103,6 +115,8 @@ export async function exportThread(
       tryCount++;
     }
   }
+
+  console.log('Collected messages:', allMessages.length);
 
   return enrichMessagesWithLinks(
     await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, allMessages.reverse().map(m => {
@@ -155,7 +169,7 @@ async function getUserName(
     + (user.last_name ? ' ' + user.last_name : '')
     + ('(' + uName + ')');
 
-  if (EXCLUDE_USERS.has(uName)) {
+  if (EXCLUDE_USERS.has(uName) && process.env.SKIP_EXCLUDED_USERS !== 'true') {
     name = hashText(name);
     userExcludedCache.set(userId, true);
   }
@@ -202,4 +216,93 @@ async function getMsgLink(client: Client, chatId: number, msgId: number): Promis
     in_message_thread: true,
   }) as MessageLink;
   return link.link;
+}
+
+export async function downloadFile(
+  client: Client,
+  fileId: number,
+): Promise<string> {
+  return (await client.invoke({
+    _: 'downloadFile',
+    file_id: fileId,
+    priority: 1,
+    offset: 0,
+    limit: 0,
+    synchronous: true
+  }) as File).local.path;
+}
+
+// async function downloadFile(
+//   client: Client,
+//   fileId: number,
+// ): Promise<string> {
+//   return new Promise((resolve, reject) => {
+//     const onUpdate = (update: any) => {
+//       if (update._ === 'updateFile') {
+//         console.log('update.file', update.file);
+//         if (
+//           update.file.id === fileId &&
+//           update.file.local.is_downloading_completed) {
+//           client.removeListener('update', onUpdate);
+//           resolve(update.file.local.path);
+//         }
+//       }
+//     };
+//     client.on('update', onUpdate);
+//
+//     client.invoke({
+//       _: 'downloadFile',
+//       file_id: fileId,
+//       priority: 1,
+//       offset: 0,
+//       limit: 0,
+//     }).catch((err: any) => {
+//       client.removeListener('update', onUpdate);
+//       reject(err);
+//     });
+//   });
+// }
+
+export async function savePhotoFromMessage(
+  client: Client,
+  message: Message,
+  outputDir: string,
+): Promise<void> {
+  if (message.content._ !== 'messagePhoto') {
+    return;
+  }
+
+  const sizes = message.content.photo.sizes;
+  const largest = sizes.reduce((prev, curr) =>
+    curr.photo.size > prev.photo.size ? curr : prev,
+  );
+
+  // @ts-ignore
+  const sender = message['sender_name'];
+
+  const fileId = largest.photo.id;
+  console.log(`Downloading file with ID ${fileId} from ${sender}`);
+  const localPath = (await downloadFile(client, fileId));
+
+
+  const fileName = getUniqueFileName(outputDir, sender);
+
+  const targetPath = path.join(outputDir, fileName);
+  fs.copyFileSync(localPath, targetPath);
+  console.log(`Image saved to ${targetPath}`);
+}
+
+function getUniqueFileName(
+  directory: string,
+  baseName: string,
+  extension: string = '.jpg',
+): string {
+  const safeBase = baseName.replace(/[<>:"/\\|?*]+/g, '_').trim() || 'unknown';
+  let counter = 1;
+  let fileName = `${safeBase}_${counter}${extension}`;
+  while (fs.existsSync(path.join(directory, fileName))) {
+    fileName = `${safeBase}_${counter}${extension}`;
+    counter++;
+  }
+  return fileName;
 }
