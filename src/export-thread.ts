@@ -45,7 +45,7 @@ async function main() {
     throw new Error(`Expected 1 forum topic, got ${forums.topics.length}`);
   }
 
-  const messages = await exportThread(client, chatId, forums.topics[0], new Map<number, Message>(), userNamesCache, userExcludedCache);
+  const messages = await exportThread(client, chatId, forums.topics[0], new Map<number, number>(), userNamesCache, userExcludedCache);
 
   let output = '';
   let count = 0;

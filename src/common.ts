@@ -1,5 +1,5 @@
 import { Client } from 'tdl';
-import { ForumTopic, Message, MessageLink, User,File } from 'src/tdlib-types';
+import { File, ForumTopic, Message, MessageLink, User } from 'src/tdlib-types';
 import { EXCLUDE_USERS } from './exclude';
 import { createHash } from 'node:crypto';
 import * as fs from 'node:fs';
@@ -54,9 +54,10 @@ export async function exportThread(
   client: Client,
   chatId: number,
   thread: ForumTopic,
-  lastThreadMsgs: Map<number, Message> | null,
+  lastThreadMsgs: Map<number, number> | null,
   userNamesCache: Map<number, string>,
   userExcludedCache: Map<number, boolean>,
+  roundDate = true,
 ): Promise<Message[]> {
   const threadMessageId = thread.info.message_thread_id;
 
@@ -69,7 +70,12 @@ export async function exportThread(
 
   let allMessages: Message[] = [];
   const lastThreadMsg = lastThreadMsgs ? lastThreadMsgs.get(threadMessageId) : null;
-  const toDate = Math.floor((lastThreadMsg?.date ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+  let toDate;
+  if (roundDate) {
+    toDate = Math.floor((lastThreadMsg ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+  } else {
+    toDate = lastThreadMsg ?? 0;
+  }
   let fromMessageId = 0;
 
   console.log(`Exporting thread from chat ${chatId}, thread ${thread.info.name} to date ${(new Date(toDate *
@@ -115,16 +121,23 @@ export async function exportThread(
       tryCount++;
     }
   }
+  const msgs = allMessages.reverse().map(m => {
+    return {
+      ...m,
+      thread_name: thread.info.name,
+    };
+  }).filter(msg => msg.date > toDate);
 
-  console.log('Collected messages:', allMessages.length);
+  // msgs.forEach(msg => {
+  //   console.log(`Message ${msg.id} from ${(new Date(msg.date * 1000)).toISOString()}`);
+  // })
+
+  console.log(`Collected messages: ${msgs.length}/${allMessages.length}`);
 
   return enrichMessagesWithLinks(
-    await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, allMessages.reverse().map(m => {
-      return {
-        ...m,
-        thread_name: thread.info.name,
-      };
-    }), client), chatId, client, userExcludedCache);
+    await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, msgs, client),
+    chatId, client, userExcludedCache,
+  );
 }
 
 export async function sleep(ms: number) {
@@ -178,8 +191,10 @@ async function getUserName(
   return name;
 }
 
-function hashText(text: string): string {
-  return createHash('sha256').update(text).digest('hex');
+function hashText(text: string, start = 4, end = 4): string {
+  const str = createHash('sha256').update(text).digest('hex');
+  if (str.length <= start + end + 3) return str;
+  return `${str.slice(0, start)}...${str.slice(-end)}`;
 }
 
 async function enrichMessagesWithLinks(
@@ -228,7 +243,7 @@ export async function downloadFile(
     priority: 1,
     offset: 0,
     limit: 0,
-    synchronous: true
+    synchronous: true,
   }) as File).local.path;
 }
 
@@ -305,4 +320,24 @@ function getUniqueFileName(
     counter++;
   }
   return fileName;
+}
+
+export async function sendMessageToThread(
+  client: Client,
+  chatId: number,
+  threadId: number,
+  text: string,
+) {
+  await client.invoke({
+    _: "sendMessage",
+    chat_id: chatId,
+    message_thread_id: threadId,
+    input_message_content: {
+      "@type": "inputMessageText",
+      text: {
+        "@type": "formattedText",
+        text: text,
+      },
+    },
+  });
 }

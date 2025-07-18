@@ -12,7 +12,8 @@
     "export-thread": "npx ts-node src/export-thread.ts",
     "export-chat": "npx ts-node src/export-chat.ts",
     "analize": "npx ts-node src/analize.ts && npx ts-node src/add-lore.ts",
-    "add-lore": "npx ts-node src/add-lore.ts"
+    "add-lore": "npx ts-node src/add-lore.ts",
+    "moderation": "npx ts-node src/moderation.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.4",

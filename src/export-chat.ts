@@ -37,7 +37,7 @@ async function main() {
   const chatId = await getChatIdByChatName(client, chatName);
   const threads = await getActiveThreads(client, chatId);
 
-  let lastThreadMsgOld = new Map<number, Message>();
+  let lastThreadMsgOld = new Map<number, number>();
   try {
     const msgs =  JSON.parse(readFileSync(
       './exports/_last_msgs.json',
@@ -46,7 +46,7 @@ async function main() {
 
     for(const m of msgs) {
       if (m && m.message_thread_id) {
-        lastThreadMsgOld.set(m.message_thread_id, m);
+        lastThreadMsgOld.set(m.message_thread_id, m.date);
       }
     }
   } catch (e) {}
