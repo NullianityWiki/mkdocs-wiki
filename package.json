@@ -16,13 +16,14 @@
     "moderation": "npx ts-node src/moderation.ts"
   },
   "devDependencies": {
-    "@types/node": "^24.0.4",
+    "@types/node": "^24.0.14",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@google-cloud/vertexai": "^1.10.0",
     "@types/stream-chain": "^2.1.0",
     "@types/stream-json": "^1.7.8",
+    "axios": "^1.10.0",
     "dotenv": "^16.5.0",
     "openai": "^5.8.2",
     "prebuilt-tdlib": "^0.1008050.0",

@@ -4,6 +4,7 @@ import { EXCLUDE_USERS } from './exclude';
 import { createHash } from 'node:crypto';
 import * as fs from 'node:fs';
 import path from 'path';
+import axios from 'axios';
 
 export async function login(
   tdl: any,
@@ -328,7 +329,7 @@ export async function sendMessageToThread(
   threadId: number,
   text: string,
 ) {
-  await client.invoke({
+  const res = await client.invoke({
     _: "sendMessage",
     chat_id: chatId,
     message_thread_id: threadId,
@@ -339,5 +340,25 @@ export async function sendMessageToThread(
         text: text,
       },
     },
+  }) as Message;
+
+  console.log(`Message sent to thread ${threadId} in chat ${chatId}:`, JSON.stringify(res, null, 2));
+}
+
+export async function sendMessageToThreadBOT(
+  botToken: string,
+  chatId: number,
+  threadId: number,
+  text: string,
+) {
+  const res = await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    chat_id: chatId,
+    message_thread_id: threadId,
+    text,
   });
+  if (res.status !== 200) {
+    throw new Error(`Failed to send message: ${res.statusText}`);
+  } else {
+    console.log(`Message sent to thread ${threadId} in chat ${chatId}:`, res.data);
+  }
 }

@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { Client } from 'tdl';
 import { ForumTopic, Message } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, login, sendMessageToThread } from './common';
+import { exportThread, login, sendMessageToThread, sendMessageToThreadBOT } from './common';
 import OpenAI from 'openai';
 
 const tdl = require('tdl');
@@ -13,7 +13,8 @@ const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = CHAT_NAME!;
 
 const REPORT_TO_THREAD = '0 Админская';
-const TAG_MODERATORS = '@belbix';
+const REPORT_TO_CHAT = -1002832182712;
+const TAG_MODERATORS = '@belbix'; //  @forbiddenfromthebegining @Legoved @Alleks_88
 const LAST_MSGS_PERIOD = 60 * 60;
 const EXTRACT_LAST_MSGS_PERIOD = 60 * 60 * 2;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
@@ -26,7 +27,6 @@ const PROMPT = `
 - Ссылка на сообщение
 - Отправитель
 - Причина (максимум 1–2 предложения, конкретная)
-- Текст сообщения (урезать до 1-2 предложений если длинное)
 Не пиши никаких заголовков, не объясняй ничего вне списка. Просто выведи нужные сообщения.
 
 Вот правила сообщества:
@@ -98,10 +98,17 @@ async function main() {
   );
   const chatId = await getChatIdByChatName(client, chatName);
   const threads = await getActiveThreads(client, chatId);
+  // threads.forEach((thread, threadId) => {
+  //   console.log(`Thread: ${thread.info.name}, ID: ${threadId} ${thread.info.is_closed ? '(closed)' : ''} ${thread.info.is_hidden ? '(hidden)' : ''}`);
+  // });
   let resultThreadId = 0;
 
   const allMessages: Message[] = [];
   for (const thread of threads.values()) {
+    if(thread.info.is_closed) {
+      console.log(`Skipping closed thread ${thread.info.name} (${thread.info.message_thread_id})`);
+      continue;
+    }
     const threadId = thread.info.message_thread_id;
     if( thread.info.name === REPORT_TO_THREAD) {
       resultThreadId = threadId;
@@ -160,9 +167,18 @@ async function main() {
 
   const result = await analyze(allMessagesOut);
 
-  if (resultThreadId !== 0) {
-    await sendMessageToThread(client, chatId, resultThreadId, `${TAG_MODERATORS}\n\n${result}`);
-  }
+  await sendMessageToThreadBOT(botToken, REPORT_TO_CHAT, 0, `${TAG_MODERATORS}\n\n${result}`);
+  // if (resultThreadId !== 0) {
+  //   if(botToken) {
+  //     // if(REPORT_TO_CHAT) {
+  //     //   await sendMessageToThreadBOT(botToken, REPORT_TO_CHAT, 0, `${TAG_MODERATORS}\n\n${result}`);
+  //     // } else {
+  //     //   await sendMessageToThreadBOT(botToken, chatId, resultThreadId, `${TAG_MODERATORS}\n\n${result}`);
+  //     // }
+  //   } else {
+  //     await sendMessageToThread(client, chatId, resultThreadId, `${TAG_MODERATORS}\n\n${result}`);
+  //   }
+  // }
 }
 
 async function getChatIdByChatName(client: Client, _chatName: string) {
