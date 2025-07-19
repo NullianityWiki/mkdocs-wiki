@@ -361,6 +361,10 @@ export async function sendMessage(
       return;
     } else {
       replyTo = (replyMsg.reply_to as messageReplyToMessage)?.message_id ?? null;
+      if(!replyTo) {
+        console.log(`Reply message not found. Skipping reply.`);
+        return;
+      }
     }
   }
 

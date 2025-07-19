@@ -12,6 +12,9 @@ const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME } = process.env;
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = CHAT_NAME!;
 
+const EXCLUDED = new Set<string>([
+  '@thread_export_nullianity_bot',
+]);
 const REPORT_TO_THREAD = '0 Админская';
 const REPORT_TO_CHAT = -1002832182712;
 const TAG_MODERATORS = '@belbix @forbiddenfromthebegining @Legoved @Alleks_88 @natastriver @Aleksandr_Luginin @kuraimonogotari';
@@ -185,6 +188,17 @@ async function main() {
     // @ts-ignore
     const senderName = msg['sender_name'] || 'UnknownSender';
 
+    let exclude = false;
+    for (const excluded of EXCLUDED) {
+      if (senderName.includes(excluded)) {
+        exclude = true;
+        break;
+      }
+    }
+    if (exclude) {
+      continue;
+    }
+
     // @ts-ignore
     const link = msg['link'] || '';
 
@@ -211,7 +225,8 @@ async function main() {
   for (const r of result) {
     let text = `
 ⚠️ИИ заметила в ваших сообщениях нарушение правил общения, пожалуйста соблюдайте дружелюбное общение\n
-Оценка: ${r.rate} из 10
+${r.link}\n
+Оценка: ${r.rate} из 10\n
 Причина:\n${r.reason}
 `;
     try {
@@ -220,6 +235,9 @@ async function main() {
       }
     } catch (e) {
       console.log(`Failed to parse rate for message ID ${r.id} in thread ${r.thread}: ${e}`);
+    }
+    if(!r.id) {
+      continue;
     }
     try {
       await sendMessage(clientBOT, chatId, r.thread, r.id, text);
