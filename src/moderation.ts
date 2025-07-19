@@ -56,6 +56,7 @@ link: Ссылка на сообщение,
 rate: Оценка серьезности нарушения от 1 до 10,
 sender: Отправитель,
 reason: Причина (максимум 1–2 предложения, конкретная),
+recommendation: Прямое обращение к отправителю с краткой рекомендацией о неподобающем поведении,
 }
 Твой ответ должен содержать ТОЛЬКО массив JSON объектов.
 
@@ -219,36 +220,35 @@ async function main() {
 
   let out = '';
   for (const r of result) {
-    console.log(`Message ID: ${r.id}\n Link: ${r.link}\n Thread: ${r.thread}\n Rate: ${r.rate}\n Sender: ${r.sender}\n Reason: ${r.reason}`);
-    out += `Link: ${r.link}\n Sender: ${r.sender}\n Reason(${r.rate}): \`${r.reason}\`\n\n`;
+    out += `${r.link}\n${r.sender}\nReason(${r.rate}): ${r.reason}\n\n`;
   }
   for (const r of result) {
     let text = `
-⚠️ИИ заметила в ваших сообщениях нарушение правил общения, пожалуйста соблюдайте дружелюбное общение\n
+⚠️${r.sender} ${r.recommendation}\n
 ${r.link}\n
-Оценка: ${r.rate} из 10\n
+Токсичность: ${r.rate} из 10\n
 Причина:\n${r.reason}
 `;
     try {
       if (Number(r.rate) >= 5) {
-        text += `${TAG_MODERATORS}\n\n${text}`;
+        text = `${text}\n\n${TAG_MODERATORS}`;
       }
     } catch (e) {
       console.log(`Failed to parse rate for message ID ${r.id} in thread ${r.thread}: ${e}`);
     }
-    if(!r.id) {
-      continue;
-    }
+
+    console.log(text);
+
     try {
-      await sendMessage(clientBOT, chatId, r.thread, r.id, text);
+      // await sendMessage(clientBOT, chatId, r.thread, null, text);
     } catch (e) {
       console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
     }
   }
 
-  await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${TAG_MODERATORS}\n\n${out}`);
+  // await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${TAG_MODERATORS}\n\n${out}`);
 
-  await sleep(10000);
+  await sleep(60000);
 }
 
 async function getChatIdByChatName(client: Client, _chatName: string) {
