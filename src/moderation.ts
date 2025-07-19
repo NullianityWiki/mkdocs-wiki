@@ -98,11 +98,11 @@ recommendation: Прямое обращение к отправителю с к�
 
 Формат сообщений: "id,ссылка,тред,отправитель:сообщение".
 
-Это все сообщения за последний час требующие анализа модерации:
+Это все сообщения требующие анализа модерации:
 """$LAST_MESSAGES"""
 
 
-Это все сообщения за последние сутки для понимания общего контекста:
+Это остальные сообщения для понимания общего контекста:
 """$ALL_MESSAGES"""
 
 `;
@@ -240,13 +240,13 @@ ${r.link}\n
     console.log(text);
 
     try {
-      // await sendMessage(clientBOT, chatId, r.thread, null, text);
+      await sendMessage(clientBOT, chatId, r.thread, null, text);
     } catch (e) {
       console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
     }
   }
 
-  // await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${TAG_MODERATORS}\n\n${out}`);
+  await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${TAG_MODERATORS}\n\n${out}`);
 
   await sleep(60000);
 }
