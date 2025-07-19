@@ -12,6 +12,7 @@ const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME } = process.env;
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = CHAT_NAME!;
 
+const DRY_RUN = process.env.DRY_RUN === 'true';
 const EXCLUDED = new Set<string>([
   '@thread_export_nullianity_bot',
 ]);
@@ -22,8 +23,7 @@ const LAST_MSGS_PERIOD = 60 * 60;
 const EXTRACT_LAST_MSGS_PERIOD = 60 * 60 * 2;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 const PROMPT = `
-Проанализируй переписку и найди только те сообщения, которые действительно требуют модерации - по причине явных оскорблений, угроз, призывов к насилию, токсичности или нарушения личных границ.
-Учитывай, что мат допустим, если он используется нейтрально или эмоционально, но не оскорбительно.
+Проанализируй переписку и найди только те сообщения, которые действительно требуют модерации по причине нарушений правил сообщества.
 
 Запрещено не дружелюбное общение, в частности это:
 - обесценивание
@@ -55,7 +55,7 @@ thread: ID треда сообщения,
 link: Ссылка на сообщение,
 rate: Оценка серьезности нарушения от 1 до 10,
 sender: Отправитель,
-reason: Причина (максимум 1–2 предложения, конкретная),
+reason: Развернутая причина с указанием пункта правил,
 recommendation: Прямое обращение к отправителю с краткой рекомендацией о неподобающем поведении,
 }
 Твой ответ должен содержать ТОЛЬКО массив JSON объектов.
@@ -108,7 +108,6 @@ recommendation: Прямое обращение к отправителю с к�
 `;
 
 const userNamesCache = new Map<number, string>();
-const userExcludedCache = new Map<number, boolean>();
 
 type MessageOut = {
   id: number;
@@ -168,7 +167,7 @@ async function main() {
       thread,
       lastThreadMsgOld,
       userNamesCache,
-      userExcludedCache,
+      null,
       false,
     ));
     if (msgs.length === 0) {
@@ -219,9 +218,7 @@ async function main() {
   const result = extractJsonBlock(await analyze(allMessagesOut));
 
   let out = '';
-  for (const r of result) {
-    out += `${r.link}\n${r.sender}\nReason(${r.rate}): ${r.reason}\n\n`;
-  }
+  let tagAdmins = false;
   for (const r of result) {
     let text = `
 ⚠️${r.sender} ${r.recommendation}\n
@@ -229,26 +226,42 @@ ${r.link}\n
 Токсичность: ${r.rate} из 10\n
 Причина:\n${r.reason}
 `;
+    let rate = 0;
+    let extraEmoji = '';
     try {
-      if (Number(r.rate) >= 5) {
+      rate = Number(r.rate);
+      if (rate >= 5) {
+        extraEmoji = '🔥🔥🔥';
+        tagAdmins = true;
         text = `${text}\n\n${TAG_MODERATORS}`;
       }
     } catch (e) {
       console.log(`Failed to parse rate for message ID ${r.id} in thread ${r.thread}: ${e}`);
     }
 
+    out += `${r.link}\n${r.sender}\nReason(${r.rate}${extraEmoji}): ${r.reason}\n\n`;
+
     console.log(text);
 
-    try {
-      await sendMessage(clientBOT, chatId, r.thread, null, text);
-    } catch (e) {
-      console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
+    if (!DRY_RUN) {
+      try {
+        await sendMessage(clientBOT, chatId, r.thread, null, text);
+      } catch (e) {
+        console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
+      }
     }
   }
 
-  await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${TAG_MODERATORS}\n\n${out}`);
+  if (tagAdmins) {
+    out = `${out}\n${TAG_MODERATORS}`;
+  }
+
+  if (!DRY_RUN) {
+    await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${out}`);
+  }
 
   await sleep(60000);
+  console.log(`All done! Sent ${result.length} messages to ${chatName} (${chatId})`);
 }
 
 async function getChatIdByChatName(client: Client, _chatName: string) {

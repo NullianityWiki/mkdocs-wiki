@@ -73,7 +73,7 @@ export async function exportThread(
   thread: ForumTopic,
   lastThreadMsgs: Map<number, number> | null,
   userNamesCache: Map<number, string>,
-  userExcludedCache: Map<number, boolean>,
+  userExcludedCache: Map<number, boolean> | null,
   roundDate = true,
 ): Promise<Message[]> {
   const threadMessageId = thread.info.message_thread_id;
@@ -163,7 +163,7 @@ export async function sleep(ms: number) {
 
 async function enrichMessagesWithUserNames(
   userNamesCache: Map<number, string>,
-  userExcludedCache: Map<number, boolean>,
+  userExcludedCache: Map<number, boolean> | null,
   messages: Message[],
   client: Client,
 ): Promise<Message[]> {
@@ -182,7 +182,7 @@ async function enrichMessagesWithUserNames(
 
 async function getUserName(
   userNamesCache: Map<number, string>,
-  userExcludedCache: Map<number, boolean>,
+  userExcludedCache: Map<number, boolean> | null,
   client: Client,
   userId: number,
 ): Promise<string> {
@@ -199,7 +199,7 @@ async function getUserName(
     + (user.last_name ? ' ' + user.last_name : '')
     + ('(' + uName + ')');
 
-  if (EXCLUDE_USERS.has(uName) && process.env.SKIP_EXCLUDED_USERS !== 'true') {
+  if (userExcludedCache && EXCLUDE_USERS.has(uName) && process.env.SKIP_EXCLUDED_USERS !== 'true') {
     name = hashText(name);
     userExcludedCache.set(userId, true);
   }
@@ -220,13 +220,13 @@ async function enrichMessagesWithLinks(
   messages: Message[],
   chatId: number,
   client: Client,
-  userExcludedCache: Map<number, boolean>,
+  userExcludedCache: Map<number, boolean> | null,
 ): Promise<Message[]> {
 
   return await Promise.all(messages.map(async(msg) => {
     if (msg.sender_id && msg.sender_id._ === 'messageSenderUser') {
       const userId = msg.sender_id.user_id;
-      if (userExcludedCache.has(userId)) {
+      if (userExcludedCache && userExcludedCache.has(userId)) {
         return {
           ...msg,
           link: '-',
