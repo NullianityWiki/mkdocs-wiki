@@ -19,8 +19,8 @@ const EXCLUDED = new Set<string>([
 const REPORT_TO_THREAD = '0 Админская';
 const REPORT_TO_CHAT = -1002832182712;
 const TAG_MODERATORS = '@belbix @forbiddenfromthebegining @Legoved @Alleks_88 @natastriver @Aleksandr_Luginin @kuraimonogotari';
-const LAST_MSGS_PERIOD = 60 * 60;
-const EXTRACT_LAST_MSGS_PERIOD = 60 * 60 * 2;
+const LAST_MSGS_PERIOD = 60 * 20;
+const EXTRACT_LAST_MSGS_PERIOD = 60 * 30;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 const PROMPT = `
 Проанализируй переписку и найди только те сообщения, которые действительно требуют модерации по причине нарушений правил сообщества.
