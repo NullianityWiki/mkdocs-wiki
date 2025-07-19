@@ -50,7 +50,7 @@ const PROMPT = `
 id: ID сообщения,
 thread: ID треда сообщения,
 link: Ссылка на сообщение,
-rate: Оценка серъезности нурушения от 1 до 10 (чем больше тем серъезнее, добавь эмодзи),
+rate: Оценка серьезности нарушения от 1 до 10,
 sender: Отправитель,
 reason: Причина (максимум 1–2 предложения, конкретная),
 }
@@ -209,12 +209,20 @@ async function main() {
     out += `Link: ${r.link}\n Sender: ${r.sender}\n Reason(${r.rate}): \`${r.reason}\`\n\n`;
   }
   for (const r of result) {
-    try {
-      await sendMessage(clientBOT, chatId, r.thread, r.id, `
+    let text = `
 ⚠️ИИ заметила в ваших сообщениях нарушение правил общения, пожалуйста соблюдайте дружелюбное общение\n
 Оценка: ${r.rate} из 10
 Причина:\n${r.reason}
-`);
+`;
+    try {
+      if (Number(r.rate) >= 5) {
+        text += `${TAG_MODERATORS}\n\n${text}`;
+      }
+    } catch (e) {
+      console.log(`Failed to parse rate for message ID ${r.id} in thread ${r.thread}: ${e}`);
+    }
+    try {
+      await sendMessage(clientBOT, chatId, r.thread, r.id, text);
     } catch (e) {
       console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
     }
