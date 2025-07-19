@@ -12,3 +12,4 @@ site/
 _td_files
 _td_database
 exports
+tdlib-sessions

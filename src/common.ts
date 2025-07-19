@@ -1,10 +1,27 @@
 import { Client } from 'tdl';
-import { File, ForumTopic, Message, MessageLink, User } from 'src/tdlib-types';
+import { File, ForumTopic, Message, MessageLink, messageReplyToMessage, User } from 'src/tdlib-types';
 import { EXCLUDE_USERS } from './exclude';
 import { createHash } from 'node:crypto';
 import * as fs from 'node:fs';
 import path from 'path';
 import axios from 'axios';
+
+function getCustomTdDirectory(botToken?: string, phoneNumber?: string): string {
+  const baseDir = path.resolve('tdlib-sessions');
+  if (!fs.existsSync(baseDir)) {
+    fs.mkdirSync(baseDir);
+  }
+
+  const safeName = botToken
+    ? `bot_${botToken.replace(/[^a-zA-Z0-9]/g, '_')}`
+    : `user_${(phoneNumber ?? 'unknown').replace(/[^0-9]/g, '')}`;
+
+  const fullPath = path.join(baseDir, safeName);
+  if (!fs.existsSync(fullPath)) {
+    fs.mkdirSync(fullPath);
+  }
+  return fullPath;
+}
 
 export async function login(
   tdl: any,
@@ -17,13 +34,12 @@ export async function login(
   //   verbosityLevel: 3
   // };
   // tdl.configure(cfg);
-
-  const client: Client = tdl.createClient({ apiId, apiHash });
+  const dir = getCustomTdDirectory(botToken, phoneNumber);
+  const client: Client = tdl.createClient({ apiId, apiHash, databaseDirectory: dir, filesDirectory: dir });
   client.on('error', console.error);
   client.on('update', (update: any) => {
     // console.log('Received update:', update);
   });
-
 
   if (botToken) {
     console.log('Logging in as bot');
@@ -130,7 +146,7 @@ export async function exportThread(
   }).filter(msg => msg.date > toDate);
 
   // msgs.forEach(msg => {
-  //   console.log(`Message ${msg.id} from ${(new Date(msg.date * 1000)).toISOString()}`);
+  //   console.log(`Message ${msg.id} threadMessageId:${threadMessageId} from ${(new Date(msg.date * 1000)).toISOString()}`);
   // })
 
   console.log(`Collected messages: ${msgs.length}/${allMessages.length}`);
@@ -194,7 +210,9 @@ async function getUserName(
 
 function hashText(text: string, start = 4, end = 4): string {
   const str = createHash('sha256').update(text).digest('hex');
-  if (str.length <= start + end + 3) return str;
+  if (str.length <= start + end + 3) {
+    return str;
+  }
   return `${str.slice(0, start)}...${str.slice(-end)}`;
 }
 
@@ -323,42 +341,122 @@ function getUniqueFileName(
   return fileName;
 }
 
-export async function sendMessageToThread(
+export async function sendMessage(
   client: Client,
   chatId: number,
   threadId: number,
+  replyTo: number | null,
   text: string,
 ) {
-  const res = await client.invoke({
-    _: "sendMessage",
-    chat_id: chatId,
-    message_thread_id: threadId,
-    input_message_content: {
-      "@type": "inputMessageText",
-      text: {
-        "@type": "formattedText",
-        text: text,
-      },
-    },
-  }) as Message;
 
-  console.log(`Message sent to thread ${threadId} in chat ${chatId}:`, JSON.stringify(res, null, 2));
+  if (replyTo !== null) {
+    const replyMsg = await client.invoke({
+      _: 'getMessage',
+      chat_id: chatId,
+      message_id: replyTo,
+    }) as Message;
+    // console.log('reply msg', JSON.stringify(replyMsg, null, 2));
+    if(!replyMsg) {
+      console.log(`Reply message with ID ${replyTo} not found in chat ${chatId}. Skipping reply.`);
+      return;
+    } else {
+      replyTo = (replyMsg.reply_to as messageReplyToMessage)?.message_id ?? null;
+    }
+  }
+
+  const chunks = splitTextIntoChunks(text, 4000);
+
+  for (let i = 0; i < chunks.length; i++) {
+    const chunk = chunks[i];
+    const res = await client.invoke({
+      _: 'sendMessage',
+      chat_id: chatId,
+      message_thread_id: threadId,
+      input_message_content: {
+        '@type': 'inputMessageText',
+        text: {
+          '@type': 'formattedText',
+          text: chunk,
+        },
+      },
+      reply_to: replyTo !== null ? {
+        '@type': 'inputMessageReplyToMessage',
+        message_id: replyTo,
+      } : undefined,
+    }) as Message;
+
+    console.log(`Chunk ${i + 1}/${chunks.length} sent to thread ${threadId}` /*JSON.stringify(res, null, 2)*/);
+
+    // wait a bit for make sure not collect too much in pending
+    await sleep(1000);
+
+    // let msgId = res.id;
+    //
+    //   let link = '';
+    //   while (true) {
+    //     if(msgId === 0) {
+    //       console.log(`Waiting for message ID`);
+    //       await sleep(1000);
+    //       continue;
+    //     }
+    //     try {
+    //       link = await getMsgLink(client, chatId, msgId)
+    //     } catch (e) {
+    //       console.log(`Failed to get link for message ${res.id}:`);
+    //       await sleep(1000);
+    //       continue;
+    //     }
+    //     break;
+    //   }
+    //   console.log('sent', link)
+  }
 }
 
-export async function sendMessageToThreadBOT(
+export async function sendMessageBOT(
   botToken: string,
   chatId: number,
   threadId: number,
+  replyTo: number | null,
   text: string,
 ) {
-  const res = await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-    chat_id: chatId,
-    message_thread_id: threadId,
-    text,
-  });
-  if (res.status !== 200) {
-    throw new Error(`Failed to send message: ${res.statusText}`);
-  } else {
-    console.log(`Message sent to thread ${threadId} in chat ${chatId}:`, res.data);
+  const chunks = splitTextIntoChunks(text, 4000);
+
+  for (let i = 0; i < chunks.length; i++) {
+    const res = await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      chat_id: chatId,
+      message_thread_id: threadId,
+      // reply_parameters: replyTo !== null ? {
+      //   message_id: replyTo,
+      // } : undefined,
+      reply_to_message_id: replyTo ?? undefined,
+      text: chunks[i],
+    });
+
+    if (res.status !== 200 || res.data?.ok === false) {
+      throw new Error(`Failed to send part ${i + 1}/${chunks.length}: ${res.data?.description ?? res.statusText}`);
+    } else {
+      console.log(`Part ${i + 1}/${chunks.length} sent to thread ${threadId} in chat ${chatId}`, res.data);
+    }
   }
+}
+
+function splitTextIntoChunks(text: string, chunkSize: number): string[] {
+  const chunks: string[] = [];
+  let i = 0;
+  while (i < text.length) {
+    chunks.push(text.slice(i, i + chunkSize));
+    i += chunkSize;
+  }
+  return chunks;
+}
+
+export function extractJsonBlock(text: string): any {
+  const cleaned = text
+    .replace(/^.*?```json\s*/s, '')  // убираем всё до блока
+    .replace(/```[\s\S]*$/, '')     // убираем всё после
+    .trim();
+
+  // console.log(`Extracted JSON: ${cleaned}`);
+
+  return JSON.parse(cleaned);
 }

@@ -2,34 +2,59 @@ import 'dotenv/config';
 import { Client } from 'tdl';
 import { ForumTopic, Message } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, login, sendMessageToThread, sendMessageToThreadBOT } from './common';
+import { exportThread, extractJsonBlock, login, sendMessage, sendMessageBOT, sleep } from './common';
 import OpenAI from 'openai';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
 
-const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME, START_DATE, EXPORT_DIR } = process.env;
+const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME } = process.env;
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = CHAT_NAME!;
 
 const REPORT_TO_THREAD = '0 Админская';
 const REPORT_TO_CHAT = -1002832182712;
-const TAG_MODERATORS = '@belbix @forbiddenfromthebegining @Legoved @Alleks_88 @natastriver';
+const TAG_MODERATORS = '@belbix @forbiddenfromthebegining @Legoved @Alleks_88 @natastriver @Aleksandr_Luginin @kuraimonogotari';
 const LAST_MSGS_PERIOD = 60 * 60;
 const EXTRACT_LAST_MSGS_PERIOD = 60 * 60 * 2;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 const PROMPT = `
 Проанализируй переписку и найди только те сообщения, которые действительно требуют модерации - по причине явных оскорблений, угроз, призывов к насилию, токсичности или нарушения личных границ.
 Учитывай, что мат допустим, если он используется нейтрально или эмоционально, но не оскорбительно.
-Не репорть конструктивную критику, критика приветствуется если она критикует идею, а не человека.
-Будь лояльнее! Учитывай контекст, не указывай на незначительные нарушения!
-Не нужно указывать сообщения, которые приведены только для контекста или которые не нарушают правил, даже если они эмоциональны или резки.
-Верни ТОЛЬКО нарушающие сообщения, в формате (разделяй каждый пункт переходом на новую строку \\n):
-- Ссылка на сообщение
-- Отправитель
-- Причина (максимум 1–2 предложения, конкретная)
-Разделяй каждое сообщение о нарушении сиволами ---.
-Не пиши никаких заголовков, не объясняй ничего вне списка. Просто выведи нужные сообщения.
+
+Запрещено не дружелюбное общение, в частности это:
+- обесценивание
+- снисходительный тон
+- пассивно-агрессивный тон
+- унижение человека
+- критика без уточнения (сразу писать "это бред" вместо "можешь уточнить")
+- шутки над человеком
+- старички не на равных с новичками
+- гейткипинг (ты не настоящий участник, если не...)
+- "я просто пошутил(а)", когда человек явно задет.
+
+Для каждого нарушения выставляй оценку от 1 до 10.
+1 - Сомнительный тон (Неочевидная грубость, не по теме, но без явного зла)
+2 - Мягкое нарушение этики (Раздражённость, пассивная агрессия, токсичный сарказм)
+3 - Нарушение стиля общения (Явная грубость, переход на личности без мата)
+4 - Флуд, оффтоп, реклама (Сообщения вне темы, дублирование, нерелевантные ссылки)
+5 - Провокации или троллинг (Намеренное раздражение участников или подстрекательство)
+6 - Дезинформация или шок‑контент (Ложь, теория заговора, фейк-скрины, шокирующие медиа)
+7 - Оскорбления и дискриминация (Мат в адрес участника, национализм, сексизм и т.п.)
+8 - Политический оффтоп (Явное нарушение п. 1.4, особенно если пост может вызвать угрозу)
+9 - Публикация личных данных, вредоносное ПО (Частичный доксинг, ссылки на вирусы, социальная инженерия)
+10 - Системное вредительство, бот-атака (Массовый спам, порнография, призывы к насилию)
+
+Верни ТОЛЬКО нарушающие сообщения, в формате массива JSON объектов где:
+{
+id: ID сообщения,
+thread: ID треда сообщения,
+link: Ссылка на сообщение,
+rate: Оценка серъезности нурушения от 1 до 10 (чем больше тем серъезнее, добавь эмодзи),
+sender: Отправитель,
+reason: Причина (максимум 1–2 предложения, конкретная),
+}
+Твой ответ должен содержать ТОЛЬКО массив JSON объектов.
 
 Вот правила сообщества:
 1. Общие положения
@@ -84,22 +109,34 @@ const userExcludedCache = new Map<number, boolean>();
 type MessageOut = {
   id: number;
   from: string;
-  thread: string;
+  thread: number;
   link: string;
   date: number;
   text: string
 }
 
 async function main() {
-  const client = await login(
+  const clientBOT = await login(
     tdl,
     apiId,
     apiHash,
     botToken,
+    undefined,
+  );
+  const clientUSER = await login(
+    tdl,
+    apiId,
+    apiHash,
+    undefined,
     phoneNumber,
   );
-  const chatId = await getChatIdByChatName(client, chatName);
-  const threads = await getActiveThreads(client, chatId);
+  const chatId = await getChatIdByChatName(clientUSER, chatName);
+  // await sendMessage(client, chatId, 185594806272, 237812842496, `@belbix test, ignore this`);
+  // if(chatId !== 0) {
+  //   return;
+  // }
+
+  const threads = await getActiveThreads(clientUSER, chatId);
   // threads.forEach((thread, threadId) => {
   //   console.log(`Thread: ${thread.info.name}, ID: ${threadId} ${thread.info.is_closed ? '(closed)' : ''} ${thread.info.is_hidden ? '(hidden)' : ''}`);
   // });
@@ -107,12 +144,12 @@ async function main() {
 
   const allMessages: Message[] = [];
   for (const thread of threads.values()) {
-    if(thread.info.is_closed) {
+    if (thread.info.is_closed) {
       console.log(`Skipping closed thread ${thread.info.name} (${thread.info.message_thread_id})`);
       continue;
     }
     const threadId = thread.info.message_thread_id;
-    if( thread.info.name === REPORT_TO_THREAD) {
+    if (thread.info.name === REPORT_TO_THREAD) {
       resultThreadId = threadId;
       // do not analyze the report thread
       continue;
@@ -122,7 +159,7 @@ async function main() {
     lastThreadMsgOld.set(threadId, (Date.now() / 1000) - EXTRACT_LAST_MSGS_PERIOD);
 
     const msgs = (await exportThread(
-      client,
+      clientUSER,
       chatId,
       thread,
       lastThreadMsgOld,
@@ -149,9 +186,6 @@ async function main() {
     const senderName = msg['sender_name'] || 'UnknownSender';
 
     // @ts-ignore
-    const threadName = msg['thread_name'] || 'UnknownThread';
-
-    // @ts-ignore
     const link = msg['link'] || '';
 
     // const date = (new Date(msg.date * 1000)).toISOString();
@@ -160,27 +194,35 @@ async function main() {
     allMessagesOut.push({
       id: msg.id,
       from: senderName,
-      thread: threadName,
+      thread: msg.message_thread_id,
       link,
       date: msg.date,
       text: textOut,
     });
   }
 
-  const result = await analyze(allMessagesOut);
+  const result = extractJsonBlock(await analyze(allMessagesOut));
 
-  await sendMessageToThreadBOT(botToken, REPORT_TO_CHAT, 0, `${TAG_MODERATORS}\n\n${result}`);
-  // if (resultThreadId !== 0) {
-  //   if(botToken) {
-  //     // if(REPORT_TO_CHAT) {
-  //     //   await sendMessageToThreadBOT(botToken, REPORT_TO_CHAT, 0, `${TAG_MODERATORS}\n\n${result}`);
-  //     // } else {
-  //     //   await sendMessageToThreadBOT(botToken, chatId, resultThreadId, `${TAG_MODERATORS}\n\n${result}`);
-  //     // }
-  //   } else {
-  //     await sendMessageToThread(client, chatId, resultThreadId, `${TAG_MODERATORS}\n\n${result}`);
-  //   }
-  // }
+  let out = '';
+  for (const r of result) {
+    console.log(`Message ID: ${r.id}\n Link: ${r.link}\n Thread: ${r.thread}\n Rate: ${r.rate}\n Sender: ${r.sender}\n Reason: ${r.reason}`);
+    out += `Link: ${r.link}\n Sender: ${r.sender}\n Reason(${r.rate}): \`${r.reason}\`\n\n`;
+  }
+  for (const r of result) {
+    try {
+      await sendMessage(clientBOT, chatId, r.thread, r.id, `
+⚠️ИИ заметила в ваших сообщениях нарушение правил общения, пожалуйста соблюдайте дружелюбное общение\n
+Оценка: ${r.rate} из 10
+Причина:\n${r.reason}
+`);
+    } catch (e) {
+      console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
+    }
+  }
+
+  await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${TAG_MODERATORS}\n\n${out}`);
+
+  await sleep(10000);
 }
 
 async function getChatIdByChatName(client: Client, _chatName: string) {
@@ -194,6 +236,8 @@ async function getChatIdByChatName(client: Client, _chatName: string) {
 }
 
 async function getActiveThreads(client: Client, chatId: number) {
+  console.log(`Fetching active threads in chat ${chatId}...`);
+
   const allTopics = new Map<number, ForumTopic>();
   let lastThreadDate = 0;
 
@@ -239,46 +283,8 @@ async function analyze(messages: MessageOut[]) {
     if (msg.date < ((Date.now() / 1000) - LAST_MSGS_PERIOD)) {
       continue; // skip messages older than 1 hour
     }
-    lastMessagesData += `${msg.id},${msg.link},${msg.from}:${msg.text}\n`;
+    lastMessagesData += `${msg.id},${msg.link},${msg.thread},${msg.from}:${msg.text}\n`;
   }
-
-  //   allMessagesData = `
-  // 111,https://t.me/chat/111,irina_k:Какой красивый закат сегодня!
-  // 112,https://t.me/chat/112,serg1988:Это полная фигня, удаляй.
-  // 113,https://t.me/chat/113,tatiana:Спасибо за помощь ❤️
-  // 114,https://t.me/chat/114,vasya:Ты серьезно думаешь, что это умно?
-  // 115,https://t.me/chat/115,nik_bot:Проверка соединения.
-  // 116,https://t.me/chat/116,badguy666:Я тебя найду, понял?
-  // 117,https://t.me/chat/117,lolita:Никогда не сдавайся ✨
-  // 118,https://t.me/chat/118,harrypotter:Expecto patronum!
-  // 119,https://t.me/chat/119,root:Удалите это немедленно.
-  // 120,https://t.me/chat/120,anya123:Зачем ты так со мной?
-  // 121,https://t.me/chat/121,zloyadmin:Все баны будут вечными.
-  // 122,https://t.me/chat/122,oleg_oleg:Го в доту вечером?
-  // 123,https://t.me/chat/123,maria_r:Обожаю твои посты!
-  // 124,https://t.me/chat/124,xXx666:Ты ничтожество.
-  // 125,https://t.me/chat/125,techsupport:Проблема решена, благодарим за ожидание.
-  // 126,https://t.me/chat/126,vasilisa:Сегодня такой трудный день...
-  // 127,https://t.me/chat/127,h8full:Заткнись уже!
-  // 128,https://t.me/chat/128,kate_love:Ты лучший 💖
-  // 129,https://t.me/chat/129,den4ik:Damn, that was epic.
-  // 130,https://t.me/chat/130,botmod:Сообщение временно скрыто.
-  // `.trim();
-  //
-  //
-  //   lastMessagesData = `
-  // 101,https://t.me/chat/101,ivan123:Привет, как дела?
-  // 102,https://t.me/chat/102,anna_m:Ты выглядишь великолепно!
-  // 103,https://t.me/chat/103,darkwolf:Ты — позор этого чата.
-  // 104,https://t.me/chat/104,admin_bot:Пожалуйста, не флудите.
-  // 105,https://t.me/chat/105,nastya99:❤️❤️❤️
-  // 106,https://t.me/chat/106,killerbee:Лучше бы ты умер.
-  // 107,https://t.me/chat/107,bot123:Сообщение удалено модератором.
-  // 108,https://t.me/chat/108,aleksey:Когда стрим?
-  // 109,https://t.me/chat/109,sasha:У меня плохое настроение.
-  // 110,https://t.me/chat/110,anon:Ты никто и звать тебя никак.
-  // `.trim();
-
 
   const prompt = PROMPT.replace('$ALL_MESSAGES', JSON.stringify(allMessagesData))
     .replace('$LAST_MESSAGES', lastMessagesData);
@@ -294,10 +300,11 @@ async function analyze(messages: MessageOut[]) {
   const response = await openai.chat.completions.create({
     model: MODEL,
     messages: [{ role: 'user', content: prompt }],
+    temperature: 0,
   });
   const result = response.choices[0].message.content ?? '';
 
-  console.log(`result:`, result);
+  console.log(`result:\n`, result);
 
   //save last prompt to tmp dir
   const fs = require('fs');
