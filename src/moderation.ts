@@ -243,7 +243,7 @@ ${r.link}\n
 
     console.log(text);
 
-    if (!DRY_RUN) {
+    if (!DRY_RUN && rate > 2) {
       try {
         await sendMessage(clientBOT, chatId, r.thread, null, text);
       } catch (e) {
