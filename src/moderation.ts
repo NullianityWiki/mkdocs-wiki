@@ -245,17 +245,16 @@ async function sendResults(chatId: number, results: Result[]) {
   let tagAdmins = false;
   for (const r of results) {
     let text = `
-⚠️${r.sender} ${r.recommendation}\n
-${r.link}\n
-Токсичность: ${r.rate} из 10\n
-Причина:\n${r.reason}
+⚠️${r.sender}
+${r.link}
+Нарушение(${r.rate} из 10):\n${r.reason}
 `;
     let rate = 0;
     let extraEmoji = '';
 
     rate = Number(r.rate);
     if (rate >= 5) {
-      extraEmoji = '🔥🔥🔥';
+      extraEmoji = '🔥';
       tagAdmins = true;
       text = `${text}\n\n${TAG_MODERATORS}`;
     }
