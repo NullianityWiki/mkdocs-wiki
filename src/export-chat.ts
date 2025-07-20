@@ -31,7 +31,7 @@ async function main() {
     tdl,
     apiId,
     apiHash,
-    botToken,
+    undefined,
     phoneNumber,
   );
   const chatId = await getChatIdByChatName(client, chatName);

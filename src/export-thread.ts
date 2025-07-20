@@ -23,7 +23,7 @@ async function main() {
     tdl,
     apiId,
     apiHash,
-    botToken,
+    undefined,
     phoneNumber,
   );
 
