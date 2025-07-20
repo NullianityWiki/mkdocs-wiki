@@ -118,14 +118,17 @@ type MessageOut = {
   text: string
 }
 
+type Result = {
+  id: string, // ID сообщения,
+  thread: string, // ID треда сообщения,
+  link: string, // Ссылка на сообщение,
+  rate: string, // Оценка серьезности нарушения от 1 до 10,
+  sender: string, // Отправитель,
+  reason: string, // Развернутая причина с указанием пункта правил,
+  recommendation: string, // Прямое обращение к отправителю с краткой рекомендацией о неподобающем поведении,
+}
+
 async function main() {
-  const clientBOT = await login(
-    tdl,
-    apiId,
-    apiHash,
-    botToken,
-    undefined,
-  );
   const clientUSER = await login(
     tdl,
     apiId,
@@ -143,6 +146,20 @@ async function main() {
   // threads.forEach((thread, threadId) => {
   //   console.log(`Thread: ${thread.info.name}, ID: ${threadId} ${thread.info.is_closed ? '(closed)' : ''} ${thread.info.is_hidden ? '(hidden)' : ''}`);
   // });
+
+  const allMessages: Message[] = await collectMessages(clientUSER, chatId, threads);
+
+  const allMessagesOut: MessageOut[] = await prepareMessages(allMessages);
+
+  const results = extractJsonBlock(await analyze(allMessagesOut)) as Result[];
+
+  await sendResults(chatId, results);
+
+  await sleep(60000);
+  console.log(`All done! Sent ${results.length} messages to ${chatName} (${chatId})`);
+}
+
+async function collectMessages(client: Client, chatId: number,  threads: Map<number, ForumTopic>) {
   let resultThreadId = 0;
 
   const allMessages: Message[] = [];
@@ -162,7 +179,7 @@ async function main() {
     lastThreadMsgOld.set(threadId, (Date.now() / 1000) - EXTRACT_LAST_MSGS_PERIOD);
 
     const msgs = (await exportThread(
-      clientUSER,
+      client,
       chatId,
       thread,
       lastThreadMsgOld,
@@ -178,6 +195,10 @@ async function main() {
     allMessages.push(...msgs);
   }
 
+  return allMessages;
+}
+
+async function prepareMessages(allMessages: Message[]) {
   const allMessagesOut: MessageOut[] = [];
 
   for (const msg of allMessages) {
@@ -215,11 +236,14 @@ async function main() {
     });
   }
 
-  const result = extractJsonBlock(await analyze(allMessagesOut));
+  return allMessagesOut;
+}
+
+async function sendResults(chatId: number, results: Result[]) {
 
   let out = '';
   let tagAdmins = false;
-  for (const r of result) {
+  for (const r of results) {
     let text = `
 ⚠️${r.sender} ${r.recommendation}\n
 ${r.link}\n
@@ -228,27 +252,24 @@ ${r.link}\n
 `;
     let rate = 0;
     let extraEmoji = '';
-    try {
-      rate = Number(r.rate);
-      if (rate >= 5) {
-        extraEmoji = '🔥🔥🔥';
-        tagAdmins = true;
-        text = `${text}\n\n${TAG_MODERATORS}`;
-      }
-    } catch (e) {
-      console.log(`Failed to parse rate for message ID ${r.id} in thread ${r.thread}: ${e}`);
+
+    rate = Number(r.rate);
+    if (rate >= 5) {
+      extraEmoji = '🔥🔥🔥';
+      tagAdmins = true;
+      text = `${text}\n\n${TAG_MODERATORS}`;
     }
 
     out += `${r.link}\n${r.sender}\nReason(${r.rate}${extraEmoji}): ${r.reason}\n\n`;
 
     console.log(text);
 
-    if (!DRY_RUN && rate > 2) {
-      try {
-        await sendMessage(clientBOT, chatId, r.thread, null, text);
-      } catch (e) {
-        console.error(`Failed to send message for ID ${r.id} in thread ${r.thread}:`, e);
-      }
+    let thread = 0;
+
+    thread = Number(r.thread);
+
+    if (!DRY_RUN && rate > 3) {
+      await sendMessageBOT(botToken, chatId, thread, null, text);
     }
   }
 
@@ -259,9 +280,6 @@ ${r.link}\n
   if (!DRY_RUN) {
     await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${out}`);
   }
-
-  await sleep(60000);
-  console.log(`All done! Sent ${result.length} messages to ${chatName} (${chatId})`);
 }
 
 async function getChatIdByChatName(client: Client, _chatName: string) {

@@ -383,10 +383,10 @@ export async function sendMessage(
           text: chunk,
         },
       },
-      reply_to: replyTo !== null ? {
-        '@type': 'inputMessageReplyToMessage',
-        message_id: replyTo,
-      } : undefined,
+      // reply_to: replyTo !== null ? {
+      //   '@type': 'inputMessageReplyToMessage',
+      //   message_id: replyTo,
+      // } : undefined,
     }) as Message;
 
     console.log(`Chunk ${i + 1}/${chunks.length} sent to thread ${threadId}` /*JSON.stringify(res, null, 2)*/);
@@ -432,7 +432,7 @@ export async function sendMessageBOT(
       // reply_parameters: replyTo !== null ? {
       //   message_id: replyTo,
       // } : undefined,
-      reply_to_message_id: replyTo ?? undefined,
+      // reply_to_message_id: replyTo ?? undefined,
       text: chunks[i],
     });
 
