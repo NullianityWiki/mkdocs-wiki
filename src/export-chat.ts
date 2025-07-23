@@ -39,12 +39,12 @@ async function main() {
 
   let lastThreadMsgOld = new Map<number, number>();
   try {
-    const msgs =  JSON.parse(readFileSync(
+    const msgs = JSON.parse(readFileSync(
       './exports/_last_msgs.json',
       { encoding: 'utf-8' },
     )) as Message[];
 
-    for(const m of msgs) {
+    for (const m of msgs) {
       if (m && m.message_thread_id) {
         lastThreadMsgOld.set(m.message_thread_id, m.date);
       }
@@ -55,7 +55,15 @@ async function main() {
   const lastThreadMsg = new Map<number, Message>();
   for (const thread of threads.values()) {
     const threadId = thread.info.message_thread_id;
-    const msgs = (await exportThread(client, chatId, thread, lastThreadMsgOld, userNamesCache, userExcludedCache));
+    const msgs = (await exportThread(
+      client,
+      chatId,
+      thread,
+      lastThreadMsgOld.get(thread.info.message_thread_id) ?? null,
+      null,
+      userNamesCache,
+      userExcludedCache,
+    ));
     // .filter(msg => {
     // return msg.date >= startTimestamp;
     // });

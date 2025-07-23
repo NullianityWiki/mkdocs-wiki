@@ -71,7 +71,8 @@ export async function exportThread(
   client: Client,
   chatId: number,
   thread: ForumTopic,
-  lastThreadMsgs: Map<number, number> | null,
+  from: number | null,
+  to: number | null,
   userNamesCache: Map<number, string>,
   userExcludedCache: Map<number, boolean> | null,
   roundDate = true,
@@ -86,12 +87,11 @@ export async function exportThread(
   });
 
   let allMessages: Message[] = [];
-  const lastThreadMsg = lastThreadMsgs ? lastThreadMsgs.get(threadMessageId) : null;
   let toDate;
   if (roundDate) {
-    toDate = Math.floor((lastThreadMsg ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+    toDate = Math.floor((from ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
   } else {
-    toDate = lastThreadMsg ?? 0;
+    toDate = from ?? 0;
   }
   let fromMessageId = 0;
 
@@ -143,7 +143,9 @@ export async function exportThread(
       ...m,
       thread_name: thread.info.name,
     };
-  }).filter(msg => msg.date > toDate);
+  }).filter(msg => {
+    return msg.date > toDate && (!to || msg.date < to);
+  });
 
   // msgs.forEach(msg => {
   //   console.log(`Message ${msg.id} threadMessageId:${threadMessageId} from ${(new Date(msg.date * 1000)).toISOString()}`);
@@ -455,6 +457,9 @@ function splitTextIntoChunks(text: string, chunkSize: number): string[] {
 }
 
 export function extractJsonBlock(text: string): any {
+  if(!text || text.trim() === '') {
+    return [];
+  }
   const cleaned = text
     .replace(/^.*?```json\s*/s, '')  // убираем всё до блока
     .replace(/```[\s\S]*$/, '')     // убираем всё после
@@ -463,4 +468,52 @@ export function extractJsonBlock(text: string): any {
   // console.log(`Extracted JSON: ${cleaned}`);
 
   return JSON.parse(cleaned);
+}
+
+
+export async function getChatIdByChatName(client: Client, _chatName: string) {
+  console.log(`Searching for chat with name "${_chatName}"...`);
+  const chat = await client.invoke({
+    _: 'searchPublicChat',
+    username: _chatName,
+  });
+  console.log('→ CHAT_ID =', chat.id);
+  return chat.id;
+}
+
+export async function getActiveThreads(client: Client, chatId: number) {
+  console.log(`Fetching active threads in chat ${chatId}...`);
+
+  const allTopics = new Map<number, ForumTopic>();
+  let lastThreadDate = 0;
+
+  let count = 0;
+  while (true) {
+    count++;
+    const { topics } = await client.invoke({
+      _: 'getForumTopics',
+      chat_id: chatId,
+      limit: 100,
+      offset_date: lastThreadDate,
+    }) as { topics: ForumTopic[] };
+
+    if (topics.length === 0 || count > 3) {
+      break;
+    }
+
+    // console.log(topics[0])
+
+    for (const t of topics) {
+      // console.log(`Thread: ${t.info.name}, ID: ${t.info.message_thread_id} ${t.info.is_closed ? '(closed)' : ''} ${t.info.is_hidden ? '(hidden)' : ''}`);
+      allTopics.set(t.info.message_thread_id, t);
+    }
+
+    lastThreadDate = topics[topics.length - 1].last_message?.date ?? 0;
+  }
+
+  console.log(`Found ${allTopics.size} threads in chat ${chatId}`);
+  // allTopics.forEach((thread, threadId) => {
+  //   console.log(`Thread: ${thread.info.name}, ID: ${threadId} ${thread.info.is_closed ? '(closed)' : ''} ${thread.info.is_hidden ? '(hidden)' : ''}`);
+  // });
+  return allTopics;
 }

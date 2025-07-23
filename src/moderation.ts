@@ -1,9 +1,8 @@
 import 'dotenv/config';
-import { Client } from 'tdl';
-import { ForumTopic, Message } from 'src/tdlib-types';
+import { Message } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, extractJsonBlock, login, sendMessage, sendMessageBOT, sleep } from './common';
-import OpenAI from 'openai';
+import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessageBOT, sleep } from './common';
+import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
@@ -13,58 +12,44 @@ const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = CHAT_NAME!;
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
-const EXCLUDED = new Set<string>([
+const EXCLUDED_USERS = new Set<string>([
   '@thread_export_nullianity_bot',
+  '@nullianity_banhammer_bot',
+  '@QuizariumBot',
 ]);
-const REPORT_TO_THREAD = '0 Админская';
+const EXCLUDED_THREADS = new Set<string>([
+  'Квизы',
+  '0 Навигация',
+  '0 Новости и Голосования',
+  '0 Админская',
+]);
 const REPORT_TO_CHAT = -1002832182712;
 const TAG_MODERATORS = '@belbix @forbiddenfromthebegining @Legoved @Alleks_88 @natastriver @Aleksandr_Luginin @kuraimonogotari';
 const LAST_MSGS_PERIOD = 60 * 20;
-const EXTRACT_LAST_MSGS_PERIOD = 60 * 30;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 const PROMPT = `
-Проанализируй переписку и найди только те сообщения, которые действительно требуют модерации по причине нарушений правил сообщества.
-Мат в чате разрешен!
-Запрещено не дружелюбное общение, в частности это:
-- обесценивание
-- снисходительный тон
-- пассивно-агрессивный тон
-- унижение человека
-- критика без уточнения (сразу писать "это бред" вместо "можешь уточнить")
-- шутки над человеком
-- старички не на равных с новичками
-- гейткипинг (ты не настоящий участник, если не...)
-- "я просто пошутил(а)", когда человек явно задет.
+Проанализируй переписку и найди только те сообщения, которые действительно требуют модерации по причине грубого нарушений правил сообщества.
+Мат в чате разрешен, не надо обращать на него внимание.
+Не обращай внимание на небольшие нарушения правил, необходимо возвращать в ответе только грубые нарушения.
+Участники могут общаться не сильно дружелюбно, но обращай внимание только на откровенную явную грубость переходящую черту нормального общения и ведущего к конфликту.
+Не принимай за недружелюбие выражение сарказма, пассивно-агрессивный тон и токсичность.
+Делай учет на то, что участники чата не являются экспертами в определении своего тона и могут допускать вольности.
+Исходи из того, хотел ли человек обидеть участника чата в явной форме или нет.
+Человек может прямо критиковать человека, переход на личности без грубого оскорбления можно игнорировать.
+Будь лоялен к оффтопу и флуду.
+Совершенно нормально не найти в сообщениях никаких нарушений, не надо "выискивать" нарушения на ровном месте только ради того, чтобы вернуть хоть что то.
+Ты получишь премию в размере 100 долларов если проанализируешь сообщения корректно и вернешь только нарушающие сообщения либо пустой массив.
 
-Для каждого нарушения выставляй оценку от 1 до 10.
-1 - Сомнительный тон (Неочевидная грубость, не по теме, но без явного зла)
-2 - Мягкое нарушение этики (Раздражённость, пассивная агрессия, токсичный сарказм)
-3 - Нарушение стиля общения (Явная грубость, переход на личности)
-4 - Флуд, оффтоп, реклама (Сообщения вне темы, дублирование, нерелевантные ссылки)
-5 - Провокации или троллинг (Намеренное раздражение участников или подстрекательство)
-6 - Дезинформация или шок‑контент (Ложь, теория заговора, фейк-скрины, шокирующие медиа)
-7 - Оскорбления и дискриминация (Оскорбления в адрес участника, национализм, сексизм и т.п.)
-8 - Политический оффтоп (Явное нарушение п. 1.4, особенно если пост может вызвать угрозу)
-9 - Публикация личных данных, вредоносное ПО (Частичный доксинг, ссылки на вирусы, социальная инженерия)
-10 - Системное вредительство, бот-атака (Массовый спам, порнография, призывы к насилию)
-
-Верни ТОЛЬКО нарушающие сообщения, в формате массива JSON объектов где:
+Верни ТОЛЬКО нарушающие сообщения в формате массива JSON объектов где:
 {
-id: ID сообщения,
 thread: ID треда сообщения,
 link: Ссылка на сообщение,
-rate: Оценка серьезности нарушения от 1 до 10,
 sender: Отправитель,
 reason: Развернутая причина с указанием пункта правил,
-recommendation: Прямое обращение к отправителю с краткой рекомендацией о неподобающем поведении,
 }
 Твой ответ должен содержать ТОЛЬКО массив JSON объектов.
 
 Вот правила сообщества:
-1. Общие положения
-1.1. Назначение группы.
-Группа создана для обсуждения идей Нуллианства и смежных тем в дружелюбной обстановке.  
-1.2 Общайтесь вежливо, не переходите на личности. 
 1.3. Приоритет правил Telegram и закона.
 Все участники обязаны соблюдать официальные Правила Telegram и законодательство стран участников.
 В частности запрещается: разжигание ненависти и призывы к насилию.
@@ -86,47 +71,28 @@ recommendation: Прямое обращение к отправителю с к�
 • вредоносные ссылки и файлы, пиратство.
 3.2. Обсуждение проектов.
 Разрешено в соответствующем топике; автор принимает конструктивную критику; прямые ссылки на оплату/вступление - запрещены.
-4. Модерация и санкции
-При обнаружении нарушения, просьба написать в «0 Репорты и Жалобы» со ссылкой на нарушающее сообщение.
-Меры при нарушении: 
-• Замечание (сообщение админа с просьбой отредактировать или удалить нарушение), 
-• Предупреждение (три предупреждения = мут), либо 
-• Мут (лишение возможности публиковать в группу). 
-Срок мута назначается ботом автоматически удваиваясь за каждое повторное нарушение. Первое нарушение несёт наказание в виде мута на 1 день.
-• Кик (исключение из группы) только в исключительных случаях (таких как спам-ботов).
-Сообщение нарушающее правила будет удалено.
 
-Формат сообщений: "id,ссылка,тред,отправитель:сообщение".
+Формат сообщений: "ссылка,тред,отправитель:сообщение".
 
-Это все сообщения требующие анализа модерации:
+Это сообщения требующие анализа модерации:
 """$LAST_MESSAGES"""
-
-
-Это остальные сообщения для понимания общего контекста:
-"""$ALL_MESSAGES"""
-
 `;
+
+// {
+//   thread: ID треда сообщения,
+//   link: Ссылка на сообщение,
+//   sender: Отправитель,
+//   reason: Развернутая причина с указанием пункта правил,
+// }
+export type ModResult = {
+  thread: string, // ID треда сообщения,
+  link: string, // Ссылка на сообщение,
+  sender: string, // Отправитель,
+  reason: string, // Развернутая причина с указанием пункта правил,
+}
 
 const userNamesCache = new Map<number, string>();
 
-type MessageOut = {
-  id: number;
-  from: string;
-  thread: number;
-  link: string;
-  date: number;
-  text: string
-}
-
-type Result = {
-  id: string, // ID сообщения,
-  thread: string, // ID треда сообщения,
-  link: string, // Ссылка на сообщение,
-  rate: string, // Оценка серьезности нарушения от 1 до 10,
-  sender: string, // Отправитель,
-  reason: string, // Развернутая причина с указанием пункта правил,
-  recommendation: string, // Прямое обращение к отправителю с краткой рекомендацией о неподобающем поведении,
-}
 
 async function main() {
   const clientUSER = await login(
@@ -137,243 +103,118 @@ async function main() {
     phoneNumber,
   );
   const chatId = await getChatIdByChatName(clientUSER, chatName);
-  // await sendMessage(client, chatId, 185594806272, 237812842496, `@belbix test, ignore this`);
-  // if(chatId !== 0) {
-  //   return;
-  // }
 
   const threads = await getActiveThreads(clientUSER, chatId);
-  // threads.forEach((thread, threadId) => {
-  //   console.log(`Thread: ${thread.info.name}, ID: ${threadId} ${thread.info.is_closed ? '(closed)' : ''} ${thread.info.is_hidden ? '(hidden)' : ''}`);
-  // });
 
-  const allMessages: Message[] = await collectMessages(clientUSER, chatId, threads);
+  const allMessages: Message[] = await collectMessages(
+    clientUSER,
+    chatId,
+    threads,
+    LAST_MSGS_PERIOD,
+    userNamesCache,
+    EXCLUDED_THREADS,
+  );
 
-  const allMessagesOut: MessageOut[] = await prepareMessages(allMessages);
+  const allMessagesOut: MessageOut[] = await prepareMessages(allMessages, EXCLUDED_USERS);
 
-  const results = extractJsonBlock(await analyze(allMessagesOut)) as Result[];
+  const results = extractJsonBlock(await analyze(
+    allMessagesOut,
+    (Date.now() / 1000) - LAST_MSGS_PERIOD,
+    PROMPT,
+    MODEL,
+  )) as ModResult[];
 
-  await sendResults(chatId, results);
+  await sendResults(chatId, results, DRY_RUN, botToken, REPORT_TO_CHAT);
 
-  await sleep(60000);
+  await sleep(1000);
   console.log(`All done! Sent ${results.length} messages to ${chatName} (${chatId})`);
 }
 
-async function collectMessages(client: Client, chatId: number,  threads: Map<number, ForumTopic>) {
-  let resultThreadId = 0;
 
-  const allMessages: Message[] = [];
-  for (const thread of threads.values()) {
-    if (thread.info.is_closed) {
-      console.log(`Skipping closed thread ${thread.info.name} (${thread.info.message_thread_id})`);
-      continue;
-    }
-    const threadId = thread.info.message_thread_id;
-    if (thread.info.name === REPORT_TO_THREAD) {
-      resultThreadId = threadId;
-      // do not analyze the report thread
-      continue;
-    }
-
-    let lastThreadMsgOld = new Map<number, number>();
-    lastThreadMsgOld.set(threadId, (Date.now() / 1000) - EXTRACT_LAST_MSGS_PERIOD);
-
-    const msgs = (await exportThread(
-      client,
-      chatId,
-      thread,
-      lastThreadMsgOld,
-      userNamesCache,
-      null,
-      false,
-    ));
-    if (msgs.length === 0) {
-      // console.log(`No messages found in thread ${threadId} (${thread.info.name})`);
-      continue;
-    }
-
-    allMessages.push(...msgs);
+export async function sendResults(
+  chatId: number,
+  results: ModResult[],
+  DRY_RUN: boolean,
+  botToken: string,
+  REPORT_TO_CHAT: number,
+) {
+  if (!results || results.length === 0) {
+    console.log(`No results to send, skipping...`);
+    return;
   }
-
-  return allMessages;
-}
-
-async function prepareMessages(allMessages: Message[]) {
-  const allMessagesOut: MessageOut[] = [];
-
-  for (const msg of allMessages) {
-    if (!msg || msg.content._ !== 'messageText' || !msg.content.text) {
-      continue;
-    }
-
-    // @ts-ignore
-    const senderName = msg['sender_name'] || 'UnknownSender';
-
-    let exclude = false;
-    for (const excluded of EXCLUDED) {
-      if (senderName.includes(excluded)) {
-        exclude = true;
-        break;
-      }
-    }
-    if (exclude) {
-      continue;
-    }
-
-    // @ts-ignore
-    const link = msg['link'] || '';
-
-    // const date = (new Date(msg.date * 1000)).toISOString();
-    const textOut = msg.content.text.text;
-
-    allMessagesOut.push({
-      id: msg.id,
-      from: senderName,
-      thread: msg.message_thread_id,
-      link,
-      date: msg.date,
-      text: textOut,
-    });
-  }
-
-  return allMessagesOut;
-}
-
-async function sendResults(chatId: number, results: Result[]) {
-
   let out = '';
-  let tagAdmins = false;
   for (const r of results) {
-    let text = `
+    try {
+      let text = `
 ⚠️${r.sender}
 ${r.link}
-Нарушение(${r.rate} из 10):\n${r.reason}
+Подозрение на нарушение правил по причине:
+${r.reason}
 `;
-    let rate = 0;
-    let extraEmoji = '';
 
-    rate = Number(r.rate);
-    if (rate >= 5) {
-      extraEmoji = '🔥';
-      tagAdmins = true;
-      text = `${text}\n\n${TAG_MODERATORS}`;
-    }
+      out += `${r.link}\n${r.sender}\n${r.reason}\n\n`;
 
-    out += `${r.link}\n${r.sender}\nReason(${r.rate}${extraEmoji}): ${r.reason}\n\n`;
+      console.log(text);
 
-    console.log(text);
+      let thread = 0;
 
-    let thread = 0;
+      thread = Number(r.thread);
 
-    thread = Number(r.thread);
+      if (!DRY_RUN) {
+        await sendMessageBOT(botToken, chatId, thread, null, text);
+      }
 
-    if (!DRY_RUN && rate > 3) {
-      await sendMessageBOT(botToken, chatId, thread, null, text);
+    } catch (e) {
+      console.error(`Error processing result ${JSON.stringify(r, null, 2)}:`, e);
     }
   }
 
-  if (tagAdmins) {
-    out = `${out}\n${TAG_MODERATORS}`;
-  }
-
+  // out = `${out}\n${TAG_MODERATORS}`;
   if (!DRY_RUN) {
     await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${out}`);
   }
 }
 
-async function getChatIdByChatName(client: Client, _chatName: string) {
-  console.log(`Searching for chat with name "${_chatName}"...`);
-  const chat = await client.invoke({
-    _: 'searchPublicChat',
-    username: _chatName,
-  });
-  console.log('→ CHAT_ID =', chat.id);
-  return chat.id;
-}
 
-async function getActiveThreads(client: Client, chatId: number) {
-  console.log(`Fetching active threads in chat ${chatId}...`);
+// const db = await createDB('moderation.sqlite');
+// async function writeToxicLevel(db: any, result: ModResult) {
+//   let userId = -1;
+//   try {
+//     userId = Number(result.senderId);
+//   } catch (e) {
+//     console.error(`Error parsing senderId ${result.senderId} for result ${JSON.stringify(result, null, 2)}:`, e);
+//     return;
+//   }
+//   let rate = 1;
+//   try {
+//     rate = Number(result.rate);
+//   } catch (e) {
+//     console.error(`Error parsing rate ${result.rate} for result ${JSON.stringify(result, null, 2)}:`, e);
+//     return;
+//   }
+//   if (userId < 0) {
+//     console.error(`Invalid userId ${userId} for result ${JSON.stringify(result, null, 2)}`);
+//     return;
+//   }
+//   let user = await getUser(db, userId);
+//
+//   let toxicLevel = rate ** 2;
+//
+//   if (user) {
+//     user.toxicLevel += toxicLevel;
+//   } else {
+//     user = {
+//       id: userId,
+//       name: result.sender,
+//       toxicLevel: toxicLevel,
+//     };
+//   }
+//   await upsertUser(db, user);
+//
+//   console.log(`User ${user.name} (${user.id}) toxic level updated to ${user.toxicLevel}`);
+//   return user;
+// }
 
-  const allTopics = new Map<number, ForumTopic>();
-  let lastThreadDate = 0;
-
-  let count = 0;
-  while (true) {
-    count++;
-    const { topics } = await client.invoke({
-      _: 'getForumTopics',
-      chat_id: chatId,
-      limit: 100,
-      offset_date: lastThreadDate,
-    }) as { topics: ForumTopic[] };
-
-    if (topics.length === 0 || count > 3) {
-      break;
-    }
-
-    // console.log(topics[0])
-
-    for (const t of topics) {
-      // console.log(`Thread: ${t.info.name}, ID: ${t.info.message_thread_id} ${t.info.is_closed ? '(closed)' : ''} ${t.info.is_hidden ? '(hidden)' : ''}`);
-      allTopics.set(t.info.message_thread_id, t);
-    }
-
-    lastThreadDate = topics[topics.length - 1].last_message?.date ?? 0;
-  }
-
-  console.log(`Found ${allTopics.size} threads in chat ${chatId}`);
-  return allTopics;
-}
-
-async function analyze(messages: MessageOut[]) {
-
-  let allMessagesData = '';
-  for (const msg of messages) {
-    if (msg.date >= ((Date.now() / 1000) - LAST_MSGS_PERIOD)) {
-      continue;
-    }
-    allMessagesData += `${msg.from}:${msg.text}\n`;
-  }
-  let lastMessagesData = '';
-  for (const msg of messages) {
-    if (msg.date < ((Date.now() / 1000) - LAST_MSGS_PERIOD)) {
-      continue; // skip messages older than 1 hour
-    }
-    lastMessagesData += `${msg.id},${msg.link},${msg.thread},${msg.from}:${msg.text}\n`;
-  }
-
-  const prompt = PROMPT.replace('$ALL_MESSAGES', JSON.stringify(allMessagesData))
-    .replace('$LAST_MESSAGES', lastMessagesData);
-
-  // console.log(`Prompt:`, prompt);
-
-  const openai = new OpenAI({
-    baseURL: 'https://openrouter.ai/api/v1',
-    apiKey: process.env.OPENROUTER_API_KEY,
-    // apiKey: process.env.OPENAI_API_KEY,
-  });
-
-  const response = await openai.chat.completions.create({
-    model: MODEL,
-    messages: [{ role: 'user', content: prompt }],
-    temperature: 0,
-  });
-  const result = response.choices[0].message.content ?? '';
-
-  console.log(`result:\n`, result);
-
-  //save last prompt to tmp dir
-  const fs = require('fs');
-  const path = require('path');
-  const tmpDir = path.join(__dirname, '../tmp');
-  if (!fs.existsSync(tmpDir)) {
-    fs.mkdirSync(tmpDir, { recursive: true });
-  }
-  fs.writeFileSync(path.join(tmpDir, `moder_last_prompt.json`), JSON.stringify(prompt, null, 2));
-  fs.writeFileSync(path.join(tmpDir, `moder_last_result.json`), JSON.stringify(result, null, 2));
-
-  return result;
-}
 
 main()
   .then(() => process.exit(0))

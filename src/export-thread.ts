@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import { mkdirSync, writeFileSync } from 'fs';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, login, savePhotoFromMessage } from './common';
-import { ForumTopics, Message } from 'src/tdlib-types';
+import { exportThread, login } from './common';
+import { ForumTopics } from 'src/tdlib-types';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
@@ -45,18 +45,18 @@ async function main() {
     throw new Error(`Expected 1 forum topic, got ${forums.topics.length}`);
   }
 
-  const messages = await exportThread(client, chatId, forums.topics[0], new Map<number, number>(), userNamesCache, userExcludedCache);
+  const messages = await exportThread(client, chatId, forums.topics[0], 0, null, userNamesCache, userExcludedCache);
 
   let output = '';
   let count = 0;
-  for(const msg of messages) {
+  for (const msg of messages) {
 
     //   await savePhotoFromMessage(client, msg, `./tmp/images`);
 
     if (!msg || msg.content._ !== 'messageText' || !msg.content.text) {
       continue;
     }
-    if( fromDate && msg.date < fromDate) {
+    if (fromDate && msg.date < fromDate) {
       continue;
     }
 
