@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { forumTopic, Message } from 'src/tdlib-types';
+import { forumTopic } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessageBOT, sleep } from './common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
@@ -94,29 +94,37 @@ async function main() {
       [thread.info.message_thread_id, thread],
     ]);
 
-    const allMessages: Message[] = await collectMessages(
+    const msgsToAnalyze: MessageOut[] = await prepareMessages(await collectMessages(
       clientUSER,
       chatId,
       t,
       LAST_MSGS_PERIOD,
       userNamesCache,
       new Set([]),
-    );
+    ), EXCLUDED_USERS);
 
-    const allMessagesOut: MessageOut[] = await prepareMessages(allMessages, EXCLUDED_USERS);
+    const allMsgs: MessageOut[] = await prepareMessages(await collectMessages(
+      clientUSER,
+      chatId,
+      t,
+      60 * 60 * 24 * 30,
+      userNamesCache,
+      new Set([]),
+    ), EXCLUDED_USERS);
 
     const results = extractJsonBlock(await analyze(
-      allMessagesOut,
+      msgsToAnalyze,
       (Date.now() / 1000) - LAST_MSGS_PERIOD,
       PROMPT,
       MODEL,
       msg => `${msg.link},${msg.from}:${msg.text}\n`,
+      allMsgs,
     )) as ModResult[];
 
     await sendResults(chatId, results, DRY_RUN, botToken, thread.info.message_thread_id);
   }
 
-  await sleep(1000)
+  await sleep(1000);
   console.log(`Done!`);
 }
 

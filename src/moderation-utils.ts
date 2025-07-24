@@ -110,6 +110,7 @@ export async function analyze(
   PROMPT: string,
   MODEL: string,
   handler: (msg: MessageOut) => string,
+  extraMsgs?: MessageOut[],
 ) {
   if (!messages || messages.length === 0) {
     console.log(`No messages to analyze, skipping...`);
@@ -137,8 +138,19 @@ export async function analyze(
     highestDate *
     1000).toISOString()}`);
 
-  const prompt = PROMPT
-    .replace('$LAST_MESSAGES', lastMessagesData);
+  let prompt = PROMPT.replace('$LAST_MESSAGES', lastMessagesData);
+
+  if(extraMsgs) {
+    let extra = '';
+    for (const msg of extraMsgs) {
+      if (msg.date >= analyzeDate) {
+        continue;
+      }
+      extra += handler(msg);
+    }
+
+    prompt = prompt.replace('$EXTRA_MESSAGES', extra);
+  }
 
   // console.log(`Prompt:`, prompt);
 
