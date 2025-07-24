@@ -122,6 +122,7 @@ async function main() {
     (Date.now() / 1000) - LAST_MSGS_PERIOD,
     PROMPT,
     MODEL,
+    msg => `${msg.link},${msg.thread},${msg.from}:${msg.text}\n` // // Формат сообщений: "ссылка,тред,отправитель:сообщение".
   )) as ModResult[];
 
   await sendResults(chatId, results, DRY_RUN, botToken, REPORT_TO_CHAT);
@@ -131,7 +132,7 @@ async function main() {
 }
 
 
-export async function sendResults(
+async function sendResults(
   chatId: number,
   results: ModResult[],
   DRY_RUN: boolean,
@@ -174,47 +175,6 @@ ${r.reason}
     await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${out}`);
   }
 }
-
-
-// const db = await createDB('moderation.sqlite');
-// async function writeToxicLevel(db: any, result: ModResult) {
-//   let userId = -1;
-//   try {
-//     userId = Number(result.senderId);
-//   } catch (e) {
-//     console.error(`Error parsing senderId ${result.senderId} for result ${JSON.stringify(result, null, 2)}:`, e);
-//     return;
-//   }
-//   let rate = 1;
-//   try {
-//     rate = Number(result.rate);
-//   } catch (e) {
-//     console.error(`Error parsing rate ${result.rate} for result ${JSON.stringify(result, null, 2)}:`, e);
-//     return;
-//   }
-//   if (userId < 0) {
-//     console.error(`Invalid userId ${userId} for result ${JSON.stringify(result, null, 2)}`);
-//     return;
-//   }
-//   let user = await getUser(db, userId);
-//
-//   let toxicLevel = rate ** 2;
-//
-//   if (user) {
-//     user.toxicLevel += toxicLevel;
-//   } else {
-//     user = {
-//       id: userId,
-//       name: result.sender,
-//       toxicLevel: toxicLevel,
-//     };
-//   }
-//   await upsertUser(db, user);
-//
-//   console.log(`User ${user.name} (${user.id}) toxic level updated to ${user.toxicLevel}`);
-//   return user;
-// }
-
 
 main()
   .then(() => process.exit(0))

@@ -441,7 +441,7 @@ export async function sendMessageBOT(
     if (res.status !== 200 || res.data?.ok === false) {
       throw new Error(`Failed to send part ${i + 1}/${chunks.length}: ${res.data?.description ?? res.statusText}`);
     } else {
-      console.log(`Part ${i + 1}/${chunks.length} sent to thread ${threadId} in chat ${chatId}`, res.data);
+      console.log(`Part ${i + 1}/${chunks.length} sent to thread ${threadId} in chat ${chatId}`);
     }
   }
 }

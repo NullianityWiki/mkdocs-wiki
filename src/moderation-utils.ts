@@ -1,9 +1,8 @@
 import 'dotenv/config';
 import { Client } from 'tdl';
 import { ForumTopic, Message, messageSenderUser } from 'src/tdlib-types';
-import { exportThread, sendMessageBOT } from './common';
+import { exportThread } from './common';
 import OpenAI from 'openai';
-import { createDB, getUser, upsertUser } from './db';
 
 export type MessageOut = {
   id: number;
@@ -36,8 +35,9 @@ export async function collectMessages(
       continue;
     }
 
-    if(thread.last_message && thread.last_message.date < toDate) {
-      console.log(`Skipping thread ${thread.info.name} with last message date ${new Date(thread.last_message.date * 1000).toISOString()} older than ${new Date(toDate * 1000).toISOString()}`);
+    if (thread.last_message && thread.last_message.date < toDate) {
+      console.log(`Skipping thread ${thread.info.name} with last message date ${new Date(thread.last_message.date *
+        1000).toISOString()} older than ${new Date(toDate * 1000).toISOString()}`);
       continue;
     }
 
@@ -104,7 +104,13 @@ export async function prepareMessages(allMessages: Message[], EXCLUDED: Set<stri
   return allMessagesOut;
 }
 
-export async function analyze(messages: MessageOut[], analyzeDate: number, PROMPT: string, MODEL: string) {
+export async function analyze(
+  messages: MessageOut[],
+  analyzeDate: number,
+  PROMPT: string,
+  MODEL: string,
+  handler: (msg: MessageOut) => string,
+) {
   if (!messages || messages.length === 0) {
     console.log(`No messages to analyze, skipping...`);
     return '';
@@ -118,12 +124,11 @@ export async function analyze(messages: MessageOut[], analyzeDate: number, PROMP
   let lastMessagesData = '';
   for (const msg of messages) {
     if (msg.date < analyzeDate) {
-      continue; // skip messages older than 1 hour
+      continue;
     }
     lowestDate = Math.min(lowestDate, msg.date);
     highestDate = Math.max(highestDate, msg.date);
-    // Формат сообщений: "ссылка,тред,отправитель:сообщение".
-    lastMessagesData += `${msg.link},${msg.thread},${msg.from}:${msg.text}\n`;
+    lastMessagesData += handler(msg);
     msgCounter++;
   }
 
