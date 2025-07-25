@@ -118,7 +118,7 @@ async function main() {
       clientUSER,
       chatId,
       t,
-      60 * 60 * 24 * 30,
+      60 * 60 * 24,
       userNamesCache,
       new Set([]),
     ), EXCLUDED_USERS);
