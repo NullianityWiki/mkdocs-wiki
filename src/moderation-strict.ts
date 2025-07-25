@@ -11,6 +11,7 @@ import {
   sleep,
 } from './common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
+import { Client } from 'tdl';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
@@ -86,6 +87,13 @@ async function main() {
     undefined,
     phoneNumber,
   );
+  const clientBOT = await login(
+    tdl,
+    apiId,
+    apiHash,
+    botToken,
+    undefined,
+  );
   const chatId = await getChatIdByChatName(clientUSER, chatName);
 
   const threads = await getActiveThreads(clientUSER, chatId);
@@ -132,7 +140,7 @@ async function main() {
       allMsgs,
     )) as ModResult[];
 
-    await sendResults(chatId, results, DRY_RUN, botToken, thread.info.message_thread_id);
+    await sendResults(chatId, results, DRY_RUN, clientBOT, thread.info.message_thread_id);
   }
 
   await sleep(1000);
@@ -144,21 +152,13 @@ async function sendResults(
   chatId: number,
   results: ModResult[],
   DRY_RUN: boolean,
-  botToken: string,
+  clientBOT: Client,
   thread: number,
 ) {
   if (!results || results.length === 0) {
     console.log(`No results to send, skipping...`);
     return;
   }
-
-  const clientBOT = await login(
-    tdl,
-    apiId,
-    apiHash,
-    botToken,
-    undefined,
-  );
 
   for (const r of results) {
     try {
