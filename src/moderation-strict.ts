@@ -165,7 +165,7 @@ async function sendResults(
       let text = `
 ⚠️${r.sender}
 ${r.link}
-Подозрение на нарушение правил по причине:
+Комментарий от ИИ:
 ${r.reason}
 `;
 
