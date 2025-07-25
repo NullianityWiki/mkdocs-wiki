@@ -163,7 +163,7 @@ async function sendResults(
   for (const r of results) {
     try {
       let text = `
-⚠️${r.sender}
+${r.sender}
 ${r.link}
 Комментарий от ИИ:
 ${r.reason}

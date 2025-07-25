@@ -77,7 +77,7 @@ async function main() {
   }
 
   mkdirSync('./tmp', { recursive: true });
-  writeFileSync(`./tmp/thread_${threadMessageName}.txt`, output);
+  writeFileSync(`./tmp/thread_${threadMessageName.replace('\/', '')}.txt`, output);
   console.log(`Export completed: ${count} / ${messages.length} messages`);
 }
 
