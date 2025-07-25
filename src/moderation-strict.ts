@@ -1,7 +1,15 @@
 import 'dotenv/config';
-import { forumTopic } from 'src/tdlib-types';
+import { ForumTopic, forumTopic } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessageBOT, sleep } from './common';
+import {
+  extractJsonBlock,
+  getActiveThreads,
+  getChatIdByChatName,
+  login,
+  sendMessage,
+  sendMessageBOT,
+  sleep,
+} from './common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 
 const tdl = require('tdl');
@@ -89,6 +97,7 @@ async function main() {
     }
 
     if (thread.last_message && thread.last_message.date < (Date.now() / 1000) - LAST_MSGS_PERIOD) {
+      console.log(`Skipping thread ${thread.info.name} ${thread.info.message_thread_id} with last message date ${new Date(thread.last_message.date * 1000).toISOString()} older than ${new Date((Date.now() / 1000) - LAST_MSGS_PERIOD * 1000).toISOString()}`);
       continue;
     }
 
@@ -142,6 +151,15 @@ async function sendResults(
     console.log(`No results to send, skipping...`);
     return;
   }
+
+  const clientBOT = await login(
+    tdl,
+    apiId,
+    apiHash,
+    botToken,
+    undefined,
+  );
+
   for (const r of results) {
     try {
       let text = `
@@ -154,7 +172,7 @@ ${r.reason}
       console.log(text);
 
       if (!DRY_RUN) {
-        await sendMessageBOT(botToken, chatId, thread, null, text);
+        await sendMessage(clientBOT, chatId, thread, null, text);
       }
 
     } catch (e) {

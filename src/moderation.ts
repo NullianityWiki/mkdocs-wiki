@@ -1,7 +1,15 @@
 import 'dotenv/config';
 import { Message } from 'src/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessageBOT, sleep } from './common';
+import {
+  extractJsonBlock,
+  getActiveThreads,
+  getChatIdByChatName,
+  login,
+  sendMessage,
+  sendMessageBOT,
+  sleep,
+} from './common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 
 const tdl = require('tdl');
@@ -143,6 +151,15 @@ async function sendResults(
     console.log(`No results to send, skipping...`);
     return;
   }
+
+  const clientBOT = await login(
+    tdl,
+    apiId,
+    apiHash,
+    botToken,
+    undefined,
+  );
+
   let out = '';
   for (const r of results) {
     try {
@@ -162,7 +179,7 @@ ${r.reason}
       thread = Number(r.thread);
 
       if (!DRY_RUN) {
-        await sendMessageBOT(botToken, chatId, thread, null, text);
+        await sendMessage(clientBOT, chatId, thread, null, text);
       }
 
     } catch (e) {
@@ -172,6 +189,7 @@ ${r.reason}
 
   // out = `${out}\n${TAG_MODERATORS}`;
   if (!DRY_RUN) {
+    // send via API to simple chat
     await sendMessageBOT(botToken, REPORT_TO_CHAT, 0, null, `${out}`);
   }
 }
