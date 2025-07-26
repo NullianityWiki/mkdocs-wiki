@@ -374,6 +374,15 @@ export async function sendMessage(
 
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
+
+    const parsed = await client.invoke({
+      _: 'parseTextEntities',
+      text: chunk,
+      parse_mode: {
+        _: 'textParseModeMarkdown',
+      },
+    });
+
     const res = await client.invoke({
       _: 'sendMessage',
       chat_id: chatId,
@@ -382,7 +391,7 @@ export async function sendMessage(
         '@type': 'inputMessageText',
         text: {
           '@type': 'formattedText',
-          text: chunk,
+          text: parsed,
         },
       },
       // reply_to: replyTo !== null ? {

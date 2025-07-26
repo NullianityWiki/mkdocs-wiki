@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { Client } from 'tdl';
 import { ForumTopic, Message, messageSenderUser } from 'src/tdlib-types';
-import { exportThread } from './common';
+import { exportThread } from '../common';
 import OpenAI from 'openai';
 
 export type MessageOut = {
@@ -172,12 +172,14 @@ export async function analyze(
   //save last prompt to tmp dir
   const fs = require('fs');
   const path = require('path');
-  const tmpDir = path.join(__dirname, '../tmp');
+  const tmpDir = path.join(__dirname, '../../tmp');
   if (!fs.existsSync(tmpDir)) {
     fs.mkdirSync(tmpDir, { recursive: true });
   }
-  fs.writeFileSync(path.join(tmpDir, `moder_last_prompt.json`), JSON.stringify(prompt, null, 2));
-  fs.writeFileSync(path.join(tmpDir, `moder_last_result.json`), JSON.stringify(result, null, 2));
+  fs.writeFileSync(path.join(tmpDir, `moder_last_prompt.txt`), prompt);
+  fs.writeFileSync(path.join(tmpDir, `moder_last_result.txt`), result);
+
+  console.log('Results saved!')
 
   return result;
 }

@@ -13,8 +13,8 @@
     "export-chat": "npx ts-node src/export-chat.ts",
     "analize": "npx ts-node src/analize.ts && npx ts-node src/add-lore.ts",
     "add-lore": "npx ts-node src/add-lore.ts",
-    "moderation": "npx ts-node src/moderation.ts",
-    "moderation-strict": "npx ts-node src/moderation-strict.ts"
+    "moderation": "npx ts-node src/moderation/moderation.ts",
+    "moderation-strict": "npx ts-node src/moderation/moderation-strict.ts"
   },
   "devDependencies": {
     "@types/node": "^24.0.14",

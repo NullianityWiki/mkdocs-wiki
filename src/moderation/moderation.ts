@@ -9,7 +9,7 @@ import {
   sendMessage,
   sendMessageBOT,
   sleep,
-} from './common';
+} from '../common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 
 const tdl = require('tdl');
