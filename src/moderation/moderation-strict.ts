@@ -107,7 +107,7 @@ async function main() {
     )) as ModResult[];
 
     let maxCorrectnessLevel = 10;
-    const cMatch = thread.info.name.match(/\(с=(\d+)\)$/);
+    const cMatch = thread.info.name.match(/\(L=(\d+)\)$/);
     if (cMatch) {
       maxCorrectnessLevel = parseInt(cMatch[1], 10);
       console.log('correctness level', maxCorrectnessLevel);
