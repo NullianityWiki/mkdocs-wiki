@@ -11,7 +11,8 @@ export type MessageOut = {
   thread: number;
   link: string;
   date: number;
-  text: string
+  text: string;
+  replyTo: string;
 }
 
 export async function collectMessages(
@@ -62,7 +63,7 @@ export async function collectMessages(
   return allMessages;
 }
 
-export async function prepareMessages(allMessages: Message[], EXCLUDED: Set<string>) {
+export async function prepareMessages(client: Client, allMessages: Message[], EXCLUDED: Set<string>) {
   const allMessagesOut: MessageOut[] = [];
 
   for (const msg of allMessages) {
@@ -90,6 +91,25 @@ export async function prepareMessages(allMessages: Message[], EXCLUDED: Set<stri
     // const date = (new Date(msg.date * 1000)).toISOString();
     const textOut = msg.content.text.text;
 
+
+    let replyMsgText = '';
+    if (msg.reply_to && msg.reply_to._ === 'messageReplyToMessage') {
+      try {
+        const replyMsg = await client.invoke({
+          _: 'getMessage',
+          chat_id: msg.chat_id,
+          message_id: msg.reply_to.message_id,
+        }) as Message;
+
+        if (replyMsg && replyMsg.content._ === 'messageText') {
+          replyMsgText = replyMsg.content.text.text;
+        }
+      } catch (e) {
+        console.log(`Error getting reply message for ${msg.id}:`, e);
+      }
+    }
+
+
     allMessagesOut.push({
       id: msg.id,
       from: senderName,
@@ -98,6 +118,7 @@ export async function prepareMessages(allMessages: Message[], EXCLUDED: Set<stri
       link,
       date: msg.date,
       text: textOut,
+      replyTo: replyMsgText,
     });
   }
 

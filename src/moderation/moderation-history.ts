@@ -138,7 +138,7 @@ async function collectHistoryToxic(client: Client, chatId: number, threads: Map<
 
       console.log('All messages length:', allMessages.length);
 
-      const allMessagesOut: MessageOut[] = await prepareMessages(allMessages, EXCLUDED_USERS);
+      const allMessagesOut: MessageOut[] = await prepareMessages(client,allMessages, EXCLUDED_USERS);
       if (allMessagesOut.length === 0) {
         continue;
       }

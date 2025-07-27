@@ -123,7 +123,7 @@ async function main() {
     EXCLUDED_THREADS,
   );
 
-  const allMessagesOut: MessageOut[] = await prepareMessages(allMessages, EXCLUDED_USERS);
+  const allMessagesOut: MessageOut[] = await prepareMessages(clientUSER, allMessages, EXCLUDED_USERS);
 
   const results = extractJsonBlock(await analyze(
     allMessagesOut,

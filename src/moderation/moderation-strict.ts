@@ -19,7 +19,7 @@ const EXCLUDED_USERS = new Set<string>([
   '@nullianity_banhammer_bot',
   '@QuizariumBot',
 ]);
-const LAST_MSGS_PERIOD = 60 * 5;
+const LAST_MSGS_PERIOD = 60 * 50;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 
 export type ModResult = {
@@ -73,7 +73,7 @@ async function main() {
       [thread.info.message_thread_id, thread],
     ]);
 
-    const msgsToAnalyze: MessageOut[] = await prepareMessages(await collectMessages(
+    const msgsToAnalyze: MessageOut[] = await prepareMessages(clientUSER, await collectMessages(
       clientUSER,
       chatId,
       t,
@@ -82,8 +82,12 @@ async function main() {
       new Set([]),
     ), EXCLUDED_USERS);
 
-    const firstMsg: MessageOut[] = await prepareMessages([thread.last_message] as Message[], EXCLUDED_USERS);
-    const allMsgs: MessageOut[] = await prepareMessages(await collectMessages(
+    const firstMsg: MessageOut[] = await prepareMessages(
+      clientUSER,
+      [thread.last_message] as Message[],
+      EXCLUDED_USERS,
+    );
+    const allMsgs: MessageOut[] = await prepareMessages(clientUSER, await collectMessages(
       clientUSER,
       chatId,
       t,
@@ -99,13 +103,19 @@ async function main() {
     if (!prompt) {
       prompt = STRICT_PROMPTS.get('0') ?? '';
     }
-
+    // {
+    //   id: Message ID,
+    //   link: Ссылка на сообщение,
+    //   sender: Отправитель,
+    //   text: Текст сообщения
+    //   replyTo: сообщения на которое ответили, если есть
+    // }
     const results = extractJsonBlock(await analyze(
       msgsToAnalyze,
       (Date.now() / 1000) - LAST_MSGS_PERIOD,
       prompt,
       MODEL,
-      msg => `${msg.id},${msg.link},${msg.from}:${msg.text}\n`,
+      msg => `{id:${msg.id},link:${msg.link},sender:${msg.from},text:${msg.text},replyTo:${msg.replyTo}\n`,
       allMsgs,
     )) as ModResult[];
 
@@ -142,7 +152,7 @@ async function sendResults(
       let text = `
 ${r.sender}
 ${r.link}
-**Комментарий от ИИ(${r.correctness}/10):**
+**Комментарий от ИИ(${r.correctness}/100):**
 \`\`\`
 ${r.reason}
 \`\`\`
@@ -156,6 +166,7 @@ ${r.recommendation}
 
       if (Number(r.correctness) > maxCorrectnessLevel) {
         console.log('Skip too correct message!');
+        continue;
       }
 
       if (!DRY_RUN) {
