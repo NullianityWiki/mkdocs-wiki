@@ -19,7 +19,7 @@ const EXCLUDED_USERS = new Set<string>([
   '@nullianity_banhammer_bot',
   '@QuizariumBot',
 ]);
-const LAST_MSGS_PERIOD = 60 * 50;
+const LAST_MSGS_PERIOD = 60 * 5;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 
 export type ModResult = {
