@@ -119,7 +119,7 @@ async function main() {
       allMsgs,
     )) as ModResult[];
 
-    let maxCorrectnessLevel = 10;
+    let maxCorrectnessLevel = 100;
     const cMatch = thread.info.name.match(/\(L=(\d+)\)$/);
     if (cMatch) {
       maxCorrectnessLevel = parseInt(cMatch[1], 10);
