@@ -23,6 +23,7 @@ const LAST_MSGS_PERIOD = 60 * 5;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 
 export type ModResult = {
+  id: string,
   thread: string,
   link: string,
   sender: string,
@@ -93,6 +94,8 @@ async function main() {
 
     allMsgs.unshift(...firstMsg);
 
+    // allMsgs.forEach(msg => console.log(`${msg.id},${msg.from} (${msg.fromId}) ${msg.thread} ${msg.link} ${msg.date} ${msg.text}`));
+
     if (!prompt) {
       prompt = STRICT_PROMPTS.get('0') ?? '';
     }
@@ -102,7 +105,7 @@ async function main() {
       (Date.now() / 1000) - LAST_MSGS_PERIOD,
       prompt,
       MODEL,
-      msg => `${msg.link},${msg.from}:${msg.text}\n`,
+      msg => `${msg.id},${msg.link},${msg.from}:${msg.text}\n`,
       allMsgs,
     )) as ModResult[];
 
@@ -140,9 +143,13 @@ async function sendResults(
 ${r.sender}
 ${r.link}
 **Комментарий от ИИ(${r.correctness}/10):**
-\`\`\`${r.reason}\`\`\`
+\`\`\`
+${r.reason}
+\`\`\`
 **Как было бы лучше сказать:**
-\`\`\`${r.recommendation}\`\`\`
+\`\`\`
+${r.recommendation}
+\`\`\`
 `;
 
       console.log(text);
@@ -152,7 +159,7 @@ ${r.link}
       }
 
       if (!DRY_RUN) {
-        await sendMessage(clientBOT, chatId, thread, null, text);
+        await sendMessage(clientBOT, chatId, thread, Number(r.id), text);
       }
 
     } catch (e) {

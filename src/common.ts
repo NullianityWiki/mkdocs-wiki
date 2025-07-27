@@ -1,5 +1,5 @@
 import { Client } from 'tdl';
-import { File, ForumTopic, Message, MessageLink, messageReplyToMessage, User } from 'src/tdlib-types';
+import { File, FormattedText, ForumTopic, Message, MessageLink, messageReplyToMessage, User } from 'src/tdlib-types';
 import { EXCLUDE_USERS } from './exclude';
 import { createHash } from 'node:crypto';
 import * as fs from 'node:fs';
@@ -352,21 +352,15 @@ export async function sendMessage(
 ) {
 
   if (replyTo !== null) {
-    const replyMsg = await client.invoke({
-      _: 'getMessage',
-      chat_id: chatId,
-      message_id: replyTo,
-    }) as Message;
-    // console.log('reply msg', JSON.stringify(replyMsg, null, 2));
-    if(!replyMsg) {
-      console.log(`Reply message with ID ${replyTo} not found in chat ${chatId}. Skipping reply.`);
-      return;
-    } else {
-      replyTo = (replyMsg.reply_to as messageReplyToMessage)?.message_id ?? null;
-      if(!replyTo) {
-        console.log(`Reply message not found. Skipping reply.`);
-        return;
-      }
+    let replyMsg;
+    try {
+      replyMsg = await client.invoke({
+        _: 'getMessage',
+        chat_id: chatId,
+        message_id: replyTo,
+      }) as Message;
+    } catch (e) {
+      console.log(`Failed to fetch reply message with ID ${replyTo} in chat ${chatId}:`, e);
     }
   }
 
@@ -381,7 +375,7 @@ export async function sendMessage(
       parse_mode: {
         _: 'textParseModeMarkdown',
       },
-    });
+    }) as FormattedText;
 
     const res = await client.invoke({
       _: 'sendMessage',
@@ -389,15 +383,12 @@ export async function sendMessage(
       message_thread_id: threadId,
       input_message_content: {
         '@type': 'inputMessageText',
-        text: {
-          '@type': 'formattedText',
-          text: parsed,
-        },
+        text: parsed,
       },
-      // reply_to: replyTo !== null ? {
-      //   '@type': 'inputMessageReplyToMessage',
-      //   message_id: replyTo,
-      // } : undefined,
+      reply_to: replyTo !== null ? {
+        '@type': 'inputMessageReplyToMessage',
+        message_id: replyTo,
+      } : undefined,
     }) as Message;
 
     console.log(`Chunk ${i + 1}/${chunks.length} sent to thread ${threadId}` /*JSON.stringify(res, null, 2)*/);
@@ -466,7 +457,7 @@ function splitTextIntoChunks(text: string, chunkSize: number): string[] {
 }
 
 export function extractJsonBlock(text: string): any {
-  if(!text || text.trim() === '') {
+  if (!text || text.trim() === '') {
     return [];
   }
   const cleaned = text
