@@ -1,7 +1,15 @@
 import 'dotenv/config';
-import { forumTopic, Message } from 'src/utils/tdlib-types';
+import { forumTopic, Message, messageSenderUser, User } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessage, sleep } from '../utils/common';
+import {
+  deleteMessages,
+  extractJsonBlock,
+  getActiveThreads,
+  getChatIdByChatName,
+  login,
+  sendMessage,
+  sleep,
+} from '../utils/common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 import { Client } from 'tdl';
 import { STRICT_PROMPTS } from './moderation-prompts';
@@ -51,6 +59,7 @@ async function main() {
     undefined,
   );
   const chatId = await getChatIdByChatName(clientUSER, chatName);
+  const botInfo = await clientBOT.invoke({ _: 'getMe' }) as User;
 
   const threads = await getActiveThreads(clientUSER, chatId);
 
@@ -65,7 +74,7 @@ async function main() {
       console.log(`Skipping thread ${thread.info.name} ${thread.info.message_thread_id} with last message date ${new Date(
         thread.last_message.date * 1000).toISOString()} older than ${new Date((Date.now() / 1000) - LAST_MSGS_PERIOD *
         1000).toISOString()}`);
-      continue;
+      // continue;
     }
 
 
@@ -87,14 +96,28 @@ async function main() {
       [thread.last_message] as Message[],
       EXCLUDED_USERS,
     );
-    const allMsgs: MessageOut[] = await prepareMessages(clientUSER, await collectMessages(
+
+    let allMsgsPure = await collectMessages(
       clientUSER,
       chatId,
       t,
-      60 * 60 * 24,
+      60 * 60 * 24 * 30,
       userNamesCache,
       new Set([]),
-    ), EXCLUDED_USERS);
+    );
+
+    console.log(`Collected ${allMsgsPure.length} messages`);
+
+    const botMsgs = allMsgsPure.filter(m => (m.sender_id as messageSenderUser).user_id === botInfo.id);
+    console.log('botMsgs', botMsgs.length);
+
+    const MAX_MSG_CONTEXT = 100;
+    if (allMsgsPure.length > MAX_MSG_CONTEXT) {
+      allMsgsPure = allMsgsPure.slice(-MAX_MSG_CONTEXT);
+      console.log(`Collected ${allMsgsPure.length} messages after limiting to last ${MAX_MSG_CONTEXT} messages`);
+    }
+
+    const allMsgs: MessageOut[] = await prepareMessages(clientUSER, allMsgsPure, EXCLUDED_USERS);
 
     allMsgs.unshift(...firstMsg);
 
@@ -103,13 +126,7 @@ async function main() {
     if (!prompt) {
       prompt = STRICT_PROMPTS.get('0') ?? '';
     }
-    // {
-    //   id: Message ID,
-    //   link: Ссылка на сообщение,
-    //   sender: Отправитель,
-    //   text: Текст сообщения
-    //   replyTo: сообщения на которое ответили, если есть
-    // }
+
     const results = extractJsonBlock(await analyze(
       msgsToAnalyze,
       (Date.now() / 1000) - LAST_MSGS_PERIOD,
@@ -127,6 +144,28 @@ async function main() {
     }
 
     await sendResults(chatId, results, DRY_RUN, clientBOT, thread.info.message_thread_id, maxCorrectnessLevel);
+
+    const currentDate = Math.floor(Date.now() / 1000);
+    let msgsToDelete: number[] = [];
+    for (const msg of botMsgs) {
+      if (msg.date < (currentDate - 60 * 60)) {
+        if ((msg.interaction_info?.reactions?.reactions?.length ?? 0) > 0) {
+          console.log(`Old bot message ${msg.id} with reaction in thread ${thread.info.name}`);
+          msgsToDelete.push(msg.id);
+        }
+      }
+
+      if (msgsToDelete.length >= 100) {
+        if (!DRY_RUN) {
+          await deleteMessages(clientBOT, chatId, msgsToDelete);
+        }
+        msgsToDelete = [];
+      }
+    }
+
+    if (!DRY_RUN && msgsToDelete.length > 0) {
+      await deleteMessages(clientBOT, chatId, msgsToDelete);
+    }
   }
 
   await sleep(1000);

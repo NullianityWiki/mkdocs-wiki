@@ -583,3 +583,16 @@ export async function getActiveThreads(client: Client, chatId: number) {
   // });
   return allTopics;
 }
+
+export async function deleteMessages(
+  client: Client,
+  chatId: number,
+  msgs: number[]
+) {
+  await client.invoke({
+    _: 'deleteMessages',
+    chat_id: chatId,
+    message_ids: msgs,
+    revoke: true,
+  });
+}
