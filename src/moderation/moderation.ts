@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { Message } from 'src/tdlib-types';
+import { Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import {
   extractJsonBlock,
@@ -9,7 +9,7 @@ import {
   sendMessage,
   sendMessageBOT,
   sleep,
-} from '../common';
+} from '../utils/common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 
 const tdl = require('tdl');

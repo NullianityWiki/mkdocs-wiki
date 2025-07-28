@@ -1,5 +1,14 @@
 import { Client } from 'tdl';
-import { File, FormattedText, ForumTopic, Message, MessageLink, messageReplyToMessage, User } from 'src/tdlib-types';
+import {
+  File,
+  FormattedText,
+  ForumTopic,
+  Message,
+  MessageLink,
+  messageReplyToMessage,
+  Messages,
+  User,
+} from 'src/utils/tdlib-types';
 import { EXCLUDE_USERS } from './exclude';
 import { createHash } from 'node:crypto';
 import * as fs from 'node:fs';
@@ -157,6 +166,63 @@ export async function exportThread(
     await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, msgs, client),
     chatId, client, userExcludedCache,
   );
+}
+
+export async function exportChat(
+  client: Client,
+  chatId: number,
+  lastMsg: Message | null,
+  userNamesCache: Map<number, string>,
+  userExcludedCache: Map<number, boolean>,
+): Promise<Message[]> {
+  let allMessages: Message[] = [];
+  const toDate = Math.floor((lastMsg?.date ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+  let fromMessageId = 0;
+
+  console.log(`Exporting chat ${chatId} to date ${(new Date(toDate * 1000)).toISOString()}`);
+
+  let tryCount = 0;
+  while (true) {
+    try {
+      const result = await client.invoke({
+        _: 'getChatHistory',
+        chat_id: chatId,
+        from_message_id: fromMessageId,
+        offset: 0,
+        limit: 100,
+      }) as Messages;
+
+      const msgs = (result.messages ?? []) as Message[];
+
+      if (msgs.length === 0) {
+        break;
+      }
+      allMessages.push(...msgs);
+      const resultLstMsg = msgs[msgs.length - 1];
+      fromMessageId = resultLstMsg.id as number;
+
+      if (resultLstMsg.date < toDate) {
+        console.log('Reached target date with msg', (new Date(resultLstMsg.date * 1000)).toISOString());
+        break;
+      } else {
+        console.log(`Fetched messages with the last ${(new Date(resultLstMsg.date * 1000)).toISOString()}`);
+      }
+    } catch (e) {
+      if (tryCount > 100) {
+        console.error(`Failed to fetch messages for chat ${chatId} after multiple attempts.`);
+        throw e;
+      }
+      console.log(`Error fetching messages for chat ${chatId}:`, e);
+      await sleep(1000);
+      tryCount++;
+    }
+  }
+
+  return await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, allMessages.reverse().map(m => {
+    return {
+      ...m,
+    };
+  }), client);
 }
 
 export async function sleep(ms: number) {

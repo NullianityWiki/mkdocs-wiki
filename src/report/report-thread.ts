@@ -5,7 +5,7 @@ import { pick } from 'stream-json/filters/Pick.js';
 import { streamArray } from 'stream-json/streamers/StreamArray.js';
 import { encoding_for_model } from 'tiktoken';
 import 'dotenv/config';
-import { Message } from 'src/tdlib-types';
+import { Message } from 'src/utils/tdlib-types';
 
 const fileName = process.env.REPORT_NAME!;
 

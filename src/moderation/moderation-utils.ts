@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { Client } from 'tdl';
-import { ForumTopic, Message, messageSenderUser } from 'src/tdlib-types';
-import { exportThread } from '../common';
+import { ForumTopic, Message, messageSenderUser } from 'src/utils/tdlib-types';
+import { exportThread } from '../utils/common';
 import OpenAI from 'openai';
 
 export type MessageOut = {

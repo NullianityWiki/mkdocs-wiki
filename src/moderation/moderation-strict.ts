@@ -1,7 +1,7 @@
 import 'dotenv/config';
-import { forumTopic, Message } from 'src/tdlib-types';
+import { forumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessage, sleep } from '../common';
+import { extractJsonBlock, getActiveThreads, getChatIdByChatName, login, sendMessage, sleep } from '../utils/common';
 import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
 import { Client } from 'tdl';
 import { STRICT_PROMPTS } from './moderation-prompts';

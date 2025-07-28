@@ -1,6 +1,6 @@
 // Types for TDLib v1.8.50 (e133ac6d049f5d56821cec6a3e5501cb20965c66)
 // Generated using tdl-install-types v0.3.0
-declare module 'src/tdlib-types' {
+declare module 'src/utils/tdlib-types' {
   export type error = {
     /**
      * An object of this type can be returned on every function call, in case of an

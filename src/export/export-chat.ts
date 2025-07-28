@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import { Client } from 'tdl';
-import { ForumTopic, Message } from 'src/tdlib-types';
+import { ForumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import { mkdirSync, writeFileSync } from 'fs';
-import { exportThread, login } from './common';
+import { exportThread, login } from '../utils/common';
 import { readFileSync } from 'node:fs';
 
 const tdl = require('tdl');

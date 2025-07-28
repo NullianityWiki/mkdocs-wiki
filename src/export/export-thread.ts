@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import { mkdirSync, writeFileSync } from 'fs';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, login } from './common';
-import { ForumTopics } from 'src/tdlib-types';
+import { exportThread, login } from '../utils/common';
+import { ForumTopics } from 'src/utils/tdlib-types';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });

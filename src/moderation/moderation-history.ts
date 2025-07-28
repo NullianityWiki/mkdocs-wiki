@@ -1,10 +1,10 @@
 import 'dotenv/config';
 import { Client } from 'tdl';
-import { ForumTopic, Message } from 'src/tdlib-types';
+import { ForumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, extractJsonBlock, getActiveThreads, getChatIdByChatName, login } from '../common';
+import { exportThread, extractJsonBlock, getActiveThreads, getChatIdByChatName, login } from '../utils/common';
 import { analyze, MessageOut, prepareMessages } from './moderation-utils';
-import { createDB, getUser, upsertUser } from '../db';
+import { createDB, getUser, upsertUser } from '../utils/db';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });

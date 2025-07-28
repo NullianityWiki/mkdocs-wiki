@@ -7,12 +7,12 @@
   "scripts": {
     "run": "mkdocs serve",
     "build": "npx tdl-install-types && tsc",
-    "report": "npx ts-node src/report.ts",
-    "report-thread": "npx ts-node src/report-thread.ts",
-    "export-thread": "npx ts-node src/export-thread.ts",
-    "export-chat": "npx ts-node src/export-chat.ts",
-    "analize": "npx ts-node src/analize.ts && npx ts-node src/add-lore.ts",
-    "add-lore": "npx ts-node src/add-lore.ts",
+    "report": "npx ts-node src/report/report.ts",
+    "report-thread": "npx ts-node src/report/report-thread.ts",
+    "export-thread": "npx ts-node src/export/export-thread.ts",
+    "export-chat": "npx ts-node src/export/export-chat.ts",
+    "analize": "npx ts-node src/analyze/analize.ts && npx ts-node src/wiki/add-lore.ts",
+    "add-lore": "npx ts-node src/wiki/add-lore.ts",
     "moderation": "npx ts-node src/moderation/moderation.ts",
     "moderation-strict": "npx ts-node src/moderation/moderation-strict.ts"
   },
