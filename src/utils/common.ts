@@ -171,12 +171,22 @@ export async function exportThread(
 export async function exportChat(
   client: Client,
   chatId: number,
-  lastMsg: Message | null,
+  from: number | null,
+  to: number | null,
   userNamesCache: Map<number, string>,
   userExcludedCache: Map<number, boolean>,
+  roundDate = true,
 ): Promise<Message[]> {
   let allMessages: Message[] = [];
-  const toDate = Math.floor((lastMsg?.date ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+
+  let toDate;
+  if (roundDate) {
+    toDate = Math.floor((from ?? 0) / (60 * 60 * 24)) * (60 * 60 * 24);
+  } else {
+    toDate = from ?? 0;
+  }
+
+
   let fromMessageId = 0;
 
   console.log(`Exporting chat ${chatId} to date ${(new Date(toDate * 1000)).toISOString()}`);
@@ -218,11 +228,11 @@ export async function exportChat(
     }
   }
 
-  return await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, allMessages.reverse().map(m => {
-    return {
-      ...m,
-    };
-  }), client);
+  const msgs = allMessages.reverse().filter(msg => {
+    return msg.date > toDate && (!to || msg.date < to);
+  });
+
+  return await enrichMessagesWithUserNames(userNamesCache, userExcludedCache, msgs, client);
 }
 
 export async function sleep(ms: number) {
@@ -595,4 +605,5 @@ export async function deleteMessages(
     message_ids: msgs,
     revoke: true,
   });
+  console.log(`Deleted ${msgs.length} messages from chat ${chatId}`);
 }

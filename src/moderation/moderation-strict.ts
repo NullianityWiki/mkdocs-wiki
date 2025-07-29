@@ -145,33 +145,31 @@ async function main() {
 
     await sendResults(chatId, results, DRY_RUN, clientBOT, thread.info.message_thread_id, maxCorrectnessLevel);
 
-    const currentDate = Math.floor(Date.now() / 1000);
-    let msgsToDelete: number[] = [];
-    for (const msg of botMsgs) {
-      if (msg.date < (currentDate - 60 * 60)) {
-        if ((msg.interaction_info?.reactions?.reactions?.length ?? 0) > 0) {
-          console.log(`Old bot message ${msg.id} with reaction in thread ${thread.info.name}`);
-          msgsToDelete.push(msg.id);
-        }
-      }
+    await deleteOldMsgs(clientBOT, botMsgs, chatId, thread)
 
-      if (msgsToDelete.length >= 100) {
-        if (!DRY_RUN) {
-          await deleteMessages(clientBOT, chatId, msgsToDelete);
-        }
-        msgsToDelete = [];
-      }
-    }
-
-    if (!DRY_RUN && msgsToDelete.length > 0) {
-      await deleteMessages(clientBOT, chatId, msgsToDelete);
-    }
   }
 
   await sleep(1000);
   console.log(`Done!`);
 }
 
+async function deleteOldMsgs(clientBOT: Client, botMsgs: Message[], chatId: number, thread: forumTopic) {
+  const currentDate = Math.floor(Date.now() / 1000);
+  for (const msg of botMsgs) {
+    if (msg.date < (currentDate - 60 * 60)) {
+      if ((msg.interaction_info?.reactions?.reactions?.length ?? 0) > 0) {
+        console.log(`Old bot message ${msg.id} with reaction in thread ${thread.info.name}`);
+        if (!DRY_RUN) {
+          try {
+            await deleteMessages(clientBOT, chatId, [msg.id]);
+          } catch (e) {
+            console.error(`Error deleting message ${msg.id} in thread ${thread.info.name}:`, e);
+          }
+        }
+      }
+    }
+  }
+}
 
 async function sendResults(
   chatId: number,
