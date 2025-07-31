@@ -28,6 +28,7 @@ const EXCLUDED_USERS = new Set<string>([
   '@QuizariumBot',
 ]);
 const LAST_MSGS_PERIOD = 60 * 5;
+const DEFAULT_CORRECTNESS_LEVEL = 30;
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
 
 export type ModResult = {
@@ -136,7 +137,7 @@ async function main() {
       allMsgs,
     )) as ModResult[];
 
-    let maxCorrectnessLevel = 100;
+    let maxCorrectnessLevel = DEFAULT_CORRECTNESS_LEVEL;
     const cMatch = thread.info.name.match(/\(L=(\d+)\)$/);
     if (cMatch) {
       maxCorrectnessLevel = parseInt(cMatch[1], 10);
