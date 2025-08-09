@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { Message } from 'src/utils/tdlib-types';
+import { forumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import {
   extractJsonBlock,
@@ -50,10 +50,13 @@ const PROMPT = `
 
 Верни ТОЛЬКО нарушающие сообщения в формате массива JSON объектов где:
 {
+id: message ID,
 thread: ID треда сообщения,
 link: Ссылка на сообщение,
 sender: Отправитель,
-reason: Развернутая причина с указанием пункта правил,
+reason: Причина нарушения описанная в оригинальном и забавном стиле,
+score: Оценка грубости нарушения от 0 до 10(чем выше - тем грубее нарушение),
+probability: Оценка вероятности того, что это ложное срабатывание от 0 до 10 (чем выше - тем ты уверение в своей правоте)
 }
 Твой ответ должен содержать ТОЛЬКО массив JSON объектов.
 
@@ -80,9 +83,16 @@ reason: Развернутая причина с указанием пункта
 3.2. Обсуждение проектов.
 Разрешено в соответствующем топике; автор принимает конструктивную критику; прямые ссылки на оплату/вступление - запрещены.
 
-Формат сообщений: "ссылка,тред,отправитель:сообщение".
+Формат сообщений:
+{
+link: Ссылка на сообщение,
+thread: ID треда,
+from: Ник пользователя,
+text: Сообщение пользователя для анализа,
+replyTo: Текст сообщения на которое отвечает пользователь (этот текст для контекста и не требует анализа модерации)
+}
 
-Это сообщения требующие анализа модерации:
+Это сообщения из треда "$THREAD_NAME" требующие анализа модерации:
 """$LAST_MESSAGES"""
 `;
 
@@ -93,10 +103,13 @@ reason: Развернутая причина с указанием пункта
 //   reason: Развернутая причина с указанием пункта правил,
 // }
 export type ModResult = {
+  id: string,
   thread: string, // ID треда сообщения,
   link: string, // Ссылка на сообщение,
   sender: string, // Отправитель,
   reason: string, // Развернутая причина с указанием пункта правил,
+  score: string,
+  probability: string,
 }
 
 const userNamesCache = new Map<number, string>();
@@ -114,29 +127,44 @@ async function main() {
 
   const threads = await getActiveThreads(clientUSER, chatId);
 
-  const allMessages: Message[] = await collectMessages(
-    clientUSER,
-    chatId,
-    threads,
-    LAST_MSGS_PERIOD,
-    userNamesCache,
-    EXCLUDED_THREADS,
-  );
+  for (const thread of threads.values()) {
 
-  const allMessagesOut: MessageOut[] = await prepareMessages(clientUSER, allMessages, EXCLUDED_USERS);
+    const threadMessages: Message[] = await collectMessages(
+      clientUSER,
+      chatId,
+      new Map<number, forumTopic>([[thread.info.message_thread_id, thread]]),
+      LAST_MSGS_PERIOD,
+      userNamesCache,
+      EXCLUDED_THREADS,
+    );
 
-  const results = extractJsonBlock(await analyze(
-    allMessagesOut,
-    (Date.now() / 1000) - LAST_MSGS_PERIOD,
-    PROMPT,
-    MODEL,
-    msg => `${msg.link},${msg.thread},${msg.from}:${msg.text}\n` // // Формат сообщений: "ссылка,тред,отправитель:сообщение".
-  )) as ModResult[];
+    const allMessagesOut: MessageOut[] = await prepareMessages(clientUSER, threadMessages, EXCLUDED_USERS);
 
-  await sendResults(chatId, results, DRY_RUN, botToken, REPORT_TO_CHAT);
+    const results = extractJsonBlock(await analyze(
+      allMessagesOut,
+      (Date.now() / 1000) - LAST_MSGS_PERIOD,
+      PROMPT,
+      MODEL,
+      msg => `
+{
+link: ${msg.link},
+thread: ${msg.thread},
+from: ${msg.from},
+text: ${msg.text},
+replyTo: ${msg.replyTo},
+}      
+      `,
+      undefined,
+      thread.info.name,
+    )) as ModResult[];
+
+    const filteredResults = results.filter(r => Number(r.score) > 3 && Number(r.probability) > 7);
+
+    await sendResults(chatId, filteredResults, DRY_RUN, botToken, REPORT_TO_CHAT);
+  }
 
   await sleep(1000);
-  console.log(`All done! Sent ${results.length} messages to ${chatName} (${chatId})`);
+  console.log(`All done!`);
 }
 
 
@@ -164,13 +192,14 @@ async function sendResults(
   for (const r of results) {
     try {
       let text = `
-⚠️${r.sender}
+S:${r.score},P:${r.probability}
+${r.sender}
 ${r.link}
-Подозрение на нарушение правил по причине:
 ${r.reason}
+*ИИ может ошибаться, относитесь спокойней и с юмором :)
 `;
 
-      out += `${r.link}\n${r.sender}\n${r.reason}\n\n`;
+      out += `S:${r.score},P:${r.probability}\n${r.link}\n${r.sender}\n${r.reason}\n\n`;
 
       console.log(text);
 

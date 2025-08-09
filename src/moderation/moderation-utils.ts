@@ -132,6 +132,7 @@ export async function analyze(
   MODEL: string,
   handler: (msg: MessageOut) => string,
   extraMsgs?: MessageOut[],
+  threadName?: string,
 ) {
   if (!messages || messages.length === 0) {
     console.log(`No messages to analyze, skipping...`);
@@ -161,6 +162,10 @@ export async function analyze(
 
   let prompt = PROMPT.replace('$LAST_MESSAGES', lastMessagesData);
 
+  if(threadName) {
+    prompt = prompt.replace('$THREAD_NAME', threadName);
+  }
+
   if(extraMsgs) {
     let extra = '';
     for (const msg of extraMsgs) {
@@ -184,7 +189,7 @@ export async function analyze(
   const response = await openai.chat.completions.create({
     model: MODEL,
     messages: [{ role: 'user', content: prompt }],
-    temperature: 0,
+    temperature: 1,
   });
   const result = response.choices[0].message.content ?? '';
 

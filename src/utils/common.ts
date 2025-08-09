@@ -1,5 +1,6 @@
 import { Client } from 'tdl';
 import {
+  chatMember, ChatMembers, chatTypeSupergroup,
   File,
   FormattedText,
   ForumTopic,
@@ -258,7 +259,7 @@ async function enrichMessagesWithUserNames(
   }));
 }
 
-async function getUserName(
+export async function getUserName(
   userNamesCache: Map<number, string>,
   userExcludedCache: Map<number, boolean> | null,
   client: Client,
@@ -555,6 +556,35 @@ export async function getChatIdByChatName(client: Client, _chatName: string) {
   });
   console.log('→ CHAT_ID =', chat.id);
   return chat.id;
+}
+
+export async function getAllChatMembers(client: Client, supergroupId: number) {
+  let usersOffset = 0;
+  const allUsers: chatMember[] = [];
+  while (true) {
+    const users = (await client.invoke({
+      _: 'getSupergroupMembers',
+      supergroup_id: supergroupId,
+      filter: {
+        _: 'supergroupMembersFilterRecent',
+      },
+      offset: usersOffset,
+      limit: 200,
+      user_ids: [],
+    }) as ChatMembers);
+
+    if (users.members.length === 0) {
+      console.log(`No more users found, exiting...`);
+      break;
+    }
+
+    console.log(`Found ${users.members.length} users from offset ${usersOffset}`);
+
+    usersOffset += 200;
+    allUsers.push(...users.members);
+  }
+
+  return allUsers;
 }
 
 export async function getActiveThreads(client: Client, chatId: number) {
