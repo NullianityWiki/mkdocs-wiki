@@ -191,10 +191,10 @@ async function sendResults(
   let out = '';
   for (const r of results) {
     try {
+      // S:${r.score},P:${r.probability}
+      // ${r.link}
       let text = `
-S:${r.score},P:${r.probability}
 ${r.sender}
-${r.link}
 ${r.reason}
 ---
 ИИ может ошибаться, относитесь спокойней и с юмором :)
