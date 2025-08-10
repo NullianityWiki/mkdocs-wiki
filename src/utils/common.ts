@@ -430,9 +430,8 @@ export async function sendMessage(
 ) {
 
   if (replyTo !== null) {
-    let replyMsg;
     try {
-      replyMsg = await client.invoke({
+      await client.invoke({
         _: 'getMessage',
         chat_id: chatId,
         message_id: replyTo,
