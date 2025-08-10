@@ -158,7 +158,7 @@ replyTo: ${msg.replyTo},
       thread.info.name,
     )) as ModResult[];
 
-    const filteredResults = results.filter(r => Number(r.score) > 3 && Number(r.probability) > 7);
+    const filteredResults = results.filter(r => Number(r.score) >= 6 && Number(r.probability) >= 9);
 
     await sendResults(chatId, filteredResults, DRY_RUN, botToken, REPORT_TO_CHAT);
   }
