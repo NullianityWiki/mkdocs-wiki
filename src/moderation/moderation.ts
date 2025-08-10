@@ -209,7 +209,7 @@ ${r.reason}
       thread = Number(r.thread);
 
       if (!DRY_RUN) {
-        await sendMessage(clientBOT, chatId, thread, null, text);
+        await sendMessage(clientBOT, chatId, thread, Number(r.id), text);
       }
 
     } catch (e) {
