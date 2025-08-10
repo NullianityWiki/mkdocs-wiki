@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { Client } from 'tdl';
 import { ForumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, extractJsonBlock, getActiveThreads, getChatIdByChatName, login } from '../utils/common';
+import { exportThread, extractJsonBlock, getActiveThreads, getPublicChatIdByChatName, login } from '../utils/common';
 import { analyze, MessageOut, prepareMessages } from './moderation-utils';
 import { createDB, getUser, upsertUser } from '../utils/db';
 
@@ -75,7 +75,7 @@ async function main() {
     undefined,
     phoneNumber,
   );
-  const chatId = await getChatIdByChatName(clientUSER, chatName);
+  const chatId = await getPublicChatIdByChatName(clientUSER, chatName);
 
   const threads = await getActiveThreads(clientUSER, chatId);
 

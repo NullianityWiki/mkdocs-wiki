@@ -4,7 +4,7 @@ import { getTdjson } from 'prebuilt-tdlib';
 import {
   extractJsonBlock,
   getActiveThreads,
-  getChatIdByChatName,
+  getPublicChatIdByChatName,
   login,
   sendMessage,
   sendMessageBOT,
@@ -123,7 +123,7 @@ async function main() {
     undefined,
     phoneNumber,
   );
-  const chatId = await getChatIdByChatName(clientUSER, chatName);
+  const chatId = await getPublicChatIdByChatName(clientUSER, chatName);
 
   const threads = await getActiveThreads(clientUSER, chatId);
 
@@ -196,7 +196,8 @@ S:${r.score},P:${r.probability}
 ${r.sender}
 ${r.link}
 ${r.reason}
-*ИИ может ошибаться, относитесь спокойней и с юмором :)
+---
+ИИ может ошибаться, относитесь спокойней и с юмором :)
 `;
 
       out += `S:${r.score},P:${r.probability}\n${r.link}\n${r.sender}\n${r.reason}\n\n`;

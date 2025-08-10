@@ -5,7 +5,7 @@ import {
   deleteMessages,
   extractJsonBlock,
   getActiveThreads,
-  getChatIdByChatName,
+  getPublicChatIdByChatName,
   login,
   sendMessage,
   sleep,
@@ -59,7 +59,7 @@ async function main() {
     botToken,
     undefined,
   );
-  const chatId = await getChatIdByChatName(clientUSER, chatName);
+  const chatId = await getPublicChatIdByChatName(clientUSER, chatName);
   const botInfo = await clientBOT.invoke({ _: 'getMe' }) as User;
 
   const threads = await getActiveThreads(clientUSER, chatId);

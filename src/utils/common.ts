@@ -1,12 +1,13 @@
 import { Client } from 'tdl';
 import {
-  chatMember, ChatMembers, chatTypeSupergroup,
+  Chat,
+  chatMember,
+  ChatMembers,
   File,
   FormattedText,
   ForumTopic,
   Message,
   MessageLink,
-  messageReplyToMessage,
   Messages,
   User,
 } from 'src/utils/tdlib-types';
@@ -446,21 +447,29 @@ export async function sendMessage(
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
 
-    const parsed = await client.invoke({
-      _: 'parseTextEntities',
-      text: chunk,
-      parse_mode: {
-        _: 'textParseModeMarkdown',
-      },
-    }) as FormattedText;
+    let parsed = undefined;
+    try {
+      parsed = await client.invoke({
+        _: 'parseTextEntities',
+        text: chunk,
+        parse_mode: {
+          _: 'textParseModeMarkdown',
+        },
+      }) as FormattedText;
+    } catch (e) {
+      console.log('not parsed');
+    }
 
     const res = await client.invoke({
       _: 'sendMessage',
       chat_id: chatId,
-      message_thread_id: threadId,
+      message_thread_id: threadId === 0 ? undefined : threadId,
       input_message_content: {
         '@type': 'inputMessageText',
-        text: parsed,
+        text: parsed ? parsed : {
+          "@type": "formattedText",
+          text: chunk,
+        },
       },
       reply_to: replyTo !== null ? {
         '@type': 'inputMessageReplyToMessage',
@@ -548,7 +557,7 @@ export function extractJsonBlock(text: string): any {
 }
 
 
-export async function getChatIdByChatName(client: Client, _chatName: string) {
+export async function getPublicChatIdByChatName(client: Client, _chatName: string) {
   console.log(`Searching for chat with name "${_chatName}"...`);
   const chat = await client.invoke({
     _: 'searchPublicChat',
@@ -556,6 +565,29 @@ export async function getChatIdByChatName(client: Client, _chatName: string) {
   });
   console.log('→ CHAT_ID =', chat.id);
   return chat.id;
+}
+
+export async function getPrivateChatIdByChatName(client: Client, _chatName: string) {
+  console.log(`Searching for chat with name "${_chatName}"...`);
+
+  const chats = await client.invoke({
+    _: 'getChats',
+    chat_list: { _: 'chatListMain' },
+    limit: 100,
+  });
+
+  for (const chatId of chats.chat_ids) {
+    const chat = await client.invoke({
+      _: 'getChat',
+      chat_id: chatId,
+    }) as Chat;
+
+    if (chat.title === _chatName) {
+      console.log('Found chat:', chat.title, chatId);
+      return chatId;
+    }
+  }
+
 }
 
 export async function getAllChatMembers(client: Client, supergroupId: number) {
@@ -627,7 +659,7 @@ export async function getActiveThreads(client: Client, chatId: number) {
 export async function deleteMessages(
   client: Client,
   chatId: number,
-  msgs: number[]
+  msgs: number[],
 ) {
   await client.invoke({
     _: 'deleteMessages',
@@ -636,4 +668,16 @@ export async function deleteMessages(
     revoke: true,
   });
   console.log(`Deleted ${msgs.length} messages from chat ${chatId}`);
+}
+
+export async function getPrompt(fileName: string, dir = 'prompts') {
+  const folderPath = path.resolve(dir);
+  const files = fs.readdirSync(folderPath);
+  const file = files.find(f => f === fileName);
+
+  if (!file) {
+    throw new Error(`Prompt "${fileName}" does not found ${folderPath}`);
+  }
+  const content = fs.readFileSync(path.join(folderPath, file), 'utf-8');
+  return content.trim();
 }

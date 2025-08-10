@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { getTdjson } from 'prebuilt-tdlib';
-import { getAllChatMembers, getChatIdByChatName, getUserName, login } from '../utils/common';
+import { getAllChatMembers, getPublicChatIdByChatName, getUserName, login } from '../utils/common';
 import { Chat, chatEvent, ChatEvents, chatMember, chatTypeSupergroup, messageSenderUser } from 'src/utils/tdlib-types';
 import { Client } from 'tdl';
 import * as fs from 'node:fs';
@@ -40,7 +40,7 @@ async function main() {
     phoneNumber,
   );
 
-  const chatId = await getChatIdByChatName(client, chatName);
+  const chatId = await getPublicChatIdByChatName(client, chatName);
 
   const chat = await client.invoke({
     _: 'getChat',
