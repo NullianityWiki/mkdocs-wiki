@@ -49,7 +49,6 @@ async function main() {
   console.log('Messages:', messages.length);
 
   const allMessagesOut: MessageOut[] = await prepareMessages(clientUSER, messages, EXCLUDED_USERS);
-  console.log(allMessagesOut)
 
   const result = await analyze(
     allMessagesOut,
