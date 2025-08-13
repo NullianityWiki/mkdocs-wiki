@@ -1,7 +1,15 @@
 import 'dotenv/config';
 import { User } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportChat, getPrivateChatIdByChatName, getPrompt, login, sendMessage, sleep } from '../utils/common';
+import {
+  exportChat,
+  getPrivateChatIdByChatName,
+  getPrompt,
+  login,
+  sendMessage,
+  sendMessageBOT,
+  sleep,
+} from '../utils/common';
 import { analyze, MessageOut, prepareMessages } from '../moderation/moderation-utils';
 
 const tdl = require('tdl');
@@ -70,7 +78,7 @@ text: ${msg.text},
   console.log('result:', result);
 
   if (!DRY_RUN) {
-    await sendMessage(clientBOT, chatId, 0, null, result);
+    await sendMessageBOT(botToken, chatId, 0, null, result);
   }
 
   await sleep(1000);
