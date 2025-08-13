@@ -441,6 +441,9 @@ export async function sendMessage(
     }
   }
 
+  // refresh chat
+  await client.invoke({ _: 'getChat', chat_id: chatId });
+
   const chunks = splitTextIntoChunks(text, 4000);
 
   for (let i = 0; i < chunks.length; i++) {
@@ -466,7 +469,7 @@ export async function sendMessage(
       input_message_content: {
         '@type': 'inputMessageText',
         text: parsed ? parsed : {
-          "@type": "formattedText",
+          '@type': 'formattedText',
           text: chunk,
         },
       },
