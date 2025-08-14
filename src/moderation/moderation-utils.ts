@@ -67,7 +67,7 @@ export async function prepareMessages(client: Client, allMessages: Message[], EX
   const allMessagesOut: MessageOut[] = [];
 
   for (const msg of allMessages) {
-    if (!msg || msg.content._ !== 'messageText' || !msg.content.text) {
+    if (!msg) {
       continue;
     }
 
@@ -89,7 +89,20 @@ export async function prepareMessages(client: Client, allMessages: Message[], EX
     const link = msg['link'] || '';
 
     // const date = (new Date(msg.date * 1000)).toISOString();
-    const textOut = msg.content.text.text;
+
+    let textOut = '';
+    if(
+      msg.content._ === 'messageDocument'
+      || msg.content._ === 'messageAnimation'
+      || msg.content._ === 'messagePhoto'
+      || msg.content._ === 'messageVideo'
+    ) {
+      textOut = msg.content.caption.text;
+    }
+    if(msg.content._ === 'messageText') {
+      textOut = msg.content.text.text;
+    }
+
 
 
     let replyMsgText = '';

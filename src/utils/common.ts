@@ -202,6 +202,7 @@ export async function exportChat(
         from_message_id: fromMessageId,
         offset: 0,
         limit: 100,
+        only_local: false,
       }) as Messages;
 
       const msgs = (result.messages ?? []) as Message[];

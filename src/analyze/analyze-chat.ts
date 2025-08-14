@@ -50,6 +50,8 @@ async function main() {
 
   const allMessagesOut: MessageOut[] = await prepareMessages(clientUSER, messages, EXCLUDED_USERS);
 
+  console.log('Messages out:', allMessagesOut.length);
+
   const result = await analyze(
     allMessagesOut,
     Math.floor(Date.now() / 1000) - DAY,
