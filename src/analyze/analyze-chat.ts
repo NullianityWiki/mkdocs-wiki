@@ -11,6 +11,7 @@ import {
   sleep,
 } from '../utils/common';
 import { analyze, MessageOut, prepareMessages } from '../moderation/moderation-utils';
+import { Client } from 'tdl';
 
 const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
@@ -89,6 +90,14 @@ text: ${msg.text},
 
   const jsonResult = extractJsonBlock(result) as Result[];
 
+  await send(jsonResult, clientBOT, chatId);
+
+
+  await sleep(1000);
+  console.log(`Done!`);
+}
+
+async function send(jsonResult: Result[], client: Client, chatId: number) {
 
   for (const r of jsonResult) {
 
@@ -111,14 +120,10 @@ __Опиши проделанную работу более подробно, в
 
     console.log(text);
 
-    // if (!DRY_RUN) {
-      await sendMessage(clientBOT, chatId, 0, null, text);
-    // }
+    if (!DRY_RUN) {
+      await sendMessage(client, chatId, 0, null, text);
+    }
   }
-
-
-  await sleep(1000);
-  console.log(`Done!`);
 }
 
 main()
