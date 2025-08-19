@@ -1,7 +1,15 @@
 import 'dotenv/config';
 import { User } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportChat, getPrivateChatIdByChatName, getPrompt, login, sendMessage, sleep } from '../utils/common';
+import {
+  exportChat,
+  extractJsonBlock,
+  getPrivateChatIdByChatName,
+  getPrompt,
+  login,
+  sendMessage,
+  sleep,
+} from '../utils/common';
 import { analyze, MessageOut, prepareMessages } from '../moderation/moderation-utils';
 
 const tdl = require('tdl');
@@ -13,7 +21,15 @@ const phoneNumber = PHONE_NUMBER!, chatName = ANALYZE_CHAT_NAME!;
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const EXCLUDED_USERS = new Set<string>([]);
-const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-flash';
+const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-pro-preview';
+
+type Result = {
+  name: string,
+  past: number,
+  current: number,
+  future: number,
+  recomendations: string,
+}
 
 const userNamesCache = new Map<number, string>();
 
@@ -71,9 +87,35 @@ text: ${msg.text},
 
   console.log('result:', result);
 
-  if (!DRY_RUN) {
-    await sendMessage(clientBOT, chatId, 0, null, result);
+  const jsonResult = extractJsonBlock(result) as Result[];
+
+
+  for (const r of jsonResult) {
+
+    let text = `
+**${r.name}**      
+P:${r.past} / C:${r.current} / F:${r.future}  
+\`\`\`    
+${r.recomendations}
+\`\`\`  
+      `;
+
+    if (r.past < 8 || r.current < 8 || r.future < 8) {
+      text += `
+---
+⚠️__Не хватает данных!__⚠️ 
+__Опиши проделанную работу более подробно, включая что сделано, чем занимаешься сейчас и чем будешь заниматься в будущем.__
+Просто ответь на это сообщение с кратким репортом.
+        `;
+    }
+
+    console.log(text);
+
+    // if (!DRY_RUN) {
+      await sendMessage(clientBOT, chatId, 0, null, text);
+    // }
   }
+
 
   await sleep(1000);
   console.log(`Done!`);
