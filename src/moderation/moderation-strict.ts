@@ -9,12 +9,12 @@ import {
   login,
   sendMessage,
   sleep,
-} from '../utils/common';
-import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
+} from '@/utils/common.js';
+import { analyze, collectMessages, MessageOut, prepareMessages } from '@/moderation/moderation-utils.js';
+import * as tdl from 'tdl';
 import { Client } from 'tdl';
-import { STRICT_PROMPTS } from './moderation-prompts';
+import { STRICT_PROMPTS } from '@/moderation/moderation-prompts.js';
 
-const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
 
 const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME } = process.env;
@@ -109,7 +109,7 @@ async function main() {
 
     console.log(`Collected ${allMsgsPure.length} messages`);
 
-    const botMsgs = allMsgsPure.filter(m => (m.sender_id as messageSenderUser).user_id === botInfo.id);
+    const botMsgs = allMsgsPure.filter((m: any) => (m.sender_id as messageSenderUser).user_id === botInfo.id);
     console.log('botMsgs', botMsgs.length);
 
     const MAX_MSG_CONTEXT = 100;
@@ -133,7 +133,7 @@ async function main() {
       (Date.now() / 1000) - LAST_MSGS_PERIOD,
       prompt,
       MODEL,
-      msg => `{id:${msg.id},link:${msg.link},sender:${msg.from},text:${msg.text},replyTo:${msg.replyTo}\n`,
+      (msg: MessageOut) => `{id:${msg.id},link:${msg.link},sender:${msg.from},text:${msg.text},replyTo:${msg.replyTo}\n`,
       allMsgs,
     )) as ModResult[];
 
@@ -146,7 +146,7 @@ async function main() {
 
     await sendResults(chatId, results, DRY_RUN, clientBOT, thread.info.message_thread_id, maxCorrectnessLevel);
 
-    await deleteOldMsgs(clientBOT, botMsgs, chatId, thread)
+    await deleteOldMsgs(clientBOT, botMsgs, chatId, thread);
 
   }
 

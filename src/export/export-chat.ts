@@ -3,10 +3,10 @@ import { Client } from 'tdl';
 import { ForumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
 import { mkdirSync, writeFileSync } from 'fs';
-import { exportThread, login } from '../utils/common';
+import { exportThread, login } from '@/utils/common.js';
 import { readFileSync } from 'node:fs';
 
-const tdl = require('tdl');
+import * as tdl from 'tdl';
 tdl.configure({ tdjson: getTdjson() });
 
 const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME, START_DATE, EXPORT_DIR } = process.env;

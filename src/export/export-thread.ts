@@ -1,10 +1,10 @@
 import 'dotenv/config';
 import { mkdirSync, writeFileSync } from 'fs';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, login } from '../utils/common';
+import { exportThread, login } from '@/utils/common.js';
 import { ForumTopics } from 'src/utils/tdlib-types';
 
-const tdl = require('tdl');
+import * as tdl from 'tdl';
 tdl.configure({ tdjson: getTdjson() });
 
 const apiId = Number(process.env.API_ID);

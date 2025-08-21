@@ -1,7 +1,6 @@
 import { createReadStream, mkdirSync, writeFileSync } from 'fs';
 import { chain } from 'stream-chain';
 import { parser } from 'stream-json';
-import { pick } from 'stream-json/filters/Pick.js';
 import { streamArray } from 'stream-json/streamers/StreamArray.js';
 import { encoding_for_model } from 'tiktoken';
 import 'dotenv/config';
@@ -44,7 +43,7 @@ chain([
   // pick({ filter: 'messages' }),
   streamArray(),
   async({ value }) => {
-    const msg= value as Message;
+    const msg = value as Message;
     if (!msg || msg.content._ !== 'messageText' || !msg.content.text) {
       return;
     }
@@ -65,7 +64,8 @@ chain([
     // console.log('tokenSum:', tokenSum);
   },
 ])
-  .on('data', () => {})
+  .on('data', () => {
+  })
   .on('end', () => {
     console.log('Stream ended, flushing remaining messages...');
     flush();

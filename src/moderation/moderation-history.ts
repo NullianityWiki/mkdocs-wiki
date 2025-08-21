@@ -1,12 +1,12 @@
 import 'dotenv/config';
+import * as tdl from 'tdl';
 import { Client } from 'tdl';
 import { ForumTopic, Message } from 'src/utils/tdlib-types';
 import { getTdjson } from 'prebuilt-tdlib';
-import { exportThread, extractJsonBlock, getActiveThreads, getPublicChatIdByChatName, login } from '../utils/common';
-import { analyze, MessageOut, prepareMessages } from './moderation-utils';
-import { createDB, getUser, upsertUser } from '../utils/db';
+import { exportThread, extractJsonBlock, getActiveThreads, getPublicChatIdByChatName, login } from '@/utils/common.js';
+import { analyze, MessageOut, prepareMessages } from '@/moderation/moderation-utils.js';
+import { createDB, getUser, upsertUser } from '@/utils/db.js';
 
-const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
 
 const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME } = process.env;
@@ -138,7 +138,7 @@ async function collectHistoryToxic(client: Client, chatId: number, threads: Map<
 
       console.log('All messages length:', allMessages.length);
 
-      const allMessagesOut: MessageOut[] = await prepareMessages(client,allMessages, EXCLUDED_USERS);
+      const allMessagesOut: MessageOut[] = await prepareMessages(client, allMessages, EXCLUDED_USERS);
       if (allMessagesOut.length === 0) {
         continue;
       }
@@ -147,7 +147,7 @@ async function collectHistoryToxic(client: Client, chatId: number, threads: Map<
         lastMsgDate,
         PROMPT,
         MODEL,
-        msg => `${msg.fromId},${msg.from}:${msg.text}\n`,
+        (msg: MessageOut) => `${msg.fromId},${msg.from}:${msg.text}\n`,
       )) as ModResult[];
 
       await processResults(results);

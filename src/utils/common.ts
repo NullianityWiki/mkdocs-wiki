@@ -11,7 +11,7 @@ import {
   Messages,
   User,
 } from 'src/utils/tdlib-types';
-import { EXCLUDE_USERS } from './exclude';
+import { EXCLUDE_USERS } from '@/utils/exclude.js';
 import { createHash } from 'node:crypto';
 import * as fs from 'node:fs';
 import path from 'path';

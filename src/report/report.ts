@@ -56,7 +56,8 @@ chain([
     // console.log('tokenSum:', tokenSum);
   },
 ])
-  .on('data', () => {})
+  .on('data', () => {
+  })
   .on('end', () => {
     console.log('Stream ended, flushing remaining messages...');
     flush();

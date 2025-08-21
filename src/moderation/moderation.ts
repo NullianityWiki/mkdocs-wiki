@@ -9,10 +9,10 @@ import {
   sendMessage,
   sendMessageBOT,
   sleep,
-} from '../utils/common';
-import { analyze, collectMessages, MessageOut, prepareMessages } from './moderation-utils';
+} from '@/utils/common.js';
+import { analyze, collectMessages, MessageOut, prepareMessages } from '@/moderation/moderation-utils.js';
 
-const tdl = require('tdl');
+import * as tdl from 'tdl';
 tdl.configure({ tdjson: getTdjson() });
 
 const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, CHAT_NAME } = process.env;
@@ -145,7 +145,7 @@ async function main() {
       (Date.now() / 1000) - LAST_MSGS_PERIOD,
       PROMPT,
       MODEL,
-      msg => `
+      (msg: MessageOut) => `
 {
 link: ${msg.link},
 thread: ${msg.thread},

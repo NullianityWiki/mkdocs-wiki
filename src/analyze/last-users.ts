@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { getTdjson } from 'prebuilt-tdlib';
-import { getAllChatMembers, getPublicChatIdByChatName, getUserName, login } from '../utils/common';
+import { getAllChatMembers, getPublicChatIdByChatName, getUserName, login } from '@/utils/common.js';
 import { Chat, chatEvent, ChatEvents, chatMember, chatTypeSupergroup, messageSenderUser } from 'src/utils/tdlib-types';
 import { Client } from 'tdl';
 import * as fs from 'node:fs';

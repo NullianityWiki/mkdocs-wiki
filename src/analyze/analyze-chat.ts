@@ -9,11 +9,11 @@ import {
   login,
   sendMessage,
   sleep,
-} from '../utils/common';
-import { analyze, MessageOut, prepareMessages } from '../moderation/moderation-utils';
+} from '@/utils/common.js';
+import { analyze, MessageOut, prepareMessages } from '@/moderation/moderation-utils.js';
 import { Client } from 'tdl';
+import * as tdl from 'tdl';
 
-const tdl = require('tdl');
 tdl.configure({ tdjson: getTdjson() });
 
 const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, ANALYZE_CHAT_NAME } = process.env;
