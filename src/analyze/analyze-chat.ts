@@ -11,8 +11,8 @@ import {
   sleep,
 } from '@/utils/common.js';
 import { analyze, MessageOut, prepareMessages } from '@/moderation/moderation-utils.js';
-import { Client } from 'tdl';
 import * as tdl from 'tdl';
+import { Client } from 'tdl';
 
 tdl.configure({ tdjson: getTdjson() });
 
@@ -61,6 +61,12 @@ async function main() {
   const DAY = 60 * 60 * 24;
   const startDate = Math.floor(Date.now() / 1000) - DAY * 30;
   const finishDate = Math.floor(Date.now() / 1000);
+
+  //i have no clues why the first loading does not work and need to load again
+  await exportChat(clientUSER, chatId, startDate, finishDate, userNamesCache, new Map(), false);
+
+  await sleep(1000);
+  console.log(`LOAD AGAIN`);
 
   const messages = await exportChat(clientUSER, chatId, startDate, finishDate, userNamesCache, new Map(), false);
   console.log('Messages:', messages.length);

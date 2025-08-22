@@ -2,7 +2,8 @@ import 'dotenv/config';
 import { Minimatch } from 'minimatch';
 import path from 'path';
 import { Octokit } from '@octokit/core';
-import * as fs from 'node:fs';
+import { mkdir, writeFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
 
 const EXCLUDE_GLOBS = [
   '**/vendor/**',
@@ -32,44 +33,71 @@ const EXCLUDE_GLOBS = [
 
 const {
   GITHUB_TOKEN,
-  GITHUB_OWNER,
-  GITHUB_REPO,
-  GITHUB_BRANCH,
+  GITHUB_REPOS,
   GITHUB_SINCE,
   GITHUB_UNTIL,
-  GITHUB_OUTDIR,
 } = process.env;
 
-const owner = GITHUB_OWNER!;
-const repo = GITHUB_REPO!;
-const branch = GITHUB_BRANCH ?? 'master';
-const since = GITHUB_SINCE!;
-const until = GITHUB_UNTIL!;
-const outDir = GITHUB_OUTDIR ?? './tmp/git';
-
-async function main() {
-  checkEnvs();
-  const result = await extractFromCommits();
-
-  const out = fs.createWriteStream(outDir, { flags: 'w' });
-  out.write(result);
-  out.end();
-  console.error(`Wrote: ${outDir}`);
-
-  console.log(`Done!`);
+type CommitRecord = {
+  commit: {
+    sha: string;
+    author: string;
+    date?: string;
+    message: string;
+  };
+  stats: {
+    totalFiles: number;
+    additions: number;
+    deletions: number;
+  };
+  files: {
+    path: string;
+    additions: number;
+    deletions: number;
+    llm_snippet: string;
+  }[];
 }
 
-function checkEnvs() {
+async function main() {
   if (
-    !owner ||
-    !repo ||
-    !branch ||
-    !since ||
-    !until ||
-    !outDir
+    !GITHUB_REPOS ||
+    !GITHUB_SINCE ||
+    !GITHUB_UNTIL
   ) {
     throw Error('Wrong envs');
   }
+
+  const repos = GITHUB_REPOS.split(',');
+
+  for (const repoData of repos) {
+    const owner = repoData.split(':')[0];
+    const repo = repoData.split(':')[1];
+    const branch = repoData.split(':')[2];
+    const since = GITHUB_SINCE!;
+    const until = GITHUB_UNTIL!;
+
+    const result = await extractFromCommits(
+      owner,
+      repo,
+      branch,
+      since,
+      until,
+    );
+    // console.log('Result:\n', result);
+
+
+    if (result.length !== 0) {
+      const tmpDir = new URL('../../tmp/git/', import.meta.url);
+      await mkdir(tmpDir, { recursive: true });
+      const tmpDest = new URL(`./${repoData}.json`, tmpDir);
+      await writeFile(tmpDest, JSON.stringify(result.filter(c => c.commit.author === 'vseplet'), null, 2));
+      console.log(`Result saved to ${fileURLToPath(tmpDest)}`);
+    }
+
+  }
+
+
+  console.log(`Done!`);
 }
 
 function isExcluded(filePath: string): boolean {
@@ -178,7 +206,13 @@ function limitLines(lines: string[], max: number): string[] {
   return [...lines.slice(0, head), `\n... [${lines.length - max} lines skipped] ...\n`, ...lines.slice(-tail)];
 }
 
-async function extractFromCommits() {
+async function extractFromCommits(
+  owner: string,
+  repo: string,
+  branch: string,
+  since: string,
+  until: string,
+) {
 
   const octokit = new Octokit({
     auth: GITHUB_TOKEN,
@@ -187,7 +221,7 @@ async function extractFromCommits() {
   // https://docs.github.com/en/rest/commits/commits#list-commits
   let page = 1;
   const per_page = 100;
-  let out = '';
+  let out: CommitRecord[] = [];
 
   while (true) {
     const res = await octokit.request('GET /repos/{owner}/{repo}/commits', {
@@ -201,8 +235,11 @@ async function extractFromCommits() {
 
     const commits = res.data as any[];
     if (!commits.length) {
+      // console.log('zero commits, break');
       break;
     }
+
+    console.log(`Received ${commits.length} commits`);
 
     for (const c of commits) {
       const msg: string = c.commit?.message || '';
@@ -278,7 +315,7 @@ async function extractFromCommits() {
         files: fileEntries,
       };
 
-      out += (JSON.stringify(rec) + '\n');
+      out.push(rec);
     }
 
     page++;
