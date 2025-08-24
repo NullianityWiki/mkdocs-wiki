@@ -4,6 +4,7 @@ node_modules
 sh
 tmp
 .env
+.env.save
 .DS_Store
 # Python virtual environment
 venv/
