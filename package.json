@@ -12,6 +12,7 @@
     "report-thread": "npx tsx src/report/report-thread.ts",
     "export-thread": "npx tsx src/export/export-thread.ts",
     "export-chat": "npx tsx src/export/export-chat.ts",
+    "export-personal-chat": "npx tsx src/export/export-personal-chat.ts",
     "analize": "npx tsx src/analyze/analize.ts && npx tsx src/wiki/add-lore.ts",
     "analize-chat": "npx tsx src/analyze/analyze-chat.ts",
     "analyze-github": "npx tsx src/analyze/analyze-github.ts",
