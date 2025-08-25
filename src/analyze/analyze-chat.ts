@@ -13,10 +13,19 @@ import {
 import { analyze, MessageOut, prepareMessages } from '@/moderation/moderation-utils.js';
 import * as tdl from 'tdl';
 import { Client } from 'tdl';
+import { CommitRecord, loadGithubRecords } from '@/analyze/github-utils.js';
 
 tdl.configure({ tdjson: getTdjson() });
 
-const { API_ID, API_HASH, BOT_TOKEN, PHONE_NUMBER, ANALYZE_CHAT_NAME } = process.env;
+const {
+  API_ID,
+  API_HASH,
+  BOT_TOKEN,
+  PHONE_NUMBER,
+  ANALYZE_CHAT_NAME,
+  GITHUB_TOKEN,
+  GITHUB_REPOS,
+} = process.env;
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = ANALYZE_CHAT_NAME!;
 
@@ -52,8 +61,12 @@ async function main() {
   );
   const chatId = await getPrivateChatIdByChatName(clientUSER, chatName);
 
+  if (!chatId) {
+    throw new Error('chat not found');
+  }
+
   const context = await getPrompt('context_' + chatId + '.txt');
-  const prompt = (await getPrompt('prompt_' + chatId + '.txt')).replace('$PROJECT_CONTEXT', context);
+  let prompt = (await getPrompt('prompt_' + chatId + '.txt')).replace('$PROJECT_CONTEXT', context);
 
   const botInfo = await clientBOT.invoke({ _: 'getMe' }) as User;
   EXCLUDED_USERS.add(botInfo.usernames?.active_usernames[0] ?? '');
@@ -75,9 +88,30 @@ async function main() {
 
   console.log('Messages out:', allMessagesOut.length);
 
+  if (GITHUB_REPOS && GITHUB_TOKEN) {
+    const ghRecords = (await loadGithubRecords(
+      GITHUB_REPOS!,
+      14,
+      GITHUB_TOKEN!,
+    )).map((record: CommitRecord) => {
+      return `
+{
+author: ${record.commit.author},        
+date: ${record.commit.date},
+head: ${record.commit.message},
+files: ${JSON.stringify(record.files, null, 2)},
+}        
+        `;
+    });
+
+    prompt = prompt.replace('$COMMITS', JSON.stringify(ghRecords, null, 2));
+  }
+
+  const toAnalyzeGap = (new Date()).getDay() === 1 ? 3 * DAY : DAY;
+
   const result = await analyze(
     allMessagesOut,
-    Math.floor(Date.now() / 1000) - DAY,
+    Math.floor(Date.now() / 1000) - toAnalyzeGap,
     prompt,
     MODEL,
     msg => `
