@@ -38,7 +38,7 @@ type Result = {
   past: number,
   current: number,
   future: number,
-  recomendations: string,
+  recommendations: string,
 }
 
 const userNamesCache = new Map<number, string>();
@@ -145,7 +145,7 @@ async function send(jsonResult: Result[], client: Client, chatId: number) {
 **${r.name}**      
 P:${r.past} / C:${r.current} / F:${r.future}  
 \`\`\`    
-${r.recomendations}
+${r.recommendations}
 \`\`\`  
       `;
 
