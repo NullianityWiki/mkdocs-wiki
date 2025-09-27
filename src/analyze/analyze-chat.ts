@@ -35,10 +35,10 @@ const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-pro-preview';
 
 type Result = {
   name: string,
-  past: number,
-  current: number,
-  future: number,
-  recommendations: string,
+  report: number,
+  score: number,
+  text: string,
+  code: string,
 }
 
 const userNamesCache = new Map<number, string>();
@@ -142,25 +142,32 @@ async function send(jsonResult: Result[], client: Client, chatId: number) {
   for (const r of jsonResult) {
 
     let text = `
-**${r.name}**      
-P:${r.past} / C:${r.current} / F:${r.future}  
+**${r.name}**
+R:${r.report} / S:${r.score}
 \`\`\`    
-${r.recommendations}
+${r.text}
 \`\`\`  
       `;
 
-    if (r.past < 8 || r.current < 8 || r.future < 8) {
+    if (r.code && r.code.length > 0) {
+      text += `
+\`\`\`    
+${r.code}
+\`\`\`  
+      
+        `;
+    }
+
+    if (r.report < 8) {
       text += `
 ---
-⚠️__Не хватает данных!__⚠️ 
-__Опиши проделанную работу более подробно, включая что сделано, чем занимаешься сейчас и чем будешь заниматься в будущем.__
-Просто ответь на это сообщение с кратким репортом.
+⚠️__Не хватает данных!__⚠️
         `;
     }
 
     console.log(text);
 
-    if (!DRY_RUN) {
+    if (!DRY_RUN && r.score > 8) {
       await sendMessage(client, chatId, 0, null, text);
     }
   }

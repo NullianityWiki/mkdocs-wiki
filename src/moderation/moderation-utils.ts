@@ -176,7 +176,9 @@ export async function analyze(
     highestDate *
     1000).toISOString()}`);
 
-  let prompt = PROMPT.replace('$LAST_MESSAGES', lastMessagesData);
+  let prompt = PROMPT
+      .replace('$LAST_MESSAGES', lastMessagesData)
+      .replace('$DATE', (new Date()).toISOString());
 
   if(threadName) {
     prompt = prompt.replace('$THREAD_NAME', threadName);
