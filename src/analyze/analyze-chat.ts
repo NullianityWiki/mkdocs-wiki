@@ -167,7 +167,7 @@ ${r.code}
 
     console.log(text);
 
-    if (!DRY_RUN && r.score > 8) {
+    if (!DRY_RUN && r.score >= 10) {
       await sendMessage(client, chatId, 0, null, text);
     }
   }
