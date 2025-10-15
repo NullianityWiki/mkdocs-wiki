@@ -376,32 +376,37 @@ export async function loadGithubRecords(
   daysAgo: number,
   ghToken: string,
 ) {
-  const out = [];
-  const now = new Date();
-  const until = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-  const since = new Date(until);
-  since.setUTCDate(until.getUTCDate() - daysAgo);
+    try {
+        const out = [];
+        const now = new Date();
+        const until = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+        const since = new Date(until);
+        since.setUTCDate(until.getUTCDate() - daysAgo);
 
 
-  const repos = reposArr.split(',');
+        const repos = reposArr.split(',');
 
-  for (const repoData of repos) {
-    const owner = repoData.split(':')[0];
-    const repo = repoData.split(':')[1];
-    const branch = repoData.split(':')[2];
+        for (const repoData of repos) {
+            const owner = repoData.split(':')[0];
+            const repo = repoData.split(':')[1];
+            const branch = repoData.split(':')[2];
 
 
-    const commitRecords = await extractFromCommits(
-      owner,
-      repo,
-      branch,
-      since.toISOString(),
-      until.toISOString(),
-      ghToken,
-    );
+            const commitRecords = await extractFromCommits(
+                owner,
+                repo,
+                branch,
+                since.toISOString(),
+                until.toISOString(),
+                ghToken,
+            );
 
-    out.push(...commitRecords);
-  }
+            out.push(...commitRecords);
+        }
 
-  return out;
+        return out;
+    }catch (e) {
+        console.error(e);
+        return [];
+    }
 }
