@@ -72,7 +72,7 @@ async function main() {
   EXCLUDED_USERS.add(botInfo.usernames?.active_usernames[0] ?? '');
 
   const DAY = 60 * 60 * 24;
-  const startDate = Math.floor(Date.now() / 1000) - DAY * 30;
+  const startDate = Math.floor(Date.now() / 1000) - DAY * 15;
   const finishDate = Math.floor(Date.now() / 1000);
 
   //i have no clues why the first loading does not work and need to load again
