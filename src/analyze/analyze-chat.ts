@@ -29,6 +29,8 @@ const {
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = ANALYZE_CHAT_NAME!;
 
+const WINDOW = Number(process.env.WINDOW === '15');
+const WINDOW_GITHUB = Number(process.env.WINDOW_GITHUB === '15');
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const EXCLUDED_USERS = new Set<string>([]);
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-pro-preview';
@@ -72,7 +74,7 @@ async function main() {
   EXCLUDED_USERS.add(botInfo.usernames?.active_usernames[0] ?? '');
 
   const DAY = 60 * 60 * 24;
-  const startDate = Math.floor(Date.now() / 1000) - DAY * 15;
+  const startDate = Math.floor(Date.now() / 1000) - (DAY * WINDOW);
   const finishDate = Math.floor(Date.now() / 1000);
 
   //i have no clues why the first loading does not work and need to load again
@@ -91,7 +93,7 @@ async function main() {
   if (GITHUB_REPOS && GITHUB_TOKEN) {
     const ghRecords = (await loadGithubRecords(
       GITHUB_REPOS!,
-      14,
+        WINDOW_GITHUB,
       GITHUB_TOKEN!,
     )).map((record: CommitRecord) => {
       return `
