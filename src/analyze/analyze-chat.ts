@@ -29,12 +29,12 @@ const {
 const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = ANALYZE_CHAT_NAME!;
 
-const WINDOW = Number(process.env.WINDOW === '15');
-const WINDOW_GITHUB = Number(process.env.WINDOW_GITHUB === '15');
+const WINDOW = Number(process.env.WINDOW ?? '15');
+const WINDOW_GITHUB = Number(process.env.WINDOW_GITHUB ?? '15');
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const EXCLUDED_USERS = new Set<string>([]);
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-pro-preview';
-const LOAD_AGAIN_COUNT = 3;
+const LOAD_AGAIN_COUNT = 2;
 
 type Result = {
     name: string,
