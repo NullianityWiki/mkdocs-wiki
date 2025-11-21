@@ -215,10 +215,10 @@ export async function exportChat(
       fromMessageId = resultLstMsg.id as number;
 
       if (resultLstMsg.date < toDate) {
-        console.log('Reached target date with msg', (new Date(resultLstMsg.date * 1000)).toISOString());
+        console.log('Reached target date with msg', (new Date(resultLstMsg.date * 1000)).toISOString(), allMessages.length);
         break;
       } else {
-        console.log(`Fetched messages with the last ${(new Date(resultLstMsg.date * 1000)).toISOString()}`);
+        console.log(`Fetched messages with the last ${(new Date(resultLstMsg.date * 1000)).toISOString()}`, allMessages.length);
       }
     } catch (e) {
       if (tryCount > 100) {
