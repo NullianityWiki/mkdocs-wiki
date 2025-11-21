@@ -34,6 +34,7 @@ const WINDOW_GITHUB = Number(process.env.WINDOW_GITHUB === '15');
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const EXCLUDED_USERS = new Set<string>([]);
 const MODEL = process.env.OPENROUTER_MODEL ?? 'google/gemini-2.5-pro-preview';
+const LOAD_AGAIN_COUNT = 10;
 
 type Result = {
   name: string,
@@ -78,10 +79,11 @@ async function main() {
   const finishDate = Math.floor(Date.now() / 1000);
 
   //i have no clues why the first loading does not work and need to load again
-  await exportChat(clientUSER, chatId, startDate, finishDate, userNamesCache, new Map(), false);
-
-  await sleep(1000);
-  console.log(`LOAD AGAIN`);
+    for(let i = 0; i < LOAD_AGAIN_COUNT; i++) {
+        await exportChat(clientUSER, chatId, startDate, finishDate, userNamesCache, new Map(), false);
+        await sleep(10000);
+        console.log(`========================LOAD AGAIN==============================`);
+    }
 
   const messages = await exportChat(clientUSER, chatId, startDate, finishDate, userNamesCache, new Map(), false);
   console.log('Messages:', messages.length);
