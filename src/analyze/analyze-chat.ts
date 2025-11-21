@@ -83,10 +83,10 @@ async function main() {
     for (let i = 0; i < LOAD_AGAIN_COUNT; i++) {
         messages = await exportChat(clientUSER, chatId, startDate, finishDate, userNamesCache, new Map(), false);
 
-        console.log('data', new Date(messages[messages.length].date * 1000));
-        if (messages.length != 0 && messages[messages.length].date >= (finishDate - (60 * 60 * 24))) {
-            break;
-        }
+        // console.log('data', new Date(messages[messages.length].date * 1000));
+        // if (messages.length != 0 && messages[messages.length].date >= (finishDate - (60 * 60 * 24))) {
+        //     break;
+        // }
 
         await sleep(10000);
         console.log(`========================LOAD AGAIN==============================`);
