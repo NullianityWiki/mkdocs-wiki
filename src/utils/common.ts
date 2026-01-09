@@ -50,13 +50,17 @@ export async function login(
   client.on('error', console.error);
   client.on('update', (update: any) => {
     // console.log('Received update:', update);
+
+      if (update._ === 'updateAuthorizationState') {
+          console.log('AUTH STATE:', JSON.stringify(update.authorization_state, null, 2));
+      }
   });
 
   if (botToken) {
-    console.log('Logging in as bot');
+    console.log('Logging in as bot', botToken);
     await client.loginAsBot(botToken);
   } else {
-    console.log('Logging in as user');
+    console.log('Logging in as user', phoneNumber);
     await client.login({
       type: 'user',
       getPhoneNumber: async() => phoneNumber ?? '0',
