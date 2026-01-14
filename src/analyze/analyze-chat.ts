@@ -30,6 +30,7 @@ const apiId = Number(API_ID), apiHash = API_HASH!, botToken = BOT_TOKEN!;
 const phoneNumber = PHONE_NUMBER!, chatName = ANALYZE_CHAT_NAME!;
 
 const WINDOW = Number(process.env.WINDOW ?? '15');
+const MIN_SCORE = Number(process.env.MIN_SCORE ?? '9');
 const WINDOW_GITHUB = Number(process.env.WINDOW_GITHUB ?? '15');
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const EXCLUDED_USERS = new Set<string>([]);
@@ -177,7 +178,7 @@ ${r.code}
 
         console.log(text);
 
-        if (!DRY_RUN && r.score >= 10) {
+        if (!DRY_RUN && r.score >= MIN_SCORE) {
             await sendMessage(client, chatId, 0, null, text);
         }
     }
